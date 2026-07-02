@@ -1,0 +1,11 @@
+{
+  "version": "2.0-wb",
+  "last_update": "2026-07-02T08:30:00+08:00",
+  "files": {
+    "detailed": "20260702_消费早报.md",
+    "brief": "20260702_消费早报_精简版.txt",
+    "dashboard": "20260702_消费早报.html"
+  },
+  "deploy_target": "github-pages",
+  "pushed": false
+}

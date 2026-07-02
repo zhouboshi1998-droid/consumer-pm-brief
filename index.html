@@ -7,36 +7,35 @@
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; background:#f8f9fa; color:#2c3e50; display:flex; justify-content:center; align-items:center; min-height:100vh; }
-.container { text-align:center; padding:40px; }
-h1 { font-size:28px; margin-bottom:32px; color:#1a1a2e; }
+.container { text-align:center; padding:40px; max-width:900px; width:100%; }
+h1 { font-size:28px; margin-bottom:12px; color:#1a1a2e; }
+.date { font-size:14px; color:#7f8c8d; margin-bottom:32px; }
 .cards { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; }
-.card { background:#fff; border-radius:12px; padding:24px 32px; box-shadow:0 2px 8px rgba(0,0,0,0.08); text-decoration:none; color:#2c3e50; transition:transform 0.2s, box-shadow 0.2s; min-width:200px; }
-.card:hover { transform:translateY(-2px); box-shadow:0 4px 16px rgba(0,0,0,0.12); }
+.card { background:#fff; border-radius:12px; padding:24px 32px; box-shadow:0 2px 8px rgba(0,0,0,0.08); text-decoration:none; color:#2c3e50; transition:transform 0.2s, box-shadow 0.2s; min-width:200px; flex:1 1 200px; }
+.card:hover { transform:translateY(-3px); box-shadow:0 6px 20px rgba(0,0,0,0.12); border-color:#3498db; }
 .card .icon { font-size:36px; margin-bottom:12px; }
 .card h2 { font-size:18px; margin-bottom:8px; }
 .card p { font-size:13px; color:#7f8c8d; }
+.footer { margin-top:24px; font-size:12px; color:#aaa; }
 </style>
 </head>
 <body>
 <div class="container">
-  <h1>消费PM早报 · 2026年7月2日</h1>
+  <h1>消费PM早报 · 2026年7月2日 周四</h1>
+  <div class="date">按 consumer-pm-daily-brief v2.0-wb 规范输出 | GitHub Pages 自动部署</div>
   <div class="cards">
-    <a href="消费PM早报_20260702_仪表盘.html" class="card">
-      <div class="icon">📊</div>
-      <h2>仪表盘</h2>
-      <p>可视化数据面板</p>
-    </a>
-    <a href="消费PM早报_20260702_详细版.md" class="card">
+    <a href="20260702_%E6%B6%88%E8%B4%B9%E6%97%A9%E6%8A%A5.md" class="card" target="_blank">
       <div class="icon">📋</div>
       <h2>详细版</h2>
-      <p>Markdown 完整报告</p>
+      <p>Markdown 完整报告<br><small>五区制 + 分子板块速览</small></p>
     </a>
-    <a href="消费PM早报_20260702_精简版.txt" class="card">
+    <a href="20260702_%E6%B6%88%E8%B4%B9%E6%97%A9%E6%8A%A5_%E7%B2%BE%E7%AE%80%E7%89%88.txt" class="card" target="_blank">
       <div class="icon">📝</div>
       <h2>精简版</h2>
-      <p>纯文本快速浏览</p>
+      <p>纯文本快速浏览<br><small>可直接复制发微信</small></p>
     </a>
   </div>
+  <div class="footer">每日自动更新 · 固定链接不变</div>
 </div>
 </body>
 </html>

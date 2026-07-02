@@ -3,39 +3,200 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>消费PM早报 · 2026-07-02</title>
+<title>消费早报 · 2026-07-02</title>
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; background:#f8f9fa; color:#2c3e50; display:flex; justify-content:center; align-items:center; min-height:100vh; }
-.container { text-align:center; padding:40px; max-width:900px; width:100%; }
-h1 { font-size:28px; margin-bottom:12px; color:#1a1a2e; }
-.date { font-size:14px; color:#7f8c8d; margin-bottom:32px; }
-.cards { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; }
-.card { background:#fff; border-radius:12px; padding:24px 32px; box-shadow:0 2px 8px rgba(0,0,0,0.08); text-decoration:none; color:#2c3e50; transition:transform 0.2s, box-shadow 0.2s; min-width:200px; flex:1 1 200px; }
-.card:hover { transform:translateY(-3px); box-shadow:0 6px 20px rgba(0,0,0,0.12); border-color:#3498db; }
-.card .icon { font-size:36px; margin-bottom:12px; }
-.card h2 { font-size:18px; margin-bottom:8px; }
-.card p { font-size:13px; color:#7f8c8d; }
-.footer { margin-top:24px; font-size:12px; color:#aaa; }
+:root{--bg:#f8f9fa;--card:#fff;--text:#2c3e50;--muted:#7f8c8d;--red:#e74c3c;--green:#27ae60;--accent:#3498db;--border:#e8ecf1;--warn:#f39c12}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+header{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);color:#fff;padding:20px 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+header h1{font-size:22px}
+header .meta{font-size:12px;opacity:.7}
+.btn-sm{font-size:11px;background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.25);padding:5px 12px;border-radius:6px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:4px}
+.btn-sm:hover{background:rgba(255,255,255,.25)}
+.container{max-width:1200px;margin:0 auto;padding:16px}
+.summary{display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.summary .k{flex:1;min-width:200px;background:var(--card);border-radius:10px;padding:14px 18px;box-shadow:0 1px 4px rgba(0,0,0,.06);border:1px solid var(--border)}
+.summary .k .num{font-size:20px;font-weight:700}
+.summary .k .num.up{color:var(--red)}
+.summary .k .num.down{color:var(--green)}
+.summary .k .lbl{font-size:11px;color:var(--muted);margin-top:2px}
+.keypoints{background:var(--card);border-radius:10px;padding:16px 20px;margin-bottom:16px;box-shadow:0 1px 4px rgba(0,0,0,.06);border-left:4px solid var(--accent)}
+.keypoints ol{margin-left:18px;font-size:14px}
+.keypoints ol li{margin-bottom:6px}
+.keypoints h2{font-size:15px;margin-bottom:10px;color:var(--accent)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.card{background:var(--card);border-radius:10px;padding:16px 20px;box-shadow:0 1px 4px rgba(0,0,0,.06);border:1px solid var(--border)}
+.card h3{font-size:14px;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+.card h3.warn{border-bottom-color:var(--warn)}
+.card h3.red{border-bottom-color:var(--red)}
+.card h3.green{border-bottom-color:var(--green)}
+.row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border);font-size:13px}
+.row:last-child{border-bottom:none}
+.row .v{font-weight:600}
+.row .v.up{color:var(--red)}
+.row .v.down{color:var(--green)}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:600;margin-right:4px}
+.tag-up{background:#fdeaea;color:#c0392b}
+.tag-down{background:#e8f8f5;color:#1abc9c}
+.tag-new{background:#e8f4fd;color:#2980b9}
+.stock-item{padding:8px 0;border-bottom:1px solid var(--border);font-size:13px}
+.stock-item:last-child{border-bottom:none}
+.stock-item strong{font-size:13px}
+.stock-meta{font-size:11px;color:var(--muted);margin-top:2px}
+.broker-row{padding:8px 0;border-bottom:1px dashed var(--border);font-size:12px}
+.broker-row:last-child{border-bottom:none}
+.broker-row .name{font-weight:600;font-size:12px}
+.footer-bar{text-align:center;padding:12px;color:var(--muted);font-size:11px;margin-top:8px;border-top:1px solid var(--border)}
+.table-wrap{overflow-x:auto;font-size:12px}
+.table-wrap table{width:100%;border-collapse:collapse}
+.table-wrap th,.table-wrap td{border-bottom:1px solid var(--border);padding:6px 8px;text-align:left}
+.table-wrap th{background:#f5f6f7;font-weight:600;white-space:nowrap}
+#mdOverlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:999;justify-content:center;align-items:flex-start;padding-top:20px}
+#mdOverlay.show{display:flex}
+#mdBox{background:#fff;border-radius:12px;width:92%;max-width:1000px;max-height:85vh;overflow-y:auto;padding:24px}
+#mdBox pre{white-space:pre-wrap;font-family:Consolas,monospace;font-size:12px;line-height:1.5}
+#mdClose{float:right;font-size:20px;cursor:pointer;line-height:1;padding:0 6px;color:var(--muted)}
+#mdClose:hover{color:var(--red)}
+@media(max-width:768px){.grid2{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<div class="container">
-  <h1>消费PM早报 · 2026年7月2日 周四</h1>
-  <div class="date">按 consumer-pm-daily-brief v2.0-wb 规范输出 | GitHub Pages 自动部署</div>
-  <div class="cards">
-    <a href="20260702_%E6%B6%88%E8%B4%B9%E6%97%A9%E6%8A%A5.md" class="card" target="_blank">
-      <div class="icon">📋</div>
-      <h2>详细版</h2>
-      <p>Markdown 完整报告<br><small>五区制 + 分子板块速览</small></p>
-    </a>
-    <a href="20260702_%E6%B6%88%E8%B4%B9%E6%97%A9%E6%8A%A5_%E7%B2%BE%E7%AE%80%E7%89%88.txt" class="card" target="_blank">
-      <div class="icon">📝</div>
-      <h2>精简版</h2>
-      <p>纯文本快速浏览<br><small>可直接复制发微信</small></p>
-    </a>
+
+<header>
+  <div>
+    <h1>📊 消费PM早报 · 2026年7月2日 周四</h1>
+    <div class="meta">按 consumer-pm-daily-brief v2.0-wb | Comein ✅ iFind ✅ | 每日自动更新</div>
   </div>
-  <div class="footer">每日自动更新 · 固定链接不变</div>
+  <div style="display:flex;gap:8px;align-items:center">
+    <a class="btn-sm" href="#" onclick="toggleMD()">📄 MD</a>
+    <a class="btn-sm" href="20260702_%E6%B6%88%E8%B4%B9%E6%97%A9%E6%8A%A5_%E7%B2%BE%E7%AE%80%E7%89%88.txt" target="_blank">📝 精简版</a>
+  </div>
+</header>
+
+<div id="mdOverlay"><div id="mdBox"><span id="mdClose" onclick="toggleMD()">✕</span><pre id="mdContent">加载中...</pre></div></div>
+
+<div class="container">
+
+<div class="summary">
+  <div class="k"><div class="num up">+3.0%</div><div class="lbl">白酒板块指数 · 7/1</div></div>
+  <div class="k"><div class="num up">+2.3%</div><div class="lbl">食品ETF(560320)</div></div>
+  <div class="k"><div class="num up">199</div><div class="lbl">涨停家数 · 7/1</div></div>
+  <div class="k"><div class="num" style="color:var(--text)">4112</div><div class="lbl">上证指数 · +0.44%</div></div>
+  <div class="k"><div class="num" style="color:var(--accent)">12%</div><div class="lbl">食饮PE分位 · 十年最低</div></div>
 </div>
+
+<div class="keypoints">
+  <h2>▌今日要点</h2>
+  <ol>
+    <li><strong>7/1食饮全线反弹，中粮糖业三连板</strong>：食品ETF +2.3%，白酒指数 +3%，金种子酒一字涨停。中粮糖业连续3日涨幅偏离值累计&gt;20%（药用糖突破+食糖周期）。消费板块赚钱效应爆发，4553涨/199涨停。</li>
+    <li><strong style="color:var(--red)">🔴 益生股份H1暴增4286%-4774%</strong>：归母净利2.7-3亿，白羽鸡苗价格景气。孚日股份（纺织）H1 +50-70%。</li>
+    <li><strong>机构持仓回2015年底部，多券商共识"底已现"</strong>：中银（7/1）食饮全仓仓位3.7%/分位12.6%，PE分位12%；国盛（6/28）"白酒筑底渐明"。</li>
+    <li><strong>海天味业回购A+H合计最高25亿</strong>；茅台散瓶~1630/原箱~1650元稳定；五粮液新董事长上任（邓敏）。</li>
+    <li><strong>7/1起离境退税优化+酒类零售新国标正式生效</strong>，免税政策催化窗口开启。</li>
+  </ol>
+</div>
+
+<div class="grid2">
+  <div class="card">
+    <h3 class="red">公司动态 · 食饮重点</h3>
+    <div class="stock-item"><strong>🔼 中粮糖业 600737</strong><br><span class="tag tag-up">三连板</span> 6/29-7/1涨幅偏离值&gt;20%。药用蔗糖CDE"A"级，注射级产线就绪<span class="stock-meta">【异常波动公告+互动易】</span></div>
+    <div class="stock-item"><strong>🔼 金种子酒 600199</strong><br><span class="tag tag-up">涨停</span> 7/1一字涨停6.72元。拟与华润啤酒深化战略合作<span class="stock-meta">【公司公告】</span></div>
+    <div class="stock-item"><strong>贵州茅台 600519</strong><br>散瓶~1630/原箱~1650元(-25/-5 MoM)；股息率4.38%<span class="stock-meta">【iFind】</span></div>
+    <div class="stock-item"><strong>海天味业 603288</strong><br>A股回购10-20亿+H股5亿港元，70%注销<span class="stock-meta">【公告6/22】</span></div>
+    <div class="stock-item"><strong>五粮液 000858</strong><br>邓敏当选第七届董事长，八代普五批价840元稳定<span class="stock-meta">【股东大会】</span></div>
+    <div class="stock-item"><strong>🔼 百润股份 002568</strong><br>H1净利4.65-4.9亿+19.5-25.9%，连续两日涨停<span class="stock-meta">【业绩预告6/26】</span></div>
+    <div class="stock-item"><strong>🔼 华润饮料 2460.HK</strong><br>承诺2026-28年派息≥0.37元/股息率约6%<span class="stock-meta">【公告6/28】</span></div>
+  </div>
+  <div class="card">
+    <h3 class="warn">公司动态 · 农业/纺织</h3>
+    <div class="stock-item"><strong style="color:var(--red)">🔼 益生股份 002458</strong><br>H1归母2.7-3亿 <strong style="color:var(--red)">+4286%-4774%</strong>，白羽鸡苗景气<span class="stock-meta">【业绩预告7/1】</span></div>
+    <div class="stock-item"><strong>🔼 牧原股份 002714</strong><br>董监高增持4-5亿(6/26起)，长江7月金股<span class="stock-meta">【公告+长江研报】</span></div>
+    <div class="stock-item"><strong>孚日股份 002083</strong><br>H1归母3.7-4.2亿+50-70%（纺织）<span class="stock-meta">【业绩预告7/2】</span></div>
+    <div style="margin-top:12px"><h3 class="green">行情数据</h3></div>
+    <div class="row"><span>上证指数</span><span class="v up">4112.45 +0.44%</span></div>
+    <div class="row"><span>涨跌家数</span><span class="v">4553↑ / 931↓ · 涨停199</span></div>
+    <div class="row"><span>飞天散瓶</span><span class="v">~1630元 (-5 MoM)</span></div>
+    <div class="row"><span>飞天原箱</span><span class="v">~1650元 (-25 MoM)</span></div>
+    <div class="row"><span>普五批价</span><span class="v">840元 持平</span></div>
+    <div class="row"><span>国窖批价</span><span class="v">840元 持平</span></div>
+    <div class="row"><span>食饮PE分位</span><span class="v">12% · 十年最低</span></div>
+    <div class="row"><span>全仓仓位分位</span><span class="v">12.6% · 仅茅台进前20</span></div>
+  </div>
+</div>
+
+<div class="card" style="margin-bottom:16px">
+  <h3>券商观点 · 🔼上调 / 🔽下调 / 预测变化</h3>
+  <div class="table-wrap">
+    <table>
+      <tr><th>机构</th><th>日期</th><th>主题</th><th>核心观点</th></tr>
+      <tr><td><span class="tag tag-up">🔼</span> 国泰海通</td><td>6/30</td><td>滞涨期大众品 🔥</td><td>推荐海天/安井/安琪/东鹏/农夫/百润/青啤/伊利/蒙牛</td></tr>
+      <tr><td><span class="tag tag-up">🔼</span> 国盛证券</td><td>6/28</td><td>白酒筑底渐明 🔥</td><td>首推茅台，关注迎驾/五粮液/汾酒/金徽酒</td></tr>
+      <tr><td><span class="tag tag-up">🔼</span> 中银国际</td><td>7/1</td><td>白酒持仓12%分位 🔥</td><td>持仓回2015年，PE分位12% vs 电子90%+，左侧布局龙头</td></tr>
+      <tr><td><span class="tag tag-up">🔼</span> 国泰海通·訾猛</td><td>6/30</td><td>消费底部 🔥</td><td>"陆续布局"，大众品贯穿全年主线</td></tr>
+      <tr><td><span class="tag tag-up">🔼</span> 中信建投</td><td>6/28</td><td>五粮液/古井</td><td>八代动销双位数，古井库存回归良性</td></tr>
+      <tr><td><span class="tag tag-up">🔼</span> 国金证券</td><td>6/28</td><td>商贸零售</td><td>安克创新/小商品城；黄金珠宝(老铺/潮宏基)；餐饮</td></tr>
+      <tr><td><span class="tag tag-up">🔼</span> 长江证券</td><td>6/30</td><td>7月金股</td><td>农业-牧原 / 零售-小商品城 / 食品-安琪酵母 / 家电-安克创新</td></tr>
+      <tr><td><span class="tag tag-up">🔼</span> 开源证券</td><td>6/28</td><td>零售社服</td><td>黄金珠宝(老铺/潮宏基/周大福)；零售(永辉/家家悦)</td></tr>
+      <tr><td><span class="tag tag-up">🔼</span> 兴业证券</td><td>6/28</td><td>618美妆</td><td>珀莱雅/毛戈平超预期；茶饮Q2末高基数</td></tr>
+      <tr><td><span class="tag tag-down">🔽</span> 光大证券</td><td>6/30</td><td>啤酒承压</td><td>降水偏多10%+压制Q2动销；5月餐饮+0.6%</td></tr>
+      <tr><td><span class="tag tag-down">🔽</span> 银河证券</td><td>7/1</td><td>食饮6月跌10.7%</td><td>跑输大盘12.1%，仅肉制品/调味品跌幅较小</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="card" style="margin-bottom:16px">
+  <h3>分板块速览</h3>
+  <div class="table-wrap">
+    <table>
+      <tr><th>板块</th><th>关键变化</th><th>信号</th></tr>
+      <tr><td>白酒</td><td>茅台/普五批价稳，五粮液换帅，多券商底部共识</td><td><span class="tag tag-new">筑底</span></td></tr>
+      <tr><td>啤酒</td><td>燕京U8+25%，强降雨压制Q2动销</td><td>分化</td></tr>
+      <tr><td>乳制品</td><td>原奶去化持续，滞涨期推荐</td><td>拐点临近</td></tr>
+      <tr><td>调味品</td><td>海天回购25亿+高股息</td><td><span class="tag tag-up">积极</span></td></tr>
+      <tr><td>预调酒</td><td>百润H1+20%涨停，国盛"超预期"</td><td><span class="tag tag-up">🔼</span></td></tr>
+      <tr><td>糖业</td><td>中粮三连板，药用糖突破</td><td><span class="tag tag-up">热门</span></td></tr>
+      <tr><td style="color:var(--red)">农业/养殖</td><td style="color:var(--red)">益生+4286%白鸡景气，牧原增持</td><td><span class="tag tag-up">🔼</span></td></tr>
+      <tr><td>家电</td><td>空调排产-13.4%内销承压</td><td>承压</td></tr>
+      <tr><td>黄金珠宝</td><td>金价高企结构性分化，老铺/潮宏基/周大福</td><td>头部集中</td></tr>
+      <tr><td>零售</td><td>离境退税生效+永辉调改</td><td><span class="tag tag-new">催化</span></td></tr>
+      <tr><td>社服</td><td>燃油费下调提振出行，茶饮高基数</td><td>分化</td></tr>
+      <tr><td>美妆</td><td>618珀莱雅/毛戈平超预期</td><td>红利消退</td></tr>
+      <tr><td>软饮料</td><td>华润饮料6%股息，东鹏低糖转型</td><td><span class="tag tag-up">积极</span></td></tr>
+      <tr><td>零食</td><td>绝味激励，新鲜零食业态展开</td><td>分化</td></tr>
+      <tr><td>汽车</td><td>整车淡季，固态电池中试线落地</td><td>平淡</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="card" style="margin-bottom:16px;border-left:4px solid var(--warn)">
+  <h3 class="warn">明日关注 & 风险提示</h3>
+  <div style="font-size:13px">
+    <p>· 中粮糖业三连板后是否触发停牌核查（异动公告已发）</p>
+    <p>· 中报预告密集期开启（益生/百润已出），关注食饮超预期标的</p>
+    <p>· 科技→消费风格切换持续性：7/1赚钱效应能否扩散</p>
+  </div>
+</div>
+
+<div class="footer-bar">
+  数据来源：Comein(8家研报) · iFind(新闻+公告) · Wind(行情) | 草稿待签 · 不构成投资建议<br>
+  接口状态：✅ Comein ✅ iFind ⚠️ Wind ⚠️ AceCamp ❌ Info-Bridge | 每日自动更新 · 固定链接不变
+</div>
+</div>
+
+<script>
+function toggleMD(){
+  var o=document.getElementById('mdOverlay');
+  if(o.classList.contains('show')){o.classList.remove('show');return}
+  o.classList.add('show');
+  var c=document.getElementById('mdContent');
+  if(!c.dataset.loaded){
+    fetch('20260702_%E6%B6%88%E8%B4%B9%E6%97%A9%E6%8A%A5.md')
+    .then(function(r){return r.text()})
+    .then(function(t){c.textContent=t;c.dataset.loaded='1'})
+    .catch(function(){c.textContent='加载失败，请刷新重试'});
+  }
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')document.getElementById('mdOverlay').classList.remove('show')});
+</script>
 </body>
 </html>

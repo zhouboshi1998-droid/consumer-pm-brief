@@ -6,8 +6,10 @@
     "brief": "20260702_消费早报_精简版.txt",
     "dashboard": "20260702_消费早报.html"
   },
-  "deploy_target": "github-pages",
-  "url": "https://zhouboshi1998-droid.github.io/consumer-pm-brief/",
+  "deploy_target": "cloudstudio",
+  "url": "https://f7ffdbd5b38b450392381152687d7346.app.codebuddy.work",
+  "github_pages": "https://zhouboshi1998-droid.github.io/consumer-pm-brief/",
   "repo": "https://github.com/zhouboshi1998-droid/consumer-pm-brief",
-  "pushed": true
+  "pushed": true,
+  "note": "主入口用CloudStudio(正确Content-Type,手机可用)；github.io为兜底"
 }

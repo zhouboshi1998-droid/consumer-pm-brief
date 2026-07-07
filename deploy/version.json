@@ -1,14 +1,14 @@
 {
   "version": "2.0-wb",
-  "last_update": "2026-07-06T08:31:00+08:00",
+  "last_update": "2026-07-07T12:37:00+08:00",
   "files": {
-    "detailed": "20260706_消费早报.md",
-    "brief": "20260706_消费早报_精简版.txt",
-    "dashboard": "20260706_消费早报.html"
+    "detailed": "20260707_消费早报.md",
+    "brief": "20260707_消费早报_精简版.txt",
+    "dashboard": "20260707_消费早报.html"
   },
   "deploy_target": "cloudstudio+github",
   "github_pages": "https://zhouboshi1998-droid.github.io/consumer-pm-brief/",
   "repo": "https://github.com/zhouboshi1998-droid/consumer-pm-brief",
-  "pushed": true,
-  "note": "7/6早报：猪价涨停潮/食饮资金抄底/茅台批价续跌/中概反弹/泡泡玛特新高/625亿国补到位"
+  "pushed": false,
+  "note": "7/7早报：消费见底共识强化(国泰海通/天风/开源7/6集中路演)、高端购物中心Q2爆发(绝对值+126-139%)、白酒边际改善(洋河换帅/百润超预期)、美妆618验证复苏拐点、猪价涨停潮后博弈"
 }

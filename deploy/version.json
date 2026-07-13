@@ -1,14 +1,14 @@
 {
   "version": "2.0-wb",
-  "last_update": "2026-07-12T20:30:00+08:00",
+  "last_update": "2026-07-13T10:45:00+08:00",
   "files": {
-    "detailed": "20260712_消费早报.md",
-    "brief": "20260712_消费早报_精简版.txt",
-    "dashboard": "20260712_消费早报.html"
+    "detailed": "20260713_消费早报.md",
+    "brief": "20260713_消费早报_精简版.txt",
+    "dashboard": "20260713_消费早报.html"
   },
   "deploy_target": "cloudstudio+github",
   "github_pages": "https://zhouboshi1998-droid.github.io/consumer-pm-brief/",
   "repo": "https://github.com/zhouboshi1998-droid/consumer-pm-brief",
   "pushed": true,
-  "note": "7/12早报修正版v2：拆分经营/股价数据，券商信号聚焦评级/盈利预测上调与下调，今日要点同步前置重点标的上下调"
+  "note": "7/13早报：中概/港股互联网创年内最大单周涨幅；白酒底部共识强化；猪价暴力反弹；格力以旧换新加码；六源MCP均不可用，WebSearch+本地存档兜底"
 }

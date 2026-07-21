@@ -1,14 +1,14 @@
 {
   "version": "2.0-wb",
-  "last_update": "2026-07-13T10:45:00+08:00",
+  "last_update": "2026-07-21T20:45:00+08:00",
   "files": {
-    "detailed": "20260713_消费早报.md",
-    "brief": "20260713_消费早报_精简版.txt",
-    "dashboard": "20260713_消费早报.html"
+    "detailed": "20260721_消费早报.md",
+    "brief": "20260721_消费早报_精简版.txt",
+    "dashboard": "20260721_消费早报.html"
   },
   "deploy_target": "cloudstudio+github",
   "github_pages": "https://zhouboshi1998-droid.github.io/consumer-pm-brief/",
   "repo": "https://github.com/zhouboshi1998-droid/consumer-pm-brief",
   "pushed": true,
-  "note": "7/13早报：中概/港股互联网创年内最大单周涨幅；白酒底部共识强化；猪价暴力反弹；格力以旧换新加码；六源MCP均不可用，WebSearch+本地存档兜底"
+  "note": "7/21早报补跑：茅台年内二次提价落地后白酒冲高回落；五粮液H1预增89-99%；白酒中报加速出清（水井坊12年首亏/舍得预减60-70%）；19家食饮中报预喜；扩大消费十五五规划发布；港股互联网7/20大涨3.6%+。iFind+Comein MCP可用，WebSearch部分成功"
 }

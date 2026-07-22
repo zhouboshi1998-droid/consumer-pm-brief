@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>消费PM早报 | 2026年7月12日</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f1;
+    --card: #ffffff;
+    --border: #e8e0d5;
+    --text: #2c2416;
+    --muted: #8c8070;
+    --red: #c0392b;
+    --green: #1a7a3a;
+    --amber: #d4a017;
+    --blue: #2980b9;
+    --tag-bg: #f5f0e8;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'JetBrains Mono', 'PingFang SC', 'Microsoft YaHei', monospace;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 13px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px; }
+
+  .header {
+    text-align: center;
+    padding: 32px 0 20px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 24px;
+  }
+  .header h1 { font-size: 22px; font-weight: 700; letter-spacing: 2px; }
+  .header .date { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .header .badge-row { margin-top: 8px; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+  .badge {
+    display: inline-block; padding: 2px 10px;
+    border-radius: 3px; font-size: 10px; font-weight: 500;
+    background: var(--tag-bg); border: 1px solid var(--border);
+  }
+
+  .highlights {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+  }
+  .highlights h2 {
+    font-size: 14px; font-weight: 700;
+    color: var(--red); margin-bottom: 12px;
+    letter-spacing: 1px; text-transform: uppercase;
+  }
+  .highlights ol { padding-left: 20px; }
+  .highlights li {
+    margin-bottom: 8px; line-height: 1.6;
+    font-size: 13px;
+  }
+  .highlights li strong { color: var(--red); }
+
+  .section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+  }
+  .section h2 {
+    font-size: 14px; font-weight: 700;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    letter-spacing: 1px;
+  }
+  .section h2 .tag {
+    font-size: 10px; padding: 1px 6px; border-radius: 3px;
+    margin-left: 6px; vertical-align: middle;
+  }
+  .tag-fact { background: #e8f5e9; color: var(--green); }
+  .tag-view { background: #fff8e1; color: var(--amber); }
+  .tag-mix { background: #e3f2fd; color: var(--blue); }
+
+  table {
+    width: 100%; border-collapse: collapse;
+    font-size: 11px; margin-top: 8px;
+  }
+  th {
+    text-align: left; padding: 6px 10px;
+    background: var(--tag-bg); font-weight: 600;
+    border-bottom: 2px solid var(--border);
+    color: var(--muted); font-size: 10px;
+    letter-spacing: 0.5px; text-transform: uppercase;
+  }
+  td {
+    padding: 6px 10px; border-bottom: 1px solid var(--tag-bg);
+    vertical-align: top;
+  }
+  tr:hover td { background: #fdfaf5; }
+
+  .signal-green { color: var(--green); font-weight: 600; }
+  .signal-red { color: var(--red); font-weight: 600; }
+  .signal-amber { color: var(--amber); font-weight: 600; }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+  }
+  .metric-card {
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px;
+    text-align: center;
+  }
+  .metric-card .label {
+    font-size: 10px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+  .metric-card .value {
+    font-size: 16px; font-weight: 700;
+  }
+  .metric-card .change {
+    font-size: 10px; margin-top: 2px;
+  }
+  .up { color: var(--red); }
+  .down { color: var(--green); }
+
+  .subsector-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .subsector-card {
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+  .subsector-card .name {
+    font-size: 11px; font-weight: 600; margin-bottom: 4px;
+  }
+  .subsector-card .status {
+    font-size: 10px; line-height: 1.4;
+  }
+
+  .disclaimer {
+    text-align: center; color: var(--muted);
+    font-size: 10px; margin-top: 24px; padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  @media (max-width: 768px) {
+    .container { padding: 12px; }
+    .section { padding: 14px 16px; }
+    .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+    .subsector-grid { grid-template-columns: repeat(2, 1fr); }
+    table { font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>消费PM早报</h1>
+    <div class="date">2026年7月12日（周日） · 覆盖7/9~7/12</div>
+    <div class="badge-row">
+      <span class="badge">侧重食饮+零售</span>
+      <span class="badge">泛消费仅报异动</span>
+      <span class="badge">草稿待签字</span>
+    </div>
+  </div>
+
+  <div class="highlights">
+    <h2>● 今日要点</h2>
+    <ol>
+      <li><strong>零售创新政策落地</strong> — 7月9日商务部等9部门发文加快零售业创新发展，支持优质零售企业上市、发行REITs，推广AI+零售/即时零售/低空配送。</li>
+      <li><strong>舍得酒业H1转亏、盈利预测下调</strong> — 26H1营收同比-16%，推算Q2营收-30%、归母净亏损0.57-0.97亿元；国金证券提示次高端价位景气度仍低。</li>
+      <li><strong>H&H国际控股全年指引上调</strong> — 国海食饮：26H1经调整净利润同比翻倍以上，净杠杆率从3.45倍降至2.25倍，全年收入指引上调至15%-19%。</li>
+      <li><strong>新消费龙头增速放缓、预测下调</strong> — 高盛：泡泡玛特6月国内线上-21%、美国-57%，名创优品FY26 GMV目标下修至15%-16%；兴证社服：古茗开店目标下调至2000家。</li>
+      <li><strong>牧原股份上半年预亏57-67亿元</strong> — 生猪销售均价同比降约28%；猪价7/10外三元11.30-11.33元/kg，连续11日上涨。</li>
+      <li><strong>白酒板块低位企稳</strong> — 国金证券7/12研报称淡季价盘平稳，茅台原箱批价1730元（环周+10元），预计下半年低基数下酒企报表企稳。</li>
+      <li><strong>6月通胀数据</strong> — CPI同比1.0%、PPI同比4.1%；食品CPI同比-1.6%，猪肉环比-0.4%为近四月最小降幅，花旗认为猪周期或触底。</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2>关键经营数据 <span class="tag tag-fact">事实</span></h2>
+    <p style="font-size:11px;color:var(--muted);margin-bottom:14px;">产业/经营端数据优先；数据口径为最新可得或近一周均值，标注明来源。</p>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="label">飞天茅台散瓶（批价）</div>
+        <div class="value up">1,635元</div>
+        <div class="change up">周+2.2%</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">飞天茅台原箱（批价）</div>
+        <div class="value up">1,730元</div>
+        <div class="change up">周+1.2%</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">五粮液普五（批价）</div>
+        <div class="value down">730元</div>
+        <div class="change down">周-2.7%</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">外三元生猪（猪价）</div>
+        <div class="value up">11.33元/kg</div>
+        <div class="change up">11连涨</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">现货黄金</div>
+        <div class="value down">4,120 USD/oz</div>
+        <div class="change down">周-0.1%</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">美元兑人民币（中间价）</div>
+        <div class="value down">6.7862</div>
+        <div class="change down">周-0.2%</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">6月乘用车零售</div>
+        <div class="value">160.2万辆</div>
+        <div class="change">同比-23.2% 环比+6.1%</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">6月新能源渗透率</div>
+        <div class="value">62.8%</div>
+        <div class="change">乘用车零售口径</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>重点股价异动 <span class="tag tag-fact">事实</span></h2>
+    <p style="font-size:11px;color:var(--muted);margin-bottom:14px;">股价/指数数据，收盘价口径；周涨跌幅为最近5个交易日。</p>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="label">贵州茅台 周</div>
+        <div class="value up">+0.88%</div>
+        <div class="change">周五+1.93%</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">阿里巴巴-W 周</div>
+        <div class="value up">+14.77%</div>
+        <div class="change">港股中概领涨</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">泡泡玛特 周</div>
+        <div class="value down">-1.50%</div>
+        <div class="change">增速放缓担忧</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">白酒板块指数 周</div>
+        <div class="value up">+1.79%</div>
+        <div class="change">资金从科技回流超跌</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>一、公司动态 <span class="tag tag-fact">事实</span></h2>
+    <table>
+      <thead>
+        <tr><th style="width:11%">子板块</th><th style="width:13%">标的</th><th>动态</th></tr>
+      </thead>
+      <tbody>
+        <tr><td rowspan="4">白酒</td><td>贵州茅台</td><td>散瓶1635/原箱1730元（环周+10元），控量后渠道库存极低</td></tr>
+        <tr><td>五粮液</td><td>普五730元（环周持平），6/20动销双位数增长创三年新高</td></tr>
+        <tr><td>泸州老窖</td><td>股东会明确十五五目标“重回行业前三”，国窖挺价是长期战略</td></tr>
+        <tr><td>舍得酒业</td><td>26H1营收同比-16%，推算Q2营收-30%，Q2归母净亏损0.57-0.97亿元</td></tr>
+        <tr><td rowspan="5">非酒食品</td><td>燕京啤酒</td><td>26H1归母+25-35%，推算Q2同比+19-31%</td></tr>
+        <tr><td>中炬高新</td><td>26H1归母+51.8-67.4%</td></tr>
+        <tr><td>天味食品</td><td>26H1归母+96-104%</td></tr>
+        <tr><td>妙可蓝多</td><td>26H1营收+28.7%，Q2归母+49.6%</td></tr>
+        <tr><td>天润乳业</td><td>26H1归母4300-6000万元，扭亏为盈</td></tr>
+        <tr><td rowspan="3">汽车</td><td>比亚迪</td><td>6月销量40.35万辆（+5%），出口17.53万辆创新高</td></tr>
+        <tr><td>吉利汽车</td><td>上半年国内狭义乘用车零售102.1万辆，登顶自主品牌销量冠军</td></tr>
+        <tr><td>行业</td><td>6月乘用车零售160.2万辆（同比-23.2%、环比+6.1%），新能源渗透率62.8%</td></tr>
+        <tr><td>家电</td><td>格力电器</td><td>加码以旧换新补贴，挂机最高回收补贴600元/台，叠加国补最高直降2700元</td></tr>
+        <tr><td>农业</td><td>牧原股份</td><td>26H1归母净亏损57-67亿元，商品猪销售均价同比降约28%</td></tr>
+        <tr><td rowspan="3">美妆/新消费</td><td>珀莱雅/毛戈平</td><td>618天猫+抖音双平台告捷，珀莱雅卫冕护肤榜首，毛戈平抖音彩妆霸榜</td></tr>
+        <tr><td>泡泡玛特</td><td>高盛：6月国内Tmall+Douyin销售额同比-21%，美国-57%，Labubu二手折扣扩大至约40%</td></tr>
+        <tr><td>名创优品</td><td>高盛：6月国内线上-15%，FY26全年GMV目标下修至15%-16%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>二、行情/数据 <span class="tag tag-fact">事实</span></h2>
+    <table>
+      <thead>
+        <tr><th>市场</th><th>标的</th><th>最新价</th><th>日涨跌幅</th><th>周涨跌幅</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A股</td><td>贵州茅台</td><td>1204.98元</td><td class="signal-red">+1.93%</td><td class="signal-red">+0.88%</td></tr>
+        <tr><td>A股</td><td>五粮液</td><td>73.69元</td><td class="signal-red">+3.94%</td><td class="signal-red">+0.66%</td></tr>
+        <tr><td>A股</td><td>泸州老窖</td><td>78.18元</td><td class="signal-red">+4.37%</td><td class="signal-red">+1.27%</td></tr>
+        <tr><td>A股</td><td>山西汾酒</td><td>110.30元</td><td class="signal-red">+4.97%</td><td class="signal-green">-3.82%</td></tr>
+        <tr><td>A股</td><td>中国中免</td><td>52.73元</td><td class="signal-red">+3.41%</td><td class="signal-green">-3.99%</td></tr>
+        <tr><td>A股</td><td>牧原股份</td><td>38.14元</td><td class="signal-red">+2.78%</td><td class="signal-red">+0.57%</td></tr>
+        <tr><td>港股</td><td>腾讯控股</td><td>460.20港元</td><td class="signal-green">-2.00%</td><td class="signal-red">+8.91%</td></tr>
+        <tr><td>港股</td><td>阿里巴巴-W</td><td>110.20港元</td><td class="signal-red">+2.04%</td><td class="signal-red">+14.77%</td></tr>
+        <tr><td>港股</td><td>美团-W</td><td>78.70港元</td><td class="signal-red">+0.25%</td><td class="signal-red">+9.64%</td></tr>
+        <tr><td>港股</td><td>泡泡玛特</td><td>150.70港元</td><td class="signal-green">-0.20%</td><td class="signal-green">-1.50%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>三、券商评级/盈利预测调整 <span class="tag tag-view">观点</span></h2>
+    <p style="font-size:11px;color:var(--muted);margin-bottom:14px;">聚焦评级上调、评级下调、盈利预测/目标价上调、盈利预测/目标价下调；维持类观点折叠。</p>
+    <table>
+      <thead>
+        <tr><th style="width:11%">机构</th><th style="width:7%">日期</th><th style="width:13%">标的/板块</th><th style="width:13%">调整类型</th><th>核心观点</th><th style="width:10%">信号</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>国海食饮</td><td>7/9</td><td>H&H国际控股</td><td>全年指引上调</td><td>26H1经调整净利润同比翻倍以上，净杠杆率从3.45倍降至2.25倍，全年收入指引上调至15%-19%</td><td class="signal-red">看多</td></tr>
+        <tr><td>国金证券</td><td>7/12</td><td>舍得酒业</td><td>盈利预测下调</td><td>Q2利润转负，反映稳价同时维持渠道周转面临费投压力，次高端价位景气度仍低</td><td class="signal-green">负面</td></tr>
+        <tr><td>高盛</td><td>7/12</td><td>泡泡玛特</td><td>盈利预测下调</td><td>6月国内线上-21%、美国-57%；Labubu二手折扣扩大至约40%，需求有所透支</td><td class="signal-green">负面</td></tr>
+        <tr><td>高盛</td><td>7/11</td><td>名创优品</td><td>GMV目标下调</td><td>6月国内线上-15%；FY26全年GMV目标下修至15%-16%</td><td class="signal-green">负面</td></tr>
+        <tr><td>兴证社服</td><td>7/9</td><td>古茗</td><td>开店目标下调</td><td>Q2同店转负，开店目标下调至2000家</td><td class="signal-green">负面</td></tr>
+        <tr><td>国金证券</td><td>7/12</td><td>白酒板块</td><td>底部看多</td><td>产业处于“下行趋缓”阶段，淡季价盘平稳；预计Q2行业营收/利润同比相对平稳，下半年低基数下酒企报表企稳</td><td class="signal-red">看多</td></tr>
+        <tr><td>天风证券</td><td>7/10</td><td>生猪板块</td><td>底部看多</td><td>本轮周期猪价创2010年以来新低，产能去化接近50%；预计2026年全年猪价低位运行，亏损带来的主动去化延续</td><td class="signal-amber">周期底部</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>五、专家纪要 <span class="tag tag-mix">事实/观点</span></h2>
+    <table>
+      <thead>
+        <tr><th>主题</th><th>来源</th><th>时间</th><th>核心数字</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>清洁电器26Q2销售</td><td>国联民生家电</td><td>7/9</td><td>618清洁电器全渠道销额80亿元同比+5%，量增价跌；石头激进扩份额，科沃斯海外强劲</td></tr>
+        <tr><td>H&H国际控股近况</td><td>国海食饮</td><td>7/9</td><td>26H1经调整净利润同比翻倍以上，净杠杆率从3.45倍降至2.25倍，全年收入指引上调至15%-19%</td></tr>
+        <tr><td>安克创新调研反馈</td><td>东吴商社</td><td>7/9</td><td>6月营收增速约20%，全年营收/利润预计+25%/+30%</td></tr>
+        <tr><td>毛戈平/古茗/杭州大厦</td><td>兴证社服&零售&美护</td><td>7/9</td><td>毛戈平H1增长约30%；古茗Q2同店转负，开店目标下调至2000家</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>四、市场段子与卖方圈变化 <span class="tag tag-view">未验证</span></h2>
+    <p style="font-size:11px;color:var(--muted);margin-bottom:14px;">仅保留与评级、盈利预测、目标价调整相关的卖方圈叙事和机构调研信息。</p>
+    <table>
+      <thead>
+        <tr><th style="width:8%">层级</th><th style="width:18%">主题</th><th>核心内容</th><th style="width:15%">来源</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>L2</td><td>商社板块H1盈利前瞻</td><td>泡泡玛特H1利润增速近37%，老铺H1利润+115%，中国中免Q2利润双位数增长</td><td>卖方前瞻</td></tr>
+        <tr><td>L3</td><td>IP零售跟踪</td><td>泡泡玛特2Q26增速降至+16%（1Q26 +115%），美国2Q -45%；名创2Q增速+3%（1Q +43%）</td><td>高盛</td></tr>
+        <tr><td>L2</td><td>白酒调研</td><td>泸州老窖股东大会明确十五五目标“重回行业前三”，国窖挺价是长期战略</td><td>机构调研</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>六、分子板块速览 <span class="tag tag-mix">综合</span></h2>
+    <div class="subsector-grid">
+      <div class="subsector-card"><div class="name">白酒</div><div class="status">低位企稳，批价平稳，中报分化，次高端承压</div></div>
+      <div class="subsector-card"><div class="name">啤酒/调味品</div><div class="status">燕京/中炬/天味超预期，餐饮弱复苏仍拖累</div></div>
+      <div class="subsector-card"><div class="name">乳制品/食品</div><div class="status">妙可BC双驱高增，H&H业绩大幅上调</div></div>
+      <div class="subsector-card"><div class="name">美妆</div><div class="status">珀莱雅/毛戈平领跑，本土高端化机会显现</div></div>
+      <div class="subsector-card"><div class="name">黄金珠宝</div><div class="status">金价波动，老铺/潮宏基获券商推荐</div></div>
+      <div class="subsector-card"><div class="name">零售</div><div class="status">9部门政策催化，即时零售/REITs/AI+零售</div></div>
+      <div class="subsector-card"><div class="name">生猪</div><div class="status">猪价反弹，牧原/温氏出栏双位数下滑</div></div>
+      <div class="subsector-card"><div class="name">汽车</div><div class="status">内销承压、出口高增，出海预期1000万辆</div></div>
+      <div class="subsector-card"><div class="name">家电</div><div class="status">国补高基数下Q2承压，格力加码以旧换新</div></div>
+      <div class="subsector-card"><div class="name">新消费</div><div class="status">泡泡玛特/名创增速回落，Labubu需求透支</div></div>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    数据来源：Comein MCP、iFind MCP、Wind MCP、Info-Bridge MCP、本地存档、WebSearch · 本报告为研究草稿，观点不构成投资建议
+  </div>
+
+</div>
+</body>
+</html>

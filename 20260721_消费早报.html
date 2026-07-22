@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>消费PM早报 | 2026年7月21日</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f1;
+    --card: #ffffff;
+    --border: #e8e0d5;
+    --text: #2c2416;
+    --muted: #8c8070;
+    --red: #c0392b;
+    --green: #1a7a3a;
+    --amber: #d4a017;
+    --blue: #2980b9;
+    --tag-bg: #f5f0e8;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'JetBrains Mono', 'PingFang SC', 'Microsoft YaHei', monospace;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 13px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px; }
+  .header {
+    text-align: center;
+    padding: 32px 0 20px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 24px;
+  }
+  .header h1 { font-size: 22px; font-weight: 700; letter-spacing: 2px; }
+  .header .date { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .header .badge-row { margin-top: 8px; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+  .badge {
+    display: inline-block; padding: 2px 10px;
+    border-radius: 3px; font-size: 10px; font-weight: 500;
+    background: var(--tag-bg); border: 1px solid var(--border);
+  }
+  .badge.ok { color: var(--green); border-color: var(--green); }
+  .badge.warn { color: var(--amber); border-color: var(--amber); }
+  .badge.fail { color: var(--red); border-color: var(--red); }
+
+  .highlights {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+  }
+  .highlights h2 {
+    font-size: 14px; font-weight: 700;
+    color: var(--red); margin-bottom: 12px;
+    letter-spacing: 1px;
+  }
+  .highlights ol { padding-left: 20px; }
+  .highlights li {
+    margin-bottom: 8px; line-height: 1.6;
+    font-size: 13px;
+  }
+  .highlights li strong { color: var(--red); }
+
+  .section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+  }
+  .section h2 {
+    font-size: 14px; font-weight: 700;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    letter-spacing: 1px;
+  }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
+
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  th, td { padding: 6px 10px; text-align: left; border-bottom: 0.5px solid var(--border); }
+  th { font-weight: 500; color: var(--muted); font-size: 11px; text-transform: uppercase; }
+  .up { color: var(--red); font-weight: 500; }
+  .down { color: var(--green); font-weight: 500; }
+
+  .broker-card {
+    border-left: 3px solid var(--blue);
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    background: var(--tag-bg);
+    border-radius: 0 6px 6px 0;
+  }
+  .broker-card .broker-name { font-weight: 700; font-size: 12px; color: var(--blue); }
+  .broker-card .broker-view { font-size: 12px; margin-top: 4px; }
+
+  .sector-row {
+    display: flex; justify-content: space-between;
+    padding: 6px 0; border-bottom: 0.5px solid var(--border);
+    font-size: 12px;
+  }
+  .sector-row:last-child { border-bottom: none; }
+  .sector-name { font-weight: 500; }
+  .sector-signal { color: var(--muted); }
+
+  .footer {
+    text-align: center; padding: 16px 0;
+    font-size: 11px; color: var(--muted);
+    border-top: 1px solid var(--border);
+    margin-top: 24px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>消费PM每日简报</h1>
+    <div class="date">2026年7月21日（周二） · 补跑版</div>
+    <div class="badge-row">
+      <span class="badge ok">iFind ✅</span>
+      <span class="badge ok">Comein ✅</span>
+      <span class="badge warn">WebSearch ⚠️</span>
+      <span class="badge fail">Wind 未验证</span>
+      <span class="badge fail">Info-Bridge 未验证</span>
+      <span class="badge fail">AceCamp 未验证</span>
+    </div>
+  </div>
+
+  <div class="highlights">
+    <h2>▌今日主题</h2>
+    <ol>
+      <li><strong>茅台年内二次提价落地后白酒冲高回落</strong>：7/18提价生效（i茅台零售价1539→1639元+6.5%，合同价1269→1369元+7.9%），7/20白酒集体飘红（古井贡酒4天2板），7/21回调（白酒Ⅱ跌1.63%，茅台-1.47%报1308元）</li>
+      <li><strong>五粮液H1预增88.8-98.97%</strong>（归母87.3-92亿元），Q2单季归母+221~448%，是本周披露预告的头部酒企中唯一大幅预增的</li>
+      <li><strong>白酒中报加速出清</strong>：水井坊H1预亏622万（12年首亏，渠道库存降50%），舍得H1预减60-70%（Q2单季亏损），顺鑫农业预减69-79%</li>
+      <li><strong>19家食饮中报预喜</strong>（13预增+6扭亏）：洽洽预增170-199%（成本红利），西麦预增70-90%，好想你预增3779%+（公允价值变动）</li>
+      <li><strong>扩大消费"十五五"规划</strong>：国务院批复，2030年社零60万亿目标（年化3.7%），6月社零+1.0%环比改善</li>
+      <li><strong>港股互联网7/20大涨3.6%+</strong>：美团+3.95%，快手+3.88%，阿里Qwen3.8即将开源（2.4T参数）；北水加仓科网</li>
+    </ol>
+  </div>
+
+  <div class="grid-2">
+    <div class="section">
+      <h2>A股行情（7/21收盘）</h2>
+      <table>
+        <thead><tr><th>指数/板块</th><th>收盘</th><th>日涨跌</th></tr></thead>
+        <tbody>
+          <tr><td>上证指数</td><td>3796.28</td><td class="up">+0.85%</td></tr>
+          <tr><td>深证成指</td><td>13610.23</td><td class="down">-0.71%</td></tr>
+          <tr><td>创业板指</td><td>3443.10</td><td class="up">+0.42%</td></tr>
+          <tr><td>白酒Ⅱ</td><td>36636.03</td><td class="down">-1.63%</td></tr>
+          <tr><td>大消费</td><td>990.34</td><td class="down">-0.51%</td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:11px;color:var(--muted);">涨幅居前：罗莱生活+6.95% · 养元饮品+5.29% · 片仔癀+3.59% · 东鹏饮料+3.34% · 古井贡酒+2.31%</div>
+    </div>
+
+    <div class="section">
+      <h2>白酒中报业绩预告</h2>
+      <table>
+        <thead><tr><th>公司</th><th>H1归母</th><th>同比</th></tr></thead>
+        <tbody>
+          <tr><td>五粮液</td><td>87.3-92.0亿</td><td class="up">+89~99%</td></tr>
+          <tr><td>舍得酒业</td><td>1.35-1.75亿</td><td class="down">-61~70%</td></tr>
+          <tr><td>水井坊</td><td>-622万</td><td class="down">转亏</td></tr>
+          <tr><td>顺鑫农业</td><td>—</td><td class="down">-69~79%</td></tr>
+          <tr><td>天佑德酒</td><td>—</td><td class="down">-76~84%</td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:11px;color:var(--muted);">除五粮液外26Q2均预告亏损</div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="section">
+      <h2>食品（大众品）中报预告</h2>
+      <table>
+        <thead><tr><th>公司</th><th>H1归母</th><th>同比</th></tr></thead>
+        <tbody>
+          <tr><td>洽洽食品</td><td>2.4-2.65亿</td><td class="up">+171~199%</td></tr>
+          <tr><td>西麦食品</td><td>1.39-1.55亿</td><td class="up">+71~90%</td></tr>
+          <tr><td>好想你</td><td>7.3-7.6亿</td><td class="up">+3779%+</td></tr>
+          <tr><td>百润股份</td><td>—</td><td class="up">+20~26%</td></tr>
+          <tr><td>海天味业</td><td colspan="2">回购10-20亿元</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>港股互联网（7/20）</h2>
+      <table>
+        <thead><tr><th>标的</th><th>涨跌幅</th><th>备注</th></tr></thead>
+        <tbody>
+          <tr><td>港股通互联网指数</td><td class="up">+3.63%</td><td>931637</td></tr>
+          <tr><td>美团-W</td><td class="up">+3.95%</td><td>86.95港元</td></tr>
+          <tr><td>快手-W</td><td class="up">+3.88%</td><td>44.96港元</td></tr>
+          <tr><td>金山云</td><td class="up">+7.32%</td><td></td></tr>
+          <tr><td>哔哩哔哩-W</td><td class="up">+5.67%</td><td></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:8px;font-size:11px;color:var(--muted);">北水净卖出59.62亿港元（加仓科网抛售硬件）</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>券商观点</h2>
+    <div class="broker-card">
+      <div class="broker-name">国泰海通（訾猛团队）· 茅台提价 拐点可期</div>
+      <div class="broker-view">白酒26Q2继续出清，除五粮液外均预告亏损；茅台提价预计利润小个位数增厚；持仓和估值处于历史底部，短期资金切换有望带动估值修复</div>
+    </div>
+    <div class="broker-card">
+      <div class="broker-name">中信建投（杨骥团队）· 资金再平衡窗口</div>
+      <div class="broker-view">消费政策+六月社零+茅台提价共振；供给端动作理性，报表出清趋势延续；大众品改善趋势确定</div>
+    </div>
+    <div class="broker-card">
+      <div class="broker-name">国盛证券（李梓语团队）· 飞天再提价强提振</div>
+      <div class="broker-view">茅台定价逻辑从"大幅低频"转向"小幅高频"；年内两次提价合同价累计+17.1%；持仓和估值处在历史底部</div>
+    </div>
+    <div class="broker-card">
+      <div class="broker-name">浙商证券（张潇倩团队）· 资金切换下板块防御性凸显</div>
+      <div class="broker-view">白酒+3.22%主因资金切换；大众品防御属性凸显，乳制品&牧场表现居前；古井贡酒+11.07%</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>分子板块速览</h2>
+    <div class="sector-row"><span class="sector-name">白酒</span><span class="sector-signal">茅台二次提价+中报加速出清 → 分化（五粮液独强）</span></div>
+    <div class="sector-row"><span class="sector-name">食品</span><span class="sector-signal">洽洽/西麦/好想你中报高增 → 成本红利兑现</span></div>
+    <div class="sector-row"><span class="sector-name">互联网</span><span class="sector-signal">Qwen3.8开源催化，港股互联网大涨 → AI应用价值重估</span></div>
+    <div class="sector-row"><span class="sector-name">美妆美护</span><span class="sector-signal">片仔癀+3.59%，板块涨幅居前 → 低位反弹</span></div>
+    <div class="sector-row"><span class="sector-name">家电</span><span class="sector-signal">海尔+1.82%，美的-0.04%，格力+0.02% → 观望</span></div>
+    <div class="sector-row"><span class="sector-name">零售</span><span class="sector-signal">扩大消费规划利好预期 → 政策催化</span></div>
+  </div>
+
+  <div class="footer">
+    数据来源：iFind MCP ✅ · Comein MCP ✅ · WebSearch ⚠️ · Wind/Info-Bridge/AceCamp/ThirdBridge 未验证<br>
+    草稿待签字，手动发送 · consumer-pm-daily-brief skill
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>消费PM早报 | 2026年7月10日</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f1;
+    --card: #ffffff;
+    --border: #e8e0d5;
+    --text: #2c2416;
+    --muted: #8c8070;
+    --red: #c0392b;
+    --green: #1a7a3a;
+    --amber: #d4a017;
+    --blue: #2980b9;
+    --tag-bg: #f5f0e8;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'JetBrains Mono', 'PingFang SC', 'Microsoft YaHei', monospace;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 13px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px; }
+
+  .header {
+    text-align: center;
+    padding: 32px 0 20px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 24px;
+  }
+  .header h1 { font-size: 22px; font-weight: 700; letter-spacing: 2px; }
+  .header .date { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .header .badge-row { margin-top: 8px; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+  .badge {
+    display: inline-block; padding: 2px 10px;
+    border-radius: 3px; font-size: 10px; font-weight: 500;
+    background: var(--tag-bg); border: 1px solid var(--border);
+  }
+
+  .highlights {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+  }
+  .highlights h2 {
+    font-size: 14px; font-weight: 700;
+    color: var(--red); margin-bottom: 12px;
+    letter-spacing: 1px; text-transform: uppercase;
+  }
+  .highlights ol { padding-left: 20px; }
+  .highlights li {
+    margin-bottom: 8px; line-height: 1.6;
+    font-size: 13px;
+  }
+  .highlights li strong { color: var(--red); }
+
+  .section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+  }
+  .section h2 {
+    font-size: 14px; font-weight: 700;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    letter-spacing: 1px;
+  }
+  .section h2 .tag {
+    font-size: 10px; padding: 1px 6px; border-radius: 3px;
+    margin-left: 6px; vertical-align: middle;
+  }
+  .tag-fact { background: #e8f5e9; color: var(--green); }
+  .tag-view { background: #fff8e1; color: var(--amber); }
+  .tag-mix { background: #e3f2fd; color: var(--blue); }
+
+  table {
+    width: 100%; border-collapse: collapse;
+    font-size: 11px; margin-top: 8px;
+  }
+  th {
+    text-align: left; padding: 6px 10px;
+    background: var(--tag-bg); font-weight: 600;
+    border-bottom: 2px solid var(--border);
+    color: var(--muted); font-size: 10px;
+    letter-spacing: 0.5px; text-transform: uppercase;
+  }
+  td {
+    padding: 6px 10px; border-bottom: 1px solid var(--tag-bg);
+    vertical-align: top;
+  }
+  tr:hover td { background: #fdfaf5; }
+
+  .signal-green { color: var(--green); font-weight: 600; }
+  .signal-red { color: var(--red); font-weight: 600; }
+  .signal-amber { color: var(--amber); font-weight: 600; }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+  }
+  .metric-card {
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px;
+    text-align: center;
+  }
+  .metric-card .label {
+    font-size: 10px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+  .metric-card .value {
+    font-size: 16px; font-weight: 700;
+  }
+  .metric-card .change {
+    font-size: 10px; margin-top: 2px;
+  }
+  .up { color: var(--red); }
+  .down { color: var(--green); }
+
+  .subsector-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .subsector-card {
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+  .subsector-card .name {
+    font-size: 11px; font-weight: 600; margin-bottom: 4px;
+  }
+  .subsector-card .status {
+    font-size: 10px; line-height: 1.4;
+  }
+
+  .disclaimer {
+    text-align: center; color: var(--muted);
+    font-size: 10px; margin-top: 24px; padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  @media (max-width: 768px) {
+    .container { padding: 12px; }
+    .section { padding: 14px 16px; }
+    .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+    .subsector-grid { grid-template-columns: repeat(2, 1fr); }
+    table { font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>消费PM早报</h1>
+    <div class="date">2026年7月10日（周五） · 覆盖7/8~7/10早盘</div>
+    <div class="badge-row">
+      <span class="badge">侧重食饮+零售</span>
+      <span class="badge">泛消费仅报异动</span>
+      <span class="badge">草稿待签字</span>
+    </div>
+  </div>
+
+  <div class="highlights">
+    <h2>● 今日要点</h2>
+    <ol>
+      <li><strong>食品饮料中报业绩预告密集超预期</strong> — 燕京啤酒H1归母+25-35%（Q2+19-31%）、中炬高新+51.8-67.4%、天味食品+96-104%、妙可蓝多Q2归母+49.6%。</li>
+      <li><strong>猪价八连涨突破11元/kg</strong> — 7月8日外三元11.02元/kg，为3月以来首次站上11元；牧原/温氏6月出栏双位数下滑。</li>
+      <li><strong>白酒板块低位企稳反弹</strong> — 本周白酒指数+1.79%，普五批价从720元低位回升至750元左右，资金从科技回流超跌板块。</li>
+      <li><strong>6月汽车产销强劲</strong> — 汽车销量281万辆，新能源渗透率58.5%，出口103.7万辆同比+75.1%；比亚迪出口17.53万辆创新高。</li>
+      <li><strong>H&H国际控股业绩大幅上调</strong> — H1 EBITDA +60-70%，经调整净利润+超100%，婴配粉市占率从14.6%升至20%。</li>
+      <li><strong>农夫山泉水品类库存高企</strong> — 5月瓶装水增速不足8%，整体库存45天、水品类库存近60天。</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2>行情关键数据 <span class="tag tag-fact">事实</span></h2>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="label">白酒指数 周</div>
+        <div class="value up">+1.79%</div>
+        <div class="change">迎驾+6.87% 今世缘+4.72%</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">飞天茅台散瓶</div>
+        <div class="value down">1,600元</div>
+        <div class="change down">周-1.2%</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">五粮液普五</div>
+        <div class="value up">750元</div>
+        <div class="change up">周+4.2% 从720元回升</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">外三元生猪</div>
+        <div class="value up">11.29元/kg</div>
+        <div class="change up">8连涨 周+8.5%</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">现货黄金</div>
+        <div class="value up">4,125 USD/oz</div>
+        <div class="change up">日+1.21%</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">布伦特原油</div>
+        <div class="value down">78.67 USD/桶</div>
+        <div class="change down">日-1.02%</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">汽车6月销量</div>
+        <div class="value">281万辆</div>
+        <div class="change">新能源占比58.5%</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">汽车出口6月</div>
+        <div class="value up">103.7万辆</div>
+        <div class="change up">同比+75.1%</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">燕京啤酒H1</div>
+        <div class="value up">+25-35%</div>
+        <div class="change">归母13.79-14.89亿</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">中炬高新H1</div>
+        <div class="value up">+51.8-67.4%</div>
+        <div class="change">归母3.90-4.30亿</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>一、公司动态 <span class="tag tag-fact">事实</span></h2>
+    <table>
+      <thead>
+        <tr><th style="width:11%">子板块</th><th style="width:13%">标的</th><th>动态</th></tr>
+      </thead>
+      <tbody>
+        <tr><td rowspan="4">白酒</td><td>贵州茅台</td><td>散瓶1600/原箱1630元；控量后渠道库存极低（华创）</td></tr>
+        <tr><td>五粮液</td><td>普五750元，6/20动销双位数增长创三年新高；已回购约2亿元</td></tr>
+        <tr><td>泸州老窖</td><td>股东会明确十五五目标“重回行业前三”，将推国窖1573年份酒</td></tr>
+        <tr><td>洋河/水井坊</td><td>洋河聘任陈军任总裁；水井坊以渠道健康优先去化库存</td></tr>
+        <tr><td rowspan="6">非酒食品</td><td>燕京啤酒</td><td>H1归母+25-35%，Q2+19-31%，U8势能延续</td></tr>
+        <tr><td>中炬高新</td><td>H1归母+51.8-67.4%</td></tr>
+        <tr><td>天味食品</td><td>H1归母+96-104%</td></tr>
+        <tr><td>妙可蓝多</td><td>H1营收+28.7%，Q2归母+49.6%</td></tr>
+        <tr><td>东鹏饮料</td><td>4-5月同比+13%高于Q1；7/9股价-4.98%</td></tr>
+        <tr><td>农夫山泉</td><td>5月瓶装水增速不足8%，整体库存45天、水库存近60天</td></tr>
+        <tr><td rowspan="4">汽车</td><td>比亚迪</td><td>6月销量40.35万(+5.5%)，出口17.53万创新高；第1700万辆新能源车下线</td></tr>
+        <tr><td>吉利汽车</td><td>6月销量24.1万(+2%)，新能源占比67%，出口+157%</td></tr>
+        <tr><td>零跑/小鹏</td><td>零跑6月+95%（Q2环比+124%）；小鹏6月+140%</td></tr>
+        <tr><td>行业</td><td>6月销量281万辆，新能源164.3万辆(58.5%)，出口+75.1%</td></tr>
+        <tr><td>家电</td><td>格力/行业</td><td>格力加码以旧换新，单台最高降2700元；商务部以旧换新销售额破万亿</td></tr>
+        <tr><td>农业</td><td>生猪</td><td>猪价8连涨突破11元；牧原6月出栏-11.28%（近5年首次双位数下滑），温氏-14.51%</td></tr>
+        <tr><td rowspan="3">美妆/新消费</td><td>H&H国际控股</td><td>H1 EBITDA+60-70%，经调整净利润+超100%，全年指引上调</td></tr>
+        <tr><td>毛戈平</td><td>H1符合预期，618流水快，线下+12%，全年目标+30%</td></tr>
+        <tr><td>古茗</td><td>Q2同店约-5%，新开店目标下调至2000家</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>三、券商观点 <span class="tag tag-view">观点</span></h2>
+    <table>
+      <thead>
+        <tr><th style="width:14%">机构</th><th style="width:7%">日期</th><th style="width:10%">方向</th><th>核心观点</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>天风证券</td><td>7/9</td><td><span class="signal-green">🔼反弹</span></td><td>科技回调资金回流超跌板块，白酒指数+1.79%，关注中报催化</td></tr>
+        <tr><td>华创证券</td><td>7/9</td><td><span class="signal-green">🔼边际改善</span></td><td>茅台控量后渠道库存极低，普五从720元回升至750元，中秋前价格预计稳定</td></tr>
+        <tr><td>中信建投</td><td>7/8</td><td><span class="signal-green">🔼维持看多</span></td><td>泸州老窖挺价推年份酒；水井坊库存去化；五粮液已回购2亿元</td></tr>
+        <tr><td>国信证券</td><td>7/9</td><td><span class="signal-green">🔼底部修复</span></td><td>白电内销或将度过至暗时刻，龙头估值低位，看好内销改善+高股息</td></tr>
+        <tr><td>东方证券</td><td>7/7</td><td><span class="signal-green">🔼底部看多</span></td><td>美护板块近一年跌幅近30%，618美妆线上+11.4%，行业从价格战转向价值竞争</td></tr>
+        <tr><td>东海证券</td><td>7/7</td><td><span class="signal-green">🔼周期底部</span></td><td>生猪亏损超8个月，仔猪跌至近2年低位，产能去化有望加速</td></tr>
+        <tr><td>长江证券</td><td>7/8</td><td><span class="signal-green">🔼看多</span></td><td>比亚迪6月出口创新高，预计2026-28年归母383/570/687亿元</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>四、专家纪要</h2>
+    <table>
+      <thead>
+        <tr><th style="width:22%">主题</th><th style="width:10%">来源</th><th style="width:10%">时间</th><th>核心判断</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>能量饮料渠道近况</td><td>财通证券</td><td>7/8</td><td>农夫山泉5月整体+13%但水增速不足8%，库存45天/水库存60天。东鹏4-5月+13%高于Q1</td></tr>
+        <tr><td>H&H国际控股1H26业绩</td><td>东吴证券</td><td>7/8</td><td>H1收入中高双位数，EBITDA+60-70%，净利润+超100%；全年指引上调，奶粉市占率14.6%→20%</td></tr>
+        <tr><td>毛戈平&古茗汇报</td><td>兴业证券</td><td>7/8</td><td>毛戈平618流水快，线下+12%，全年+30%目标。古茗Q2同店-5%，开店目标下调至2000家</td></tr>
+        <tr><td>武商集团管理层交流</td><td>国泰海通</td><td>7/8</td><td>武商Mall H1增长，梦时代日均客流11万；老铺黄金上半年约4亿元</td></tr>
+        <tr><td>中国奢侈品市场Q2</td><td>ThirdBridge</td><td>7/8</td><td>Q2同比正增长、环比下滑；客单价走弱，运动休闲/中端服饰抢占份额。H2中到高个位数增长可期</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>五、市场段子 <span class="tag tag-view">未验证</span></h2>
+    <table>
+      <thead>
+        <tr><th style="width:15%">层级</th><th>内容</th><th style="width:20%">判断</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>[L2 卖方圈内]</td><td>食饮中报行情或成为Q3最强催化：燕京/中炬/天味/妙可/H&H业绩超预期，验证大众品龙头韧性</td><td>市场开始讨论估值修复</td></tr>
+        <tr><td>[L2 卖方圈内]</td><td>猪价“拐点”叙事升温：8连涨突破11元+龙头出栏下滑，但价格仍在成本线附近，多空分歧</td><td>方向乐观、节奏谨慎</td></tr>
+        <tr><td>[L2 卖方圈内]</td><td>农夫山泉“水库存近60天”引发担忧，但东方树叶/茶π饮料品类支撑整体</td><td>结构分化</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>分子板块速览</h2>
+    <div class="subsector-grid">
+      <div class="subsector-card">
+        <div class="name">白酒</div>
+        <div class="status"><span class="signal-green">🟢 筑底反弹</span> 周+1.79%，批价企稳</div>
+      </div>
+      <div class="subsector-card">
+        <div class="name">啤酒</div>
+        <div class="status"><span class="signal-green">🟢 旺季+业绩</span> 燕京H1+25-35%</div>
+      </div>
+      <div class="subsector-card">
+        <div class="name">调味品</div>
+        <div class="status"><span class="signal-green">🟢 超预期</span> 中炬+51-67%、天味+96-104%</div>
+      </div>
+      <div class="subsector-card">
+        <div class="name">乳制品/食品</div>
+        <div class="status"><span class="signal-green">🟢 改善</span> 妙可Q2+49.6%、H&H上调</div>
+      </div>
+      <div class="subsector-card">
+        <div class="name">饮料</div>
+        <div class="status"><span class="signal-amber">🟡 分化</span> 东鹏+13%，农夫水库存60天</div>
+      </div>
+      <div class="subsector-card">
+        <div class="name">生猪</div>
+        <div class="status"><span class="signal-green">🟢 反弹</span> 8连涨突破11元</div>
+      </div>
+      <div class="subsector-card">
+        <div class="name">汽车</div>
+        <div class="status"><span class="signal-green">🟢 强劲</span> 新能源渗透率58.5%</div>
+      </div>
+      <div class="subsector-card">
+        <div class="name">家电</div>
+        <div class="status"><span class="signal-amber">🟡 政策底</span> 以旧换新销售破万亿</div>
+      </div>
+      <div class="subsector-card">
+        <div class="name">美妆</div>
+        <div class="status"><span class="signal-green">🟢 改善</span> 618线上+11.4%</div>
+      </div>
+      <div class="subsector-card">
+        <div class="name">黄金珠宝</div>
+        <div class="status"><span class="signal-amber">🟡 分化</span> 老铺回调但周+6.2%</div>
+      </div>
+      <div class="subsector-card">
+        <div class="name">纺服</div>
+        <div class="status"><span class="signal-amber">🟡 调整</span> 滔搏销售下滑</div>
+      </div>
+      <div class="subsector-card">
+        <div class="name">出行链</div>
+        <div class="status"><span class="signal-green">🟢 改善</span> 燃油附加费下调</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    报告时间：2026-07-10 08:35 CST · 数据源：Comein、iFind、Wind A股、WebSearch、本地存档<br>
+    Info-Bridge不可用，Wind港股不可用（iFind global兜底）<br>
+    草稿待PM签字 · 不构成投资建议<br>
+    <a href="https://zhouboshi1998-droid.github.io/consumer-pm-brief/" style="color:var(--muted)">GitHub Pages</a>
+  </div>
+
+</div>
+</body>
+</html>

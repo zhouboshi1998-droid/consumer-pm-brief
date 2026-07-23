@@ -1,22 +1,22 @@
 {
   "name": "consumer-pm-brief",
-  "version": "20260722",
-  "date": "2026-07-22",
-  "day_of_week": "周三",
+  "version": "20260723",
+  "date": "2026-07-23",
+  "day_of_week": "周四",
   "type": "早报",
   "files": {
-    "brief": "20260722_消费早报_精简版.txt",
-    "detail": "20260722_消费早报.md",
-    "dashboard": "20260722_消费早报.html",
+    "brief": "20260723_消费早报_精简版.txt",
+    "detail": "20260723_消费早报.md",
+    "dashboard": "20260723_消费早报.html",
     "index": "index.html"
   },
   "mcp_status": {
+    "Comein": "可用",
     "iFind": "可用",
-    "Comein": "不可用",
+    "Wind": "可用",
     "Info-Bridge": "不可用",
-    "Wind": "不可用",
-    "AceCamp": "不可用",
-    "ThirdBridge": "可用"
+    "AceCamp": "未调用",
+    "ThirdBridge": "未调用"
   },
   "deploy": {
     "github_pages": "https://zhouboshi1998-droid.github.io/consumer-pm-brief/",

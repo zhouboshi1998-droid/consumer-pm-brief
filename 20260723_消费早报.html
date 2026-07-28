@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>消费PM每日简报 · 7月23日</title>
+<style>
+:root {
+  --blue: #007AFF;
+  --blue-light: #E8F2FF;
+  --green: #34C759;
+  --red: #FF3B30;
+  --orange: #FF9500;
+  --gray-100: #F5F5F7;
+  --gray-200: #E8E8ED;
+  --gray-300: #D1D1D6;
+  --gray-600: #86868B;
+  --gray-900: #1D1D1F;
+  --radius: 20px;
+  --shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+  background: #F2F2F7;
+  color: var(--gray-900);
+  line-height: 1.5;
+  padding: 24px 16px;
+}
+.container { max-width: 780px; margin: 0 auto; }
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 28px 20px 20px;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 16px;
+}
+.header h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; }
+.header .date { font-size: 14px; color: var(--gray-600); margin-top: 6px; }
+.header .mcp-status {
+  margin-top: 12px;
+  padding: 8px 16px;
+  background: #FFF3CD;
+  border-radius: 10px;
+  font-size: 12px;
+  color: #856404;
+  display: inline-block;
+}
+
+/* Stats Row */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.stat-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px 12px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.stat-card .label { font-size: 11px; color: var(--gray-600); margin-bottom: 4px; }
+.stat-card .value { font-size: 18px; font-weight: 700; }
+.stat-card .change { font-size: 11px; margin-top: 2px; }
+.up { color: var(--red); }
+.down { color: var(--green); }
+
+/* Sections */
+.section {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+.section-title {
+  font-size: 15px;
+  font-weight: 700;
+  padding: 16px 20px 10px;
+  color: var(--blue);
+  letter-spacing: -0.2px;
+}
+.section-body { padding: 0 20px 18px; }
+
+/* Theme Cards */
+.theme-card {
+  padding: 12px 0;
+  border-bottom: 0.5px solid var(--gray-200);
+}
+.theme-card:last-child { border-bottom: none; }
+.theme-card .num {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  background: var(--blue);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+.theme-card .headline { font-size: 14px; font-weight: 600; display: inline; }
+.theme-card .detail { font-size: 13px; color: var(--gray-600); margin-top: 4px; line-height: 1.6; }
+
+/* Industry rows */
+.ind-row {
+  display: flex;
+  align-items: flex-start;
+  padding: 8px 0;
+  border-bottom: 0.5px solid var(--gray-200);
+  font-size: 13px;
+}
+.ind-row:last-child { border-bottom: none; }
+.ind-tag {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--blue);
+  background: var(--blue-light);
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin-right: 10px;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+.ind-text { color: var(--gray-900); line-height: 1.6; }
+
+/* Signal rows */
+.signal-row {
+  padding: 8px 0;
+  border-bottom: 0.5px solid var(--gray-200);
+  font-size: 13px;
+  display: flex;
+  align-items: flex-start;
+}
+.signal-row:last-child { border-bottom: none; }
+.signal-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin-right: 10px;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+.signal-consensus { background: #E8F5E9; color: #2E7D32; }
+.signal-up { background: #FFEBEE; color: #C62828; }
+.signal-new { background: #E8F2FF; color: #1565C0; }
+.signal-change { background: #FFF3E0; color: #E65100; }
+.signal-alert { background: #FCE4EC; color: #880E4F; }
+
+/* Price grid */
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.price-item {
+  background: var(--gray-100);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+.price-item .name { font-size: 12px; color: var(--gray-600); }
+.price-item .val { font-size: 18px; font-weight: 700; margin: 4px 0 2px; }
+.price-item .chg { font-size: 11px; }
+
+/* Source footer */
+.source-footer {
+  text-align: center;
+  font-size: 11px;
+  color: var(--gray-600);
+  padding: 14px 0 8px;
+}
+.source-footer .unavail { color: var(--orange); }
+
+@media (max-width: 600px) {
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+  .price-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- Header -->
+<div class="header">
+  <h1>消费PM每日简报</h1>
+  <div class="date">2026年7月23日 · 周四 · 盘前</div>
+  <div class="mcp-status">⚠ Info-Bridge 不可用 · 市场段子区 WebSearch 兜底</div>
+</div>
+
+<!-- Key Stats -->
+<div class="stats-row">
+  <div class="stat-card">
+    <div class="label">白酒板块(昨收)</div>
+    <div class="value">36,788</div>
+    <div class="change up">7月+8.85%</div>
+  </div>
+  <div class="stat-card">
+    <div class="label">飞天茅台批价</div>
+    <div class="value">¥1,700</div>
+    <div class="change">提价后一周企稳</div>
+  </div>
+  <div class="stat-card">
+    <div class="label">食饮ETF估值</div>
+    <div class="value">19.5x</div>
+    <div class="change">近10年3.92%分位</div>
+  </div>
+  <div class="stat-card">
+    <div class="label">现货黄金</div>
+    <div class="value">$4,114</div>
+    <div class="change up">日+0.9%</div>
+  </div>
+</div>
+
+<!-- 今日主题 -->
+<div class="section">
+  <div class="section-title">▌今日主题</div>
+  <div class="section-body">
+    <div class="theme-card">
+      <div class="num">1</div><span class="headline">公募Q2持仓大换仓：茅台跌出前十重仓，消费持仓降至近十年冰点</span>
+      <div class="detail">茅台从Q1第5重仓骤跌至第29位，前十大重仓已无消费股。张坤减持茅台47%/泸州老窖52%/五粮液71%，刘彦春白酒全面清仓切换至科技。零售美护实配比例仅0.05%（近十年均值1.57%），超配-0.6%。食饮ETF当前19.53倍PE处于近10年3.92%分位——持仓冰点与估值冰点同步出现。</div>
+    </div>
+    <div class="theme-card">
+      <div class="num">2</div><span class="headline">苏泊尔H1业绩快报：营收微降，外销承压</span>
+      <div class="detail">营收114.1亿(-0.59%)，归母8.68亿(-7.70%)。内销略增、核心品类市占率小幅提升；外销主要客户订单减少，出口+原材料成本+利率走低三重压力侵蚀利润。综合毛利率略有提升（降本增效），销售费用因竞争加剧小幅上升。</div>
+    </div>
+    <div class="theme-card">
+      <div class="num">3</div><span class="headline">中免H1利润+19.5%，永辉H1扭亏</span>
+      <div class="detail">中国中免收入275.9亿(-2.0%)，归母31.06亿(+19.5%)，控费增效显效。永辉超市归母2.5亿/扣非0.3亿实现扭亏，门店调改+供应链优化初见效。六福集团Q1零售值+32%，金价上涨带动高单价产品销售。</div>
+    </div>
+    <div class="theme-card">
+      <div class="num">4</div><span class="headline">茅台提价一周：批价窄幅波动，终端反应平稳</span>
+      <div class="detail">飞天原箱1700元（较提价前+50元）、散瓶1680元，i茅台零售价1639元锚定批价。多地基酒商反馈动销平稳、库存周转正常，消费者接受度较高。茅台股价收1305元(-0.23%)。本轮"小步快跑"策略验证了茅台市场化定价能力。</div>
+    </div>
+    <div class="theme-card">
+      <div class="num">5</div><span class="headline">以旧换新半年带动1.1万亿，第三批625亿开始</span>
+      <div class="detail">商务部：汽车370.7万辆/家电6326.6万台/数码7909.8万台，撬动比从1:7.8升至1:10.3。第三批625亿元7月1日起申领，仅限一级能效产品（空调一人一年限购1台）。猪肉价格10.84元/kg连续十日走低，但Q2能繁去化加速至-3.2%。</div>
+    </div>
+  </div>
+</div>
+
+<!-- 分行业 -->
+<div class="section">
+  <div class="section-title">▌分行业</div>
+  <div class="section-body">
+    <div class="ind-row">
+      <span class="ind-tag">白酒</span>
+      <span class="ind-text">茅台提价后批价企稳1700元，板块7月+8.85%；但公募Q2减持空前（茅台跌出前十重仓）。中报出清加速（水井坊/舍得亏损），一线酒企相对健康，券商集体看多底部</span>
+    </div>
+    <div class="ind-row">
+      <span class="ind-tag">食品</span>
+      <span class="ind-text">原奶3.05元/kg连续三周企稳，上游去化加速；燕京U8 H1+28%以上、妙可蓝多+13.7%。苏泊尔外销承压但内销略增，成本压力边际缓解</span>
+    </div>
+    <div class="ind-row">
+      <span class="ind-tag">零售</span>
+      <span class="ind-text">中免H1归母+19.5%控费显效，永辉H1扭亏。六福Q1零售值+32%。持仓降至近十年冰点，消费十五五规划提振政策预期</span>
+    </div>
+    <div class="ind-row">
+      <span class="ind-tag">汽车/家电</span>
+      <span class="ind-text">以旧换新持续发力，上半年家电6326.6万台。苏泊尔外销承压。小鹏MONA L03大定超4.68万辆，零跑B01 800V下探10万元级加剧竞争</span>
+    </div>
+    <div class="ind-row">
+      <span class="ind-tag">养殖</span>
+      <span class="ind-text">猪价10.84元/kg连续十日走低，自繁自养头均亏约352元。Q2能繁去化加速至-3.2%（Q1仅-1.44%），产能出清蔓延至中型养殖场</span>
+    </div>
+  </div>
+</div>
+
+<!-- 券商信号 -->
+<div class="section">
+  <div class="section-title">▌券商信号</div>
+  <div class="section-body">
+    <div class="signal-row">
+      <span class="signal-tag signal-consensus">底部共识</span>
+      <span>天风"可乐观"、招商"底部不应悲观"、华泰"基本面向好"——白酒下行空间有限，消费十五五规划+茅台提价双催化</span>
+    </div>
+    <div class="signal-row">
+      <span class="signal-tag signal-alert">持仓冰点</span>
+      <span>公募Q2前十大重仓无消费股，零售美护实配0.05%（近十年均值1.57%）。券商认为"弱现实"已充分定价，拐点配置价值显现</span>
+    </div>
+    <div class="signal-row">
+      <span class="signal-tag signal-new">首次覆盖</span>
+      <span>长城证券首予古茗(01364.HK)"买入"，2026E归母31.26亿 PE 14.1X，品牌力向上+供应链壁垒支撑中长期成长</span>
+    </div>
+    <div class="signal-row">
+      <span class="signal-tag signal-up">上调</span>
+      <span>天风继续推荐茅台/五粮液/古井贡酒/迎驾贡酒/今世缘；华福消费推荐白酒龙头+燕京啤酒（U8高成长26年预计110万吨）</span>
+    </div>
+    <div class="signal-row">
+      <span class="signal-tag signal-change">去化加速</span>
+      <span>养殖Q2能繁-3.2%（Q1仅-1.44%），浙商证券"慢牛逻辑不变，周期向上明确"。原奶连续三周企稳3.05元/kg，奶价拐点将至</span>
+    </div>
+  </div>
+</div>
+
+<!-- 关键价格 -->
+<div class="section">
+  <div class="section-title">▌关键价格</div>
+  <div class="section-body">
+    <div class="price-grid">
+      <div class="price-item">
+        <div class="name">飞天茅台批价(原箱)</div>
+        <div class="val">¥1,700</div>
+        <div class="chg">日+0.6% / 周+3.0%</div>
+      </div>
+      <div class="price-item">
+        <div class="name">飞天茅台批价(散瓶)</div>
+        <div class="val">¥1,680</div>
+        <div class="chg">日+0.3% / 周+2.4%</div>
+      </div>
+      <div class="price-item">
+        <div class="name">现货黄金 XAU</div>
+        <div class="val">$4,114</div>
+        <div class="chg">日+0.9% / 周+3.0%</div>
+      </div>
+      <div class="price-item">
+        <div class="name">品牌金饰(周大福)</div>
+        <div class="val">¥1,248/克</div>
+        <div class="chg">日+26~28元</div>
+      </div>
+      <div class="price-item">
+        <div class="name">生猪外三元</div>
+        <div class="val">¥10.84/kg</div>
+        <div class="chg down">日-0.5% / 周-4.2%</div>
+      </div>
+      <div class="price-item">
+        <div class="name">原奶(10主产省)</div>
+        <div class="val">¥3.05/kg</div>
+        <div class="chg">周+0.3% / 连续3周企稳</div>
+      </div>
+      <div class="price-item">
+        <div class="name">人民币中间价</div>
+        <div class="val">6.7933</div>
+        <div class="chg">日-0.02%</div>
+      </div>
+      <div class="price-item">
+        <div class="name">猪粮比</div>
+        <div class="val">4.64:1</div>
+        <div class="chg">深度亏损区间</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Source -->
+<div class="source-footer">
+  数据来源：Comein · iFind · Wind · WebSearch &nbsp;|&nbsp;
+  <span class="unavail">Info-Bridge 不可用（市场段子区降级）</span>
+</div>
+
+</div>
+</body>
+</html>

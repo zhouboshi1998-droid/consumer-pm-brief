@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>消费PM早报 | 2026年7月7日</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f1;
+    --card: #ffffff;
+    --border: #e8e0d5;
+    --text: #2c2416;
+    --muted: #8c8070;
+    --red: #c0392b;
+    --green: #1a7a3a;
+    --amber: #d4a017;
+    --blue: #2980b9;
+    --tag-bg: #f5f0e8;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'JetBrains Mono', 'PingFang SC', 'Microsoft YaHei', monospace;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 13px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px; }
+
+  .header {
+    text-align: center;
+    padding: 32px 0 20px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 24px;
+  }
+  .header h1 { font-size: 22px; font-weight: 700; letter-spacing: 2px; }
+  .header .date { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .header .badge-row { margin-top: 8px; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+  .badge {
+    display: inline-block; padding: 2px 10px;
+    border-radius: 3px; font-size: 10px; font-weight: 500;
+    background: var(--tag-bg); border: 1px solid var(--border);
+  }
+
+  .highlights {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+  }
+  .highlights h2 {
+    font-size: 14px; font-weight: 700;
+    color: var(--red); margin-bottom: 12px;
+    letter-spacing: 1px; text-transform: uppercase;
+  }
+  .highlights ol { padding-left: 20px; }
+  .highlights li {
+    margin-bottom: 8px; line-height: 1.6;
+    font-size: 13px;
+  }
+  .highlights li strong { color: var(--red); }
+
+  .section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+  }
+  .section h2 {
+    font-size: 14px; font-weight: 700;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    letter-spacing: 1px;
+  }
+  .section h2 .tag {
+    font-size: 10px; padding: 1px 6px; border-radius: 3px;
+    margin-left: 6px; vertical-align: middle;
+  }
+  .tag-fact { background: #e8f5e9; color: var(--green); }
+  .tag-view { background: #fff8e1; color: var(--amber); }
+  .tag-mix { background: #e3f2fd; color: var(--blue); }
+
+  table {
+    width: 100%; border-collapse: collapse;
+    font-size: 11px; margin-top: 8px;
+  }
+  th {
+    text-align: left; padding: 6px 10px;
+    background: var(--tag-bg); font-weight: 600;
+    border-bottom: 2px solid var(--border);
+    color: var(--muted); font-size: 10px;
+    letter-spacing: 0.5px; text-transform: uppercase;
+  }
+  td {
+    padding: 6px 10px; border-bottom: 1px solid var(--tag-bg);
+    vertical-align: top;
+  }
+  tr:hover td { background: #fdfaf5; }
+
+  .signal-green { color: var(--green); font-weight: 600; }
+  .signal-red { color: var(--red); font-weight: 600; }
+  .signal-amber { color: var(--amber); font-weight: 600; }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+  }
+  .metric-card {
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px;
+    text-align: center;
+  }
+  .metric-card .label {
+    font-size: 10px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+  .metric-card .value {
+    font-size: 16px; font-weight: 700;
+  }
+  .metric-card .change {
+    font-size: 10px; margin-top: 2px;
+  }
+  .up { color: var(--red); }
+  .down { color: var(--green); }
+
+  .subsector-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .subsector-card {
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+  .subsector-card .name {
+    font-size: 11px; font-weight: 600; margin-bottom: 4px;
+  }
+  .subsector-card .status {
+    font-size: 10px; line-height: 1.4;
+  }
+
+  .disclaimer {
+    text-align: center; color: var(--muted);
+    font-size: 10px; margin-top: 24px; padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  @media (max-width: 768px) {
+    .container { padding: 12px; }
+    .section { padding: 14px 16px; }
+    .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+    .subsector-grid { grid-template-columns: repeat(2, 1fr); }
+    table { font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>消费PM早报</h1>
+    <div class="date">2026年7月7日（周一） · 覆盖7/4~7/7</div>
+    <div class="badge-row">
+      <span class="badge">侧重食饮+零售</span>
+      <span class="badge">泛消费仅报异动</span>
+      <span class="badge">草稿待签字</span>
+    </div>
+  </div>
+
+  <!-- Highlights -->
+  <div class="highlights">
+    <h2>● 今日要点</h2>
+    <ol>
+      <li><strong>消费见底共识强化 — 四家券商7/6集中路演</strong>：国泰海通称"消费见底，美妆25Q3已见底首选"；天风称"科技单边改变，消费估值性价比提升"；开源称"C端估值历史极低，白酒可布局"；市场从科技单边趋于均衡。</li>
+      <li><strong>高端购物中心Q2爆发出炉</strong>：长江社零专家一手数据 — 可比门店1月-15.8%→6月+46.6%，绝对值销售同比+126-139%。美妆6月仅微降0.7%预计7月回正。3C数码6月+9.1%。</li>
+      <li><strong>白酒惨淡中边际改善</strong>：86.7%酒企利润下滑，但Q1上市酒企合计营收仅-0.7%、归母-1.75%。洋河换帅（陈军接任总裁），泸州老窖将推年份酒，清香逆势+7.9%。百润H1超预期(+19-26%)。</li>
+      <li><strong>美妆618验证复苏拐点</strong>：珀莱雅/贝泰妮/毛戈平/巨子/家化618表现突出，广发商社看多珀莱雅（低基数+花知晓）和贝泰妮（拐点）。国泰海通将美妆列为消费首选方向。</li>
+      <li><strong>猪价涨停潮后持续博弈</strong>：7/1外三元10.40(+10.6%)多股涨停，但头均亏346元连续10月，6月能繁存栏环比-1.0%。中央"四带头"压产能。</li>
+      <li><strong>海外运动鞋服Q1去库顺利</strong>：大中华区+8%，库销比回疫情前。阿迪/彪马/亚瑟士/露露乐蒙提速；耐克/VF放缓。</li>
+    </ol>
+  </div>
+
+  <!-- Key Metrics -->
+  <div class="section">
+    <h2>行情关键数据 <span class="tag tag-fact">事实</span></h2>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="label">食饮板块 6/29-7/3周</div>
+        <div class="value up">+1.77%</div>
+        <div class="change">vs沪深300 -0.54%</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">飞天散瓶批价</div>
+        <div class="value down">1,620元</div>
+        <div class="change down">周-1.2%</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">五粮液普五批价</div>
+        <div class="value down">750元</div>
+        <div class="change">倒挂</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">现货黄金</div>
+        <div class="value up">4,174 $/oz</div>
+        <div class="change up">周+2.3%</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">恒生消费指数 7/3</div>
+        <div class="value up">+2.21%</div>
+        <div class="change up">老铺+8.5% 布鲁可+9.2%</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">香港5月零售</div>
+        <div class="value up">+7.9%</div>
+        <div class="change">vs预期6.7%</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">外三元生猪 7/1</div>
+        <div class="value up">10.40元/kg</div>
+        <div class="change up">单日+1元/kg</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">上证指数 7/3</div>
+        <div class="value up">4,043.64</div>
+        <div class="change up">+0.37% 成交3.18万亿</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">食品指数 PE-TTM</div>
+        <div class="value">18.98</div>
+        <div class="change">近十年1.57%分位</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">高端购物中心H1</div>
+        <div class="value up">+126~139%</div>
+        <div class="change">绝对值销售同比</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 1: Company Updates -->
+  <div class="section">
+    <h2>一、公司动态 <span class="tag tag-fact">事实</span></h2>
+    <table>
+      <thead>
+        <tr><th style="width:11%">子板块</th><th style="width:13%">标的</th><th>动态</th></tr>
+      </thead>
+      <tbody>
+        <tr><td rowspan="4">白酒</td><td>贵州茅台</td><td>散瓶批价1620/原箱1640，飞天价盘"表现可圈可点"（国金食饮）</td></tr>
+        <tr><td>洋河股份</td><td>7/1换帅：陈军接任总裁，顾宇专任董事长。结束一肩挑五个月</td></tr>
+        <tr><td>泸州老窖</td><td>股东会：国窖1573挺价稳住基本盘，将推10/15/20年年份酒。经销商库存约7个月</td></tr>
+        <tr><td>百润股份</td><td>H1归母4.65-4.90亿(+19-26%)超预期，预调酒增长+费用优化</td></tr>
+        <tr><td rowspan="3">非酒食品</td><td>零食量贩</td><td>天风：大众品中业绩最好细分，开店超预期。鸣鸣很忙H1 3977家/万辰4553家</td></tr>
+        <tr><td>饮料/啤酒</td><td>天风：Q2雨水多+去年高基数，华润/青啤利润端压力大。餐饮供应链Q3基数低有改善空间</td></tr>
+        <tr><td>安井食品</td><td>国盛首推大众品方向之一。天风：餐饮供应链Q3基数低增速有望改善</td></tr>
+        <tr><td rowspan="2">汽车</td><td>比亚迪</td><td>6月销量40.3万辆(+5.5%)，出口17.53万辆占比43.4%</td></tr>
+        <tr><td>吉利汽车</td><td>6月24.08万辆连续4月双增，新能源16.14万渗透率67%</td></tr>
+        <tr><td>家电</td><td>国补</td><td>第三批625亿以旧换新补贴7月初到位，京东上线专项补贴入口</td></tr>
+        <tr><td>农业</td><td>猪肉板块</td><td>7/1新希望/新五丰/天邦/傲农涨停。头均亏346元(连续10月)，6月能繁-1.0%。牧原拟增持4-5亿</td></tr>
+        <tr><td rowspan="4">零售/纺服</td><td>高端购物中心</td><td>长江社零专家：H1绝对值销售+126-139%，可比门店6月+46.6%</td></tr>
+        <tr><td>波司登</td><td>FY26收入273.5亿(+5.6%)，净利39.9亿(+13.7%)，雪中飞+16.6%</td></tr>
+        <tr><td>周大福</td><td>FY26净利90亿(+52.2%)，定价黄金占比35.4%。4-5月内地同店+10.3%</td></tr>
+        <tr><td>老铺黄金</td><td>7/3 +8.49%。不做套保，金价上涨最受益</td></tr>
+        <tr><td rowspan="4">美妆</td><td>珀莱雅</td><td>618表现突出，低基数+花知晓增持。广发：业绩预期有上调机会</td></tr>
+        <tr><td>贝泰妮</td><td>618验证底部拐点，转型成效显现。广发/国泰海通均看多</td></tr>
+        <tr><td>上海家化</td><td>佰草集618李佳琦成绩优异，六神高双位数增长(高温受益)</td></tr>
+        <tr><td>美妆赛道</td><td>长江社零：6月同店仅-0.7%预计7月回正。国泰海通：25Q3已见底</td></tr>
+        <tr><td rowspan="2">新消费</td><td>泡泡玛特</td><td>股价创新高(7/3-4)</td></tr>
+        <tr><td>瑞幸咖啡</td><td>ThirdBridge Q2加盟商经营数据（仅元数据，待获取全文）</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Section 3: Broker Views -->
+  <div class="section">
+    <h2>三、券商观点 <span class="tag tag-view">观点</span></h2>
+    <table>
+      <thead>
+        <tr><th style="width:14%">机构</th><th style="width:7%">日期</th><th style="width:10%">方向</th><th>核心观点</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>国泰海通</td><td>7/6</td><td><span class="signal-green">🔼见底信号</span></td><td>消费见底迹象明显，市场趋于均衡。美妆25Q3已见底为当前首选；超跌+成长方向</td></tr>
+        <tr><td>天风消费</td><td>7/6</td><td><span class="signal-green">🔼底部配置</span></td><td>科技单边改变，消费股价低位估值性价比提升。零食量贩业绩最好；饮料/啤酒Q2承压</td></tr>
+        <tr><td>开源证券</td><td>7/6</td><td><span class="signal-green">🔼底部布局</span></td><td>消费C端估值历史极低，品牌服饰5-6月筑底。白酒可布局，市场风格可能切换</td></tr>
+        <tr><td>广发商社</td><td>7/6</td><td><span class="signal-green">🔼推荐</span></td><td>618美妆超预期，推荐珀莱雅(低基数+花知晓)、贝泰妮(拐点)、毛戈平/巨子/家化</td></tr>
+        <tr><td>广发纺服</td><td>7/6</td><td><span class="signal-green">🔼超预期</span></td><td>海外运动鞋服Q1大中华区+8%、去库顺利。阿迪/亚瑟士/露露乐蒙提速</td></tr>
+        <tr><td>国盛证券</td><td>7/3</td><td><span class="signal-green">🔼超预期</span></td><td>百润H1+19-26%超预期。首推茅台/五粮液，关注安井/海天/燕京/伊利</td></tr>
+        <tr><td>国金食饮</td><td>7/5</td><td><span class="signal-amber">→筑底</span></td><td>端午/5-6月消费情绪弱于往年但回落斜率低。飞天价盘平稳，中报后估值有望修复</td></tr>
+        <tr><td>中银证券</td><td>6/30</td><td><span class="signal-green">🔼配置底部</span></td><td>白酒筑底分化，食品饮料基金持仓回2015年水平。关注茅台/老窖/今世缘</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Section 4: Expert Calls -->
+  <div class="section">
+    <h2>四、专家纪要</h2>
+    <table>
+      <thead>
+        <tr><th style="width:22%">主题</th><th style="width:10%">来源</th><th style="width:10%">时间</th><th>核心判断</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>高端购物中心Q2经营</td><td>长江社零</td><td>7/6</td><td>可比门店6月+46.6%，绝对值+137%。美妆6月仅-0.7%预计7月回正；3C数码+9.1%。高端零售Q2全面爆发</td></tr>
+        <tr><td>618美妆投资观点</td><td>广发商社</td><td>7/6</td><td>珀莱雅/贝泰妮/毛戈平/巨子/家化表现突出。珀莱雅低基数+花知晓增持，贝泰妮底部拐点。618验证品牌生命力</td></tr>
+        <tr><td>消费行业Q2前瞻</td><td>天风消费</td><td>7/6</td><td>零食量贩业绩最好(开店超预期)；饮料/啤酒因雨水+高基数Q2承压；餐饮供应链Q3基数低有改善空间</td></tr>
+        <tr><td>消费企稳布局策略</td><td>国泰海通</td><td>7/6</td><td>美妆25Q3已见底是消费首选。新消费(茶饮/潮玩/保健品)短期企稳。科技单边趋势减弱</td></tr>
+        <tr><td>海外运动鞋服Q1总结</td><td>广发纺服</td><td>7/6</td><td>大中华区+8%增速最快，库销比回疫情前。阿迪/彪马/亚瑟士/露露乐蒙提速；耐克/VF/安德玛放缓</td></tr>
+        <tr><td>瑞幸咖啡Q2加盟经营</td><td>ThirdBridge</td><td>7/4</td><td>现任加盟商一手数据。Q2门店经营情况/SSS变化（仅元数据，全文需ThirdBridge MCP获取）</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Section 5: Market Rumors -->
+  <div class="section">
+    <h2>五、市场段子 <span class="tag tag-view">未验证</span></h2>
+    <table>
+      <thead>
+        <tr><th style="width:15%">层级</th><th>内容</th><th style="width:20%">判断</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>[L2 卖方圈内]</td><td>食饮"十年大底"叙事升温 — PE-TTM 1.57%分位，中银称基金持仓回2015年水平。四家券商7/6集中路演看多消费。分歧在磨底时长而非方向。</td><td>底部共识明确、时点分歧</td></tr>
+        <tr><td>[L2 卖方圈内]</td><td>猪价"最后一跌"争议 — 乐观派认为Q3拐点已至（能繁-1.0%+中央压产能）；谨慎派认为反弹不可持续（头均仍亏346元）。</td><td>方向共识、节奏分歧</td></tr>
+        <tr><td>[L2 卖方圈内]</td><td>市场风格切换叙事 — 科技单边上行趋势减弱，消费+医药+机器人补涨。7月科技财报窗口期或加速资金轮动。</td><td>正在验证中</td></tr>
+        <tr><td>[L1 散户叙事]</td><td>AI散户"投降白酒"贴刷屏，风格转向消费防御的散户情绪升温。</td><td>情绪指标，非基本面</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Sub-sector Quick View -->
+  <div class="section">
+    <h2>分子板块速览</h2>
+    <div class="subsector-grid">
+      <div class="subsector-card">
+        <div class="name">白酒</div>
+        <div class="status"><span class="signal-amber">🟡 筑底</span> 86.7%利润下滑但Q1收窄，洋河换帅</div>
+      </div>
+      <div class="subsector-card">
+        <div class="name">高端零售</div>
+        <div class="status"><span class="signal-green">🟢 强复苏</span> 购物中心H1绝对值+126-139%</div>
+      </div>
+      <div class="subsector-card">
+        <div class="name">美妆</div>
+        <div class="status"><span class="signal-green">🟢 拐点确认</span> 618超预期，6月仅-0.7%</div>
+      </div>
+      <div class="subsector-card">
+        <div class="name">零食量贩</div>
+        <div class="status"><span class="signal-green">🟢 最强细分</span> 万辰/鸣鸣很忙H1开店超预期</div>
+      </div>
+      <div class="subsector-card">
+        <div class="name">饮料/啤酒</div>
+        <div class="status"><span class="signal-amber">🟡 短期承压</span> Q2雨水+高基数</div>
+      </div>
+      <div class="subsector-card">
+        <div class="name">乳制品</div>
+        <div class="status"><span class="signal-green">🟢 资金流入</span> 伊利净流入1.42亿</div>
+      </div>
+      <div class="subsector-card">
+        <div class="name">汽车</div>
+        <div class="status"><span class="signal-green">🟢 销量支撑</span> 比亚迪40万/吉利24万</div>
+      </div>
+      <div class="subsector-card">
+        <div class="name">家电</div>
+        <div class="status"><span class="signal-amber">🟡 政策待落地</span> 625亿国补到位</div>
+      </div>
+      <div class="subsector-card">
+        <div class="name">农业</div>
+        <div class="status"><span class="signal-red">🔴 底部异动</span> 猪价涨停潮，能繁-1%</div>
+      </div>
+      <div class="subsector-card">
+        <div class="name">黄金珠宝</div>
+        <div class="status"><span class="signal-amber">🟡 分化</span> 老铺+8.5%领涨，周大福FY26+52%</div>
+      </div>
+      <div class="subsector-card">
+        <div class="name">纺服</div>
+        <div class="status"><span class="signal-green">🟢 改善</span> 海外Q1大中华+8%去库顺利</div>
+      </div>
+      <div class="subsector-card">
+        <div class="name">中概/港股消费</div>
+        <div class="status"><span class="signal-green">🟢 反弹</span> 恒生消费+2.21%，香港零售+7.9%</div>
+      </div>
+      <div class="subsector-card">
+        <div class="name">运动鞋服</div>
+        <div class="status"><span class="signal-green">🟢 去库完成</span> 库销比回疫情前</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    报告时间：2026-07-07 12:37 CST · 数据源：Comein(7/6本地存档)、WebSearch<br>
+    草稿待PM签字 · 不构成投资建议 · Info-Bridge/Wind/iFind News不可用<br>
+    <a href="https://zhouboshi1998-droid.github.io/consumer-pm-brief/" style="color:var(--muted)">GitHub Pages</a>
+  </div>
+
+</div>
+</body>
+</html>

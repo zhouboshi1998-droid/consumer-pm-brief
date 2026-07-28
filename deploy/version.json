@@ -10,7 +10,7 @@
   },
   "deploy": {
     "github_pages": "https://zhouboshi1998-droid.github.io/consumer-pm-brief/",
-    "cloudstudio": ""
+    "cloudstudio": "https://3000-f7ffdbd5b38b450392381152687d7346.e2b.ap-beijing.sandbox.cloudstudio.club/"
   },
   "mcp_status": {
     "iFind": "available",

@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-07-28T08:54:00+08:00",
+  "latest_brief": "20260728_消费早报",
+  "files": {
+    "txt": "20260728_消费早报_精简版.txt",
+    "md": "20260728_消费早报.md",
+    "html": "20260728_消费早报.html",
+    "index": "index.html"
+  },
+  "deploy": {
+    "github_pages": "https://zhouboshi1998-droid.github.io/consumer-pm-brief/",
+    "cloudstudio": ""
+  },
+  "mcp_status": {
+    "iFind": "available",
+    "Comein": "available",
+    "Wind": "partial",
+    "Info-Bridge": "unavailable",
+    "AceCamp": "unavailable",
+    "ThirdBridge": "unavailable"
+  }
+}

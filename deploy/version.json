@@ -1,16 +1,16 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-08-01T11:54:00+08:00",
-  "latest_brief": "20260801_消费早报",
+  "last_updated": "2026-08-02T10:44:00+08:00",
+  "latest_brief": "20260802_消费早报",
   "files": {
-    "txt": "20260801_消费早报_精简版.txt",
-    "md": "20260801_消费早报.md",
-    "html": "20260801_消费早报.html",
+    "txt": "20260802_消费早报_精简版.txt",
+    "md": "20260802_消费早报.md",
+    "html": "20260802_消费早报.html",
     "index": "index.html"
   },
   "deploy": {
     "github_pages": "https://zhouboshi1998-droid.github.io/consumer-pm-brief/",
-    "cloudstudio": "https://3000-f7ffdbd5b38b450392381152687d7346.e2b.ap-beijing.sandbox.cloudstudio.club/"
+    "cloudstudio": "TBD"
   },
   "mcp_status": {
     "iFind": "available",

@@ -1,11 +1,11 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-08-03T08:37:00+08:00",
-  "latest_brief": "20260803_消费早报",
+  "last_updated": "2026-08-04T08:53:00+08:00",
+  "latest_brief": "20260804_消费早报",
   "files": {
-    "txt": "20260803_消费早报_精简版.txt",
-    "md": "20260803_消费早报.md",
-    "html": "20260803_消费早报.html",
+    "txt": "20260804_消费早报_精简版.txt",
+    "md": "20260804_消费早报.md",
+    "html": "20260804_消费早报.html",
     "index": "index.html"
   },
   "deploy": {
@@ -13,11 +13,13 @@
     "cloudstudio": "https://f7ffdbd5b38b450392381152687d7346.app.codebuddy.work"
   },
   "mcp_status": {
-    "iFind": "available",
-    "Comein": "available",
-    "Wind": "available",
-    "Info-Bridge": "available",
+    "iFind": "unavailable",
+    "Comein": "unavailable",
+    "Wind": "unavailable",
+    "Info-Bridge": "unavailable",
     "AceCamp": "unavailable",
-    "ThirdBridge": "unavailable"
+    "ThirdBridge": "unavailable",
+    "NeoData": "partial (index/fx/gold only)",
+    "WebSearch": "unavailable"
   }
 }

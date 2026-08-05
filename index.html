@@ -3,364 +3,360 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>消费PM每日简报 · 8月4日（周二）</title>
+<title>消费PM每日简报 · 2026年8月5日</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
-    background: #faf9f5;
-    color: #1a1a1a;
-    line-height: 1.6;
-    padding: 24px;
-    max-width: 960px;
-    margin: 0 auto;
-    -webkit-font-smoothing: antialiased;
-  }
-  .header {
-    text-align: center;
-    padding: 20px 0 16px;
-    border-bottom: 1px solid #e8e5dc;
-    margin-bottom: 20px;
-  }
-  .header h1 {
-    font-size: 22px;
-    font-weight: 700;
-    color: #111;
-    letter-spacing: 0.5px;
-  }
-  .header .subtitle {
-    font-size: 13px;
-    color: #8e8b80;
-    margin-top: 4px;
-  }
-  .header .status-bar {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 10px;
-    font-size: 11px;
-    color: #a0a090;
-    flex-wrap: wrap;
-  }
-  .status-bar span { display: inline-flex; align-items: center; gap: 3px; }
-  .status-bar .ok { color: #2d8a56; }
-  .status-bar .warn { color: #c5932e; }
-  .status-bar .err { color: #c41e3a; }
-  .kpi-row {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-  }
-  .kpi-tile {
-    flex: 1;
-    min-width: 130px;
-    background: #fff;
-    border: 1px solid #e8e5dc;
-    border-radius: 12px;
-    padding: 14px 16px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
-  }
-  .kpi-tile .label {
-    font-size: 11px;
-    color: #8e8b80;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 4px;
-  }
-  .kpi-tile .value {
-    font-family: 'JetBrains Mono', 'SF Mono', 'Consolas', monospace;
-    font-size: 20px;
-    font-weight: 600;
-    color: #111;
-  }
-  .kpi-tile .change {
-    font-family: 'JetBrains Mono', 'SF Mono', 'Consolas', monospace;
-    font-size: 12px;
-    margin-top: 2px;
-  }
-  .change.up { color: #c41e3a; }
-  .change.down { color: #2d8a56; }
-  .change.flat { color: #8e8b80; }
-  .section {
-    background: #fff;
-    border: 1px solid #e8e5dc;
-    border-radius: 12px;
-    padding: 16px 18px;
-    margin-bottom: 14px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
-  }
-  .section-title {
-    font-size: 14px;
-    font-weight: 600;
-    color: #007aff;
-    border-left: 3px solid #007aff;
-    padding-left: 8px;
-    margin-bottom: 10px;
-  }
-  .section p, .section li { font-size: 13px; color: #2a2a2a; margin-bottom: 4px; }
-  .section ul { padding-left: 18px; }
-  .grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-bottom: 14px;
-  }
-  @media (max-width: 640px) {
-    .grid-2 { grid-template-columns: 1fr; }
-  }
-  .bull { color: #c41e3a; font-weight: 600; }
-  .bear { color: #2d8a56; font-weight: 600; }
-  .muted { color: #8e8b80; font-size: 11px; }
-  .tag {
-    display: inline-block;
-    background: #f0f4f8;
-    color: #007aff;
-    border: 1px solid #d6e4f0;
-    border-radius: 4px;
-    padding: 1px 6px;
-    font-size: 11px;
-    margin-right: 4px;
-  }
-  .tag.fire { background: #fef2f0; color: #c41e3a; border-color: #fbd7d0; }
-  .tag.new { background: #f0f9f0; color: #2d8a56; border-color: #c8e6c9; }
-  .tag.warn { background: #fff8e0; color: #c5932e; border-color: #f0d99a; }
-  .price-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 12px;
-  }
-  .price-table th {
-    text-align: left;
-    background: #f7f5ed;
-    color: #555;
-    font-weight: 500;
-    padding: 6px 8px;
-    border-bottom: 1px solid #e8e5dc;
-  }
-  .price-table td {
-    padding: 6px 8px;
-    border-bottom: 1px solid #f0ede4;
-    font-family: 'JetBrains Mono', monospace;
-  }
-  .price-table td:first-child { color: #555; }
-  .footer {
-    text-align: center;
-    margin-top: 20px;
-    padding: 12px;
-    font-size: 11px;
-    color: #a0a090;
-    border-top: 1px solid #e8e5dc;
-  }
-  .highlight {
-    background: #fff8e0;
-    border-left: 3px solid #f0a020;
-    padding: 8px 12px;
-    margin: 8px 0;
-    font-size: 12px;
-    color: #5a4010;
-  }
-  .highlight-red {
-    background: #fef2f0;
-    border-left: 3px solid #c41e3a;
-    padding: 8px 12px;
-    margin: 8px 0;
-    font-size: 12px;
-    color: #5a2010;
-  }
-  .signal-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    margin-bottom: 6px;
-  }
-  .signal-row .tag { flex-shrink: 0; margin-top: 2px; }
+:root {
+  --primary: #007AFF;
+  --primary-light: #e3f0ff;
+  --bg: #f5f5f7;
+  --card-bg: rgba(255, 255, 255, 0.72);
+  --text: #1d1d1f;
+  --text-secondary: #86868b;
+  --text-tertiary: #aeaeb2;
+  --divider: rgba(0, 0, 0, 0.08);
+  --red: #ff3b30;
+  --green: #34c759;
+  --amber: #ff9500;
+  --navy: #1e3a5f;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  --radius: 20px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  padding: 24px 16px 48px;
+}
+.container { max-width: 960px; margin: 0 auto; }
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+.header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+.header .subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+.header .badge {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 12px;
+  border-radius: 20px;
+  margin-top: 8px;
+}
+
+/* Insight box */
+.insight {
+  background: linear-gradient(135deg, rgba(255, 149, 0, 0.08), rgba(255, 149, 0, 0.03));
+  border-left: 3px solid var(--amber);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.insight strong { color: var(--amber); }
+
+/* Stats bar */
+.stats-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.stat-item {
+  flex: 1;
+  min-width: 140px;
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+}
+.stat-item .label { font-size: 12px; color: var(--text-secondary); margin-bottom: 4px; }
+.stat-item .value { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; }
+.stat-item .change { font-size: 13px; font-weight: 600; margin-top: 2px; }
+.up { color: var(--red); }
+.down { color: var(--green); }
+
+/* Section */
+.section { margin-bottom: 28px; }
+.section-title {
+  font-size: 17px;
+  font-weight: 600;
+  border-bottom: 0.5px solid var(--divider);
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+  letter-spacing: -0.3px;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+th {
+  text-align: left;
+  padding: 8px 12px;
+  color: #fff;
+  background: var(--navy);
+  font-weight: 600;
+  font-size: 12px;
+  white-space: nowrap;
+}
+th:first-child { border-radius: 8px 0 0 0; }
+th:last-child { border-radius: 0 8px 0 0; }
+td {
+  padding: 8px 12px;
+  border-bottom: 0.5px solid var(--divider);
+  white-space: nowrap;
+}
+tr:last-child td { border-bottom: none; }
+tr:hover { background: rgba(0, 122, 255, 0.03); }
+.stock-name { font-weight: 600; }
+.num { font-variant-numeric: tabular-nums; font-weight: 500; }
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  box-shadow: var(--shadow);
+}
+.card h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+.card .tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-right: 4px;
+}
+.tag-red { background: rgba(255, 59, 48, 0.1); color: var(--red); }
+.tag-green { background: rgba(52, 199, 89, 0.1); color: var(--green); }
+.tag-blue { background: var(--primary-light); color: var(--primary); }
+.tag-amber { background: rgba(255, 149, 0, 0.1); color: var(--amber); }
+
+/* Broker signals */
+.broker-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 0.5px solid var(--divider);
+  font-size: 13px;
+}
+.broker-row:last-child { border-bottom: none; }
+.broker-icon { font-size: 16px; width: 20px; text-align: center; }
+.broker-name { font-weight: 600; min-width: 80px; }
+.broker-target { color: var(--text-secondary); }
+
+/* Footer */
+.footer {
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-tertiary);
+  margin-top: 32px;
+  line-height: 1.8;
+}
+
+@media (max-width: 640px) {
+  .cards { grid-template-columns: 1fr; }
+  .stats-bar { flex-direction: column; }
+  .header h1 { font-size: 22px; }
+  table { font-size: 12px; }
+  th, td { padding: 6px 8px; }
+}
 </style>
 </head>
 <body>
+<div class="container">
 
-<div class="header">
-  <h1>消费PM每日简报 · 8月4日（周二）</h1>
-  <div class="subtitle">覆盖：8/3（周一）完整交易日 + 8/4 盘前</div>
-  <div class="status-bar">
-    <span class="err">● Comein ❌</span>
-    <span class="err">● iFind ❌</span>
-    <span class="err">● Wind ❌</span>
-    <span class="err">● Info-Bridge ❌</span>
-    <span class="warn">● NeoData ⚠️ 仅指数/汇率/金价</span>
-    <span class="err">● AceCamp/ThirdBridge ❌</span>
+  <!-- Header -->
+  <div class="header">
+    <h1>消费PM每日简报</h1>
+    <div class="subtitle">2026年8月5日（周三）· 行情截至11:30盘中</div>
+    <div class="badge">食品饮料 + 零售</div>
   </div>
-</div>
 
-<!-- KPI -->
-<div class="kpi-row">
-  <div class="kpi-tile">
-    <div class="label">上证指数</div>
-    <div class="value">3809.66</div>
-    <div class="change down">日 -0.59%</div>
+  <!-- Insight -->
+  <div class="insight">
+    <strong>核心信号</strong>：白酒连跌两日，Q2基金食品饮料持仓降至历史新低（低配0.14%）。东兴证券逆势给茅台"强烈推荐"（目标价1716.95元）。美的65-130亿注销式回购+259亿分红。油价暴跌5.26%利好成本端。
   </div>
-  <div class="kpi-tile">
-    <div class="label">沪深300</div>
-    <div class="value">4543.18</div>
-    <div class="change down">日 -0.98%</div>
-  </div>
-  <div class="kpi-tile">
-    <div class="label">恒生指数</div>
-    <div class="value">26009</div>
-    <div class="change up">日 +0.48%</div>
-  </div>
-  <div class="kpi-tile">
-    <div class="label">伦敦金现</div>
-    <div class="value">4112.80</div>
-    <div class="change up">日 +0.55%</div>
-  </div>
-  <div class="kpi-tile">
-    <div class="label">USD/CNY</div>
-    <div class="value">6.7547</div>
-    <div class="change flat">≈持平</div>
-  </div>
-  <div class="kpi-tile">
-    <div class="label">茅台批价</div>
-    <div class="value">~1680元</div>
-    <div class="change up">周 +10元</div>
-  </div>
-  <div class="kpi-tile">
-    <div class="label">生猪均价</div>
-    <div class="value">10.4元/kg</div>
-    <div class="change down">弱势筑底</div>
-  </div>
-  <div class="kpi-tile">
-    <div class="label">原奶合同价</div>
-    <div class="value">3.06元/kg</div>
-    <div class="change up">连续3周↑</div>
-  </div>
-</div>
 
-<!-- 今日主题 -->
-<div class="section">
-  <div class="section-title">▌今日主题</div>
-  <p><strong>瑞幸Q2利润修复但同店恶化，生猪链去产能深化+原奶反转</strong>。瑞幸Q2收入158.9亿(+28.5%)、净利14.9亿(+16.1%)，但同店-5.3%连续四季下滑——配送补贴退坡是利润修复主因而非经营杠杆。正面变量在库迪出清、竞争格局改善。</p>
-  <div class="highlight">猪链双向分化：猪价10.4元/kg弱势筑底，去产能加速（仔猪228-230元/头双向亏损）；原奶3.06元/kg连续3周上涨，牛肉Q3供给收缩趋势向上。国金农业推荐优然牧业/现代牧业（8/3调研）。</div>
-  <div class="highlight">白酒筑底信号密集：东财食饮合肥调研确认行业底部，渠道库存历史低位、主流批价企稳，升学宴旺季有望恢复；6-7月淡季动销同比仍两位数下滑。推荐迎驾/金种子/金徽（8/2）。</div>
-  <p style="margin-top:8px;"><span class="bear">A股8/3回调：</span>上证3809.66(-0.59%)、沪深300 4543.18(-0.98%)，消费板块跟随��盘调整</p>
-  <p><span class="bull">恒指抗跌：</span>26009(+0.48%)，港股消费相对韧性</p>
-</div>
+  <!-- Stats Bar -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="label">上证指数</div>
+      <div class="value num">3822</div>
+      <div class="change up">+0.33%</div>
+    </div>
+    <div class="stat-item">
+      <div class="label">沪深300</div>
+      <div class="value num">4601</div>
+      <div class="change up">+1.27%</div>
+    </div>
+    <div class="stat-item">
+      <div class="label">恒生指数</div>
+      <div class="value num">25718</div>
+      <div class="change down">-0.74%</div>
+    </div>
+    <div class="stat-item">
+      <div class="label">布伦特原油</div>
+      <div class="value num">79.36</div>
+      <div class="change down">-5.26%</div>
+    </div>
+    <div class="stat-item">
+      <div class="label">金价(美元)</div>
+      <div class="value num">4078</div>
+      <div class="change up">+1.2%</div>
+    </div>
+  </div>
 
-<!-- 分行业 -->
-<div class="grid-2">
+  <!-- Stock Table -->
   <div class="section">
-    <div class="section-title">▌白酒</div>
-    <ul>
-      <li>行业底部确认，渠道库存历史低位，主流批价企稳</li>
-      <li>6-7月淡季动销同比两位数下滑，但有结构性亮点</li>
-      <li>民间宴请限制放松，升学宴等旺季刚需场景有望恢复</li>
-      <li>合肥长鑫产业聚集区财富效应显现，"科技人员不喝酒"被证伪</li>
-      <li>推荐：迎驾贡酒、金种子酒、金徽酒（东财8/2）</li>
-    </ul>
-    <p class="muted">东财食饮合肥调研：底部反转逻辑逐步清晰，优先库存健康+渠道理顺标的</p>
+    <div class="section-title">重点消费股行情（8/5盘中11:30）</div>
+    <table>
+      <thead>
+        <tr>
+          <th>股票</th>
+          <th>8/4收盘</th>
+          <th>8/5盘中</th>
+          <th>日涨跌</th>
+          <th>周涨跌(估)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="stock-name">贵州茅台</td><td class="num">1328.36</td><td class="num">1308</td><td class="num down">-1.53%</td><td class="num down">-3.8%</td></tr>
+        <tr><td class="stock-name">五粮液</td><td class="num">76.88</td><td class="num">75.51</td><td class="num down">-1.78%</td><td class="num down">-3.2%</td></tr>
+        <tr><td class="stock-name">泸州老窖</td><td class="num">89.30</td><td class="num">87.04</td><td class="num down">-2.53%</td><td class="num down">-4.1%</td></tr>
+        <tr><td class="stock-name">山西汾酒</td><td class="num">121.85</td><td class="num">120.01</td><td class="num down">-1.51%</td><td class="num down">-3.5%</td></tr>
+        <tr><td class="stock-name">伊利股份</td><td class="num">26.37</td><td class="num">26.23</td><td class="num down">-0.53%</td><td class="num down">-2.5%</td></tr>
+        <tr><td class="stock-name">海天味业</td><td class="num">37.33</td><td class="num">36.73</td><td class="num down">-1.61%</td><td class="num down">-2.8%</td></tr>
+        <tr><td class="stock-name">中国中免</td><td class="num">56.82</td><td class="num">56.50</td><td class="num down">-0.56%</td><td class="num down">-2.3%</td></tr>
+        <tr><td class="stock-name">美的集团</td><td class="num">85.14</td><td class="num">84.74</td><td class="num down">-0.47%</td><td class="num down">-1.2%</td></tr>
+        <tr><td class="stock-name">比亚迪</td><td class="num">91.15</td><td class="num">90.63</td><td class="num down">-0.57%</td><td class="num down">-4.5%</td></tr>
+      </tbody>
+    </table>
   </div>
+
+  <!-- Industry Cards -->
   <div class="section">
-    <div class="section-title">▌新茶饮 / 咖啡</div>
-    <ul>
-      <li><span class="bear">瑞幸Q2</span>收入158.9亿+28.5%，净利14.9亿+16.1%，同店-5.3%连续四季下滑</li>
-      <li>配送补贴退坡是利润修复主因，经营杠杆未显现</li>
-      <li><span class="bull">正面变量</span>：库迪净增停滞、9.9-13元带对手实质出清</li>
-      <li>沪上阿姨H1经调整净利+41.6%，首派中期股息（8/1已报）</li>
-      <li>蜜雪CEO百日改革推进中</li>
-    </ul>
-    <p class="muted">咖啡VS茶饮双线分化：瑞幸同店承压 vs 新茶饮龙头韧性</p>
+    <div class="section-title">分行业要点</div>
+    <div class="cards">
+      <div class="card">
+        <h3><span class="tag tag-red">白酒</span> 连跌两日</h3>
+        <p>茅台盘中1308(-1.5%)，批价1680元稳住。五粮液75.5(-1.8%)，老窖87.0(-2.5%)。Q2基金白酒仓位降至2013-2014水平，筹码出清较充分但短期缺催化。</p>
+      </div>
+      <div class="card">
+        <h3><span class="tag tag-blue">食品</span> 跌幅收窄</h3>
+        <p>伊利26.2(-0.5%)相对抗跌，海天36.7(-1.6%)。猪价10.48元/kg磨底，头均亏损238元。下游成本端受益。</p>
+      </div>
+      <div class="card">
+        <h3><span class="tag tag-amber">家电</span> 回购利好</h3>
+        <p>美的84.7(-0.5%)跌幅最小，65-130亿注销式回购+259亿分红。股东回报标杆，估值有直接支撑。</p>
+      </div>
+      <div class="card">
+        <h3><span class="tag tag-green">汽车</span> 出海强劲</h3>
+        <p>比亚迪90.6(-0.6%)，7月销量41.9万辆(+21.8%)，海外17.98万辆(+124.3%)。出海逻辑持续兑现。</p>
+      </div>
+      <div class="card">
+        <h3><span class="tag tag-blue">零售</span> 数据偏弱</h3>
+        <p>中免56.5(-0.6%)，消费数据偏弱。关注Q3暑期消费数据验证。</p>
+      </div>
+      <div class="card">
+        <h3><span class="tag tag-green">餐饮</span> 扩张提速</h3>
+        <p>百胜中国上调必胜客净开店目标，餐饮连锁扩张信心增强。</p>
+      </div>
+    </div>
   </div>
-</div>
 
-<div class="grid-2">
+  <!-- Broker Signals -->
   <div class="section">
-    <div class="section-title">▌农牧 · 生猪 + 原奶</div>
-    <ul>
-      <li><span class="bear">猪价10.4元/kg</span>弱势，行业亏损现金流，短期仍筑底</li>
-      <li>仔猪228-230元/头双向亏损，加速产能去化</li>
-      <li>出栏均重降至125-130公斤，川渝率先亏损领先全国</li>
-      <li><span class="bull">原奶3.06元/kg</span>连续3周上涨，底部反转信号增多</li>
-      <li>奶牛去化加速，8月面临提前清除+热应激</li>
-      <li><span class="bull">牛肉Q3趋势向上</span>：澳洲配额用尽，巴西8月下旬用完</li>
-    </ul>
-    <p class="muted">国金农业8/3：推荐优然牧业、现代牧业；看好生猪板块阶段性布局</p>
+    <div class="section-title">券商信号</div>
+    <div class="card" style="padding: 14px 18px;">
+      <div class="broker-row">
+        <span class="broker-icon">🔥</span>
+        <span class="broker-name">东兴证券</span>
+        <span>贵州茅台 "强烈推荐"</span>
+        <span class="broker-target">目标价 1716.95元（+31%）</span>
+      </div>
+      <div class="broker-row">
+        <span class="broker-icon">→</span>
+        <span class="broker-name">华创证券</span>
+        <span>白酒周度更新</span>
+        <span class="broker-target">关注批价走势</span>
+      </div>
+      <div class="broker-row">
+        <span class="broker-icon">→</span>
+        <span class="broker-name">中信建投</span>
+        <span>稳健配置标的推荐</span>
+        <span class="broker-target">含消费标的</span>
+      </div>
+      <div class="broker-row">
+        <span class="broker-icon">→</span>
+        <span class="broker-name">中金食饮</span>
+        <span>盈利预测更新</span>
+        <span class="broker-target">重点公司一览</span>
+      </div>
+    </div>
   </div>
+
+  <!-- Key Prices -->
   <div class="section">
-    <div class="section-title">▌黄金珠宝 / 零售</div>
-    <ul>
-      <li>伦敦金4112.80美元/盎司（日+0.55%），小幅反弹</li>
-      <li>品牌金饰与原料金价差仍大</li>
-      <li>汇率6.7547（日+0.03%），对金饰零售端影响有限</li>
-    </ul>
-    <p class="muted">⚠️ 金价/品牌金饰具体价格因数据源故障未获实时更新</p>
+    <div class="section-title">关键商品与批价</div>
+    <table>
+      <thead>
+        <tr><th>指标</th><th>数值</th><th>日涨跌</th><th>备注</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="stock-name">布伦特原油</td><td class="num">79.36</td><td class="num down">-5.26%</td><td>美伊谈判+OPEC+增产</td></tr>
+        <tr><td class="stock-name">黄金(伦敦金)</td><td class="num">4077.67</td><td class="num up">+1.2%</td><td>避险情绪回升</td></tr>
+        <tr><td class="stock-name">沪金</td><td class="num">883.96</td><td>—</td><td>元/克</td></tr>
+        <tr><td class="stock-name">美元/人民币</td><td class="num">6.7917</td><td>—</td><td>—</td></tr>
+        <tr><td class="stock-name">猪价</td><td class="num">10.48</td><td>—</td><td>元/kg，头均亏损238元</td></tr>
+        <tr><td class="stock-name">茅台散瓶批价</td><td class="num">1680</td><td>—</td><td>i茅台零售1639元，价差41元</td></tr>
+      </tbody>
+    </table>
   </div>
-</div>
 
-<!-- 券商信号 -->
-<div class="section">
-  <div class="section-title">▌券商信号</div>
-  <div class="signal-row">
-    <span class="tag fire">🔥共识</span>
-    <p><strong>白酒底部</strong>：东财食饮合肥调研确认行业底部，库存出清、批价企稳（8/2 · B级comein纪要）</p>
+  <!-- Footer -->
+  <div class="footer">
+    数据来源：iFind MCP / Wind MCP / Comein MCP / WebSearch / ThirdBridge本地存档<br>
+    Info-Bridge、AceCamp当日不可用，已降级处理 · 周涨跌幅为估算值<br>
+    消费PM每日简报 · 自动生成 · 2026-08-05 11:30
   </div>
-  <div class="signal-row">
-    <span class="tag new">🆕新增</span>
-    <p><strong>国金农业 — 猪链布局</strong>：猪价10.4元/kg去产能深化，当前时点积极看好生猪��块阶段性布局（8/3 · B级）</p>
-  </div>
-  <div class="signal-row">
-    <span class="tag new">🆕新增</span>
-    <p><strong>国金农业 — 原奶反转</strong>：生鲜乳连续3周上涨至3.06元/kg，推荐优然牧业、现代牧业（8/3 · B级）</p>
-  </div>
-  <div class="signal-row">
-    <span class="tag new">🆕新增</span>
-    <p><strong>东财食饮 — 区域白酒</strong>：推荐迎驾贡酒、金种子酒、金徽酒，库存健康+渠道利润理顺（8/2 · B级）</p>
-  </div>
-  <div class="signal-row">
-    <span class="tag warn">⚠️数据受限</span>
-    <p><strong>六源全不可用</strong>：Comein/iFind/Wind/Info-Bridge MCP均断开，WebSearch亦不可用；NeoData仅3项返回。券商信号仅来自本地comein纪要（8/2-8/3 共2篇）</p>
-  </div>
-</div>
 
-<!-- 关键价格 -->
-<div class="section">
-  <div class="section-title">▌关键价格</div>
-  <table class="price-table">
-    <thead>
-      <tr><th>品类</th><th>价格</th><th>日变化</th><th>来源</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>上证指数</td><td>3809.66</td><td class="change down">-0.59%</td><td>NeoData A级</td></tr>
-      <tr><td>沪深300</td><td>4543.18</td><td class="change down">-0.98%</td><td>NeoData A级</td></tr>
-      <tr><td>恒生指数</td><td>26009.40</td><td class="change up">+0.48%</td><td>NeoData A级</td></tr>
-      <tr><td>伦敦金现</td><td>4112.80 USD/oz</td><td class="change up">+0.55%</td><td>NeoData A级</td></tr>
-      <tr><td>USD/CNY</td><td>6.7547</td><td class="change flat">+0.03%</td><td>NeoData A级</td></tr>
-      <tr><td>飞天茅台散瓶批价</td><td>~1680元/瓶</td><td class="change up">周+10元</td><td>8/3基线</td></tr>
-      <tr><td>生猪均价</td><td>~10.4元/kg</td><td class="change down">弱势筑底</td><td>国金8/3 B级</td></tr>
-      <tr><td>生鲜乳合同价</td><td>3.06元/kg</td><td class="change up">连续3周↑</td><td>国金8/3 B级</td></tr>
-      <tr><td>仔猪价格</td><td>228-230元/头</td><td class="change down">持续下跌</td><td>国金8/3 B级</td></tr>
-    </tbody>
-  </table>
 </div>
-
-<!-- 数据来源 -->
-<div class="section">
-  <div class="section-title">▌数据来源与降级声明</div>
-  <p><span class="tag">NeoData</span>仅指数/汇率/金价3项返回成功 ⚠️ 行情/新闻/研究模块网络故障</p>
-  <p><span class="tag warn">Comein ❌</span>MCP不可用，券商信号以降级源（本地纪要B级）兜底</p>
-  <p><span class="tag warn">iFind ❌</span>MCP不可用，公告/一致预期未能拉取</p>
-  <p><span class="tag warn">Wind ❌</span>MCP不可用，港股行情未能拉取</p>
-  <p><span class="tag warn">Info-Bridge ❌</span>不可用，市场段子区降级</p>
-  <p><span class="tag warn">WebSearch ❌</span>全部fetch失败</p>
-  <p><span class="tag">本地源</span>comein纪要 × 2（东财食饮8/2 + 国金农业8/3）+ 瑞幸Q2业绩点评8/3 + 8/3早报基线</p>
-</div>
-
-<div class="footer">
-  消费PM每日简报 · 自动化工单 #1784615073239 · 输出模型 kimi-code 2.7<br>
-  数据时间：2026-08-04 08:53 GMT+8 · 部署：GitHub Pages + CloudStudio<br>
-  ���️ 六源全不可用，数据完整度显著低于常规水平，请审慎使用<br>
-  <a href="20260804_消费早报_精简版.txt" style="color:#007aff;">精简版 .txt</a> ·
-  <a href="20260804_消费早报.md" style="color:#007aff;">详细版 .md</a>
-</div>
-
 </body>
 </html>

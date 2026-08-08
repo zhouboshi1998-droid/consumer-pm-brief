@@ -1,25 +1,24 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-08-07T08:36:00+08:00",
-  "latest_brief": "20260807_消费早报",
+  "last_updated": "2026-08-08T11:30:00+08:00",
+  "latest_brief": "20260808_消费早报",
   "files": {
-    "txt": "20260807_消费早报_精简版.txt",
-    "md": "20260807_消费早报.md",
-    "html": "20260807_消费早报.html",
+    "txt": "20260808_消费早报_精简版.txt",
+    "md": "20260808_消费早报.md",
+    "html": "20260808_消费早报.html",
     "index": "index.html"
   },
   "deploy": {
     "github_pages": "https://zhouboshi1998-droid.github.io/consumer-pm-brief/",
-    "cloudstudio": "https://f7ffdbd5b38b450392381152687d7346.app.codebuddy.work"
+    "cloudstudio": ""
   },
   "mcp_status": {
-    "iFind": "available",
+    "iFind": "unavailable",
     "Comein": "unavailable",
-    "Wind": "available",
+    "Wind": "unavailable",
     "Info-Bridge": "unavailable",
     "AceCamp": "unavailable",
     "ThirdBridge": "unavailable",
-    "NeoData": "partial (index/fx/gold only)",
     "WebSearch": "available"
   }
 }

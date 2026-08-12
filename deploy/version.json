@@ -1,11 +1,11 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-08-08T11:30:00+08:00",
-  "latest_brief": "20260808_消费早报",
+  "last_updated": "2026-08-12T08:42:00+08:00",
+  "latest_brief": "20260812_消费早报",
   "files": {
-    "txt": "20260808_消费早报_精简版.txt",
-    "md": "20260808_消费早报.md",
-    "html": "20260808_消费早报.html",
+    "txt": "20260812_消费早报_精简版.txt",
+    "md": "20260812_消费早报.md",
+    "html": "20260812_消费早报.html",
     "index": "index.html"
   },
   "deploy": {
@@ -13,9 +13,9 @@
     "cloudstudio": "https://f7ffdbd5b38b450392381152687d7346.app.codebuddy.work"
   },
   "mcp_status": {
-    "iFind": "unavailable",
+    "iFind": "available",
     "Comein": "unavailable",
-    "Wind": "unavailable",
+    "Wind": "available",
     "Info-Bridge": "unavailable",
     "AceCamp": "unavailable",
     "ThirdBridge": "unavailable",

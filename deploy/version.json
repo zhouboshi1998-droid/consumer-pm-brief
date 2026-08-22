@@ -1,11 +1,11 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-08-21T08:45:00+08:00",
-  "latest_brief": "20260821_消费早报",
+  "last_updated": "2026-08-22T09:35:00+08:00",
+  "latest_brief": "20260822_消费早报",
   "files": {
-    "txt": "20260821_消费早报_精简版.txt",
-    "md": "20260821_消费早报.md",
-    "html": "20260821_消费早报.html",
+    "txt": "20260822_消费早报_精简版.txt",
+    "md": "20260822_消费早报.md",
+    "html": "20260822_消费早报.html",
     "index": "index.html"
   },
   "deploy": {
@@ -13,14 +13,14 @@
     "cloudstudio": "https://f7ffdbd5b38b450392381152687d7346.app.codebuddy.work"
   },
   "mcp_status": {
-    "iFind": "unavailable (reconnect ripple)",
-    "Comein": "unavailable (disconnected)",
-    "Wind": "unavailable (reconnect ripple)",
-    "Info-Bridge": "unavailable (disconnected)",
+    "iFind": "available (search_news/search_notice)",
+    "Comein": "available (searchDomesticReports/searchAnalystComments)",
+    "Wind": "available (get_stock_price_indicators/get_global_stock_kline)",
+    "Info-Bridge": "available (market_digest style:consumer)",
     "AceCamp": "unavailable",
-    "ThirdBridge": "unavailable (disconnected)",
-    "CJPY": "unavailable (SSL handshake failure)",
-    "WebSearch": "unavailable (fetch failed)",
-    "local_archive": "available (2026-08-20 worker T1 pre-collection)"
+    "ThirdBridge": "unavailable (no local archive)",
+    "CJPY": "not used",
+    "WebSearch": "available (index verification)",
+    "local_archive": "not used"
   }
 }

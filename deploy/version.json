@@ -1,11 +1,11 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-08-22T09:35:00+08:00",
-  "latest_brief": "20260822_消费早报",
+  "last_updated": "2026-08-31T09:00:00+08:00",
+  "latest_brief": "20260831_消费早报",
   "files": {
-    "txt": "20260822_消费早报_精简版.txt",
-    "md": "20260822_消费早报.md",
-    "html": "20260822_消费早报.html",
+    "txt": "20260831_消费早报_精简版.txt",
+    "md": "20260831_消费早报.md",
+    "html": "20260831_消费早报.html",
     "index": "index.html"
   },
   "deploy": {
@@ -14,13 +14,13 @@
   },
   "mcp_status": {
     "iFind": "available (search_news/search_notice)",
+    "Wind": "available (get_index_quote/get_index_kline/get_stock_quote)",
     "Comein": "available (searchDomesticReports/searchAnalystComments)",
-    "Wind": "available (get_stock_price_indicators/get_global_stock_kline)",
-    "Info-Bridge": "available (market_digest style:consumer)",
+    "Info-Bridge": "unavailable (rate-limited fallback WebSearch)",
     "AceCamp": "unavailable",
     "ThirdBridge": "unavailable (no local archive)",
     "CJPY": "not used",
-    "WebSearch": "available (index verification)",
+    "WebSearch": "available (price/news verification)",
     "local_archive": "not used"
   }
 }

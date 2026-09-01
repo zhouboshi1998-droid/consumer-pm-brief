@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>消费PM每日简报 · 9月1日</title>
+<style>
+  :root {
+    --primary: #007AFF;
+    --bg: #F5F7FA;
+    --card: rgba(255,255,255,0.82);
+    --text: #1D1D1F;
+    --text-secondary: #86868B;
+    --border: rgba(0,0,0,0.06);
+    --red: #FF3B30;
+    --green: #34C759;
+    --amber: #FF9500;
+    --radius: 20px;
+    --shadow: 0 8px 32px rgba(0,0,0,0.08);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 24px 16px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+  }
+  .header .date {
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, var(--primary), #5856D6);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 16px rgba(0,122,255,0.3);
+  }
+  .badge::before { content: "⚡"; }
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .kpi {
+    background: var(--card);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 12px;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .kpi-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary);
+  }
+  .kpi-label {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+  }
+  .card {
+    background: var(--card);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow);
+  }
+  .card-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 0.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-block {
+    margin-bottom: 16px;
+  }
+  .section-block:last-child { margin-bottom: 0; }
+  .section-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 8px;
+  }
+  .fact-tag, .opinion-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .fact-tag { background: #E8F5E9; color: #2E7D32; }
+  .opinion-tag { background: #FFF3E0; color: #E65100; }
+  .section-block-text {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .section-block-text p { margin-bottom: 8px; }
+  .section-block-text p:last-child { margin-bottom: 0; }
+  .highlight-box {
+    background: linear-gradient(135deg, rgba(255,149,0,0.08), rgba(255,59,48,0.04));
+    border-left: 3px solid var(--amber);
+    padding: 12px 14px;
+    border-radius: 0 12px 12px 0;
+    margin: 10px 0;
+    font-size: 13px;
+  }
+  .signal-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .signal-card:last-child { border-bottom: none; padding-bottom: 0; }
+  .signal-tag {
+    flex-shrink: 0;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 100px;
+    margin-top: 2px;
+  }
+  .tag-bullish { background: #E8F5E9; color: #2E7D32; }
+  .tag-bearish { background: #FFEBEE; color: #C62828; }
+  .tag-neutral { background: #F5F5F5; color: #616161; }
+  .signal-content {
+    flex: 1;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .signal-source {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+  }
+  .signal-grade {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+  .grade-a { background: #E3F2FD; color: #1565C0; }
+  .grade-b { background: #F3E5F5; color: #7B1FA2; }
+  .grade-c { background: #FFF8E1; color: #F57F17; }
+  .price-table {
+    width: 100%;
+    font-size: 13px;
+    border-collapse: collapse;
+  }
+  .price-table th {
+    text-align: left;
+    padding: 10px 8px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border-bottom: 0.5px solid var(--border);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .price-table td {
+    padding: 10px 8px;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .price-table tr:last-child td { border-bottom: none; }
+  .price-up { color: var(--red); font-weight: 600; }
+  .price-down { color: var(--green); font-weight: 600; }
+  .footer {
+    text-align: center;
+    padding: 20px 0 40px;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+  .mcp-status {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 12px;
+  }
+  .mcp-pill {
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 100px;
+    background: var(--card);
+    border: 1px solid var(--border);
+  }
+  .mcp-pill.ok { border-color: var(--green); color: var(--green); }
+  .mcp-pill.fail { border-color: var(--red); color: var(--red); }
+  @media (max-width: 480px) {
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>消费PM每日简报</h1>
+  <div class="date">2026年9月1日 · 周二</div>
+</div>
+
+<div style="text-align:center;">
+  <div class="badge">6条核心信号 · 4看多 · 1看空 · 1中性</div>
+</div>
+
+<div class="kpi-grid">
+  <div class="kpi">
+    <div class="kpi-value">-6.64%</div>
+    <div class="kpi-label">白酒H1营收同比</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-value">60万亿</div>
+    <div class="kpi-label">2030社零目标</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-value">+5.2%</div>
+    <div class="kpi-label">蒙牛液奶H1增速</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-value">-25%</div>
+    <div class="kpi-label">名创CICC净利下调</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-value">-6.5%</div>
+    <div class="kpi-label">能繁母猪累计去化</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-value">+1.8%</div>
+    <div class="kpi-label">美团日涨跌</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">▌ 今日主题</div>
+  <div class="section-block">
+    <div class="fact-tag">事实</div>
+    <div class="section-block-text">
+      <p>白酒中报收官深度出清。21家上市酒企H1合计营收1980.34亿元，同比-6.64%；归母净利736.33亿元，同比-8.13%。但批价出现修复信号：飞天茅台批价1870元/瓶（周+10元），普五批价790元/瓶（周+10元）。</p>
+      <p>七部门（发改委、商务部、文旅部等）于8/31晚间联合发布《消费扩容升级三年行动计划（2026-2028）》，提出到2030年社零总额突破60万亿元，培育20个国际消费中心城市。</p>
+      <p>蒙牛H1营收447.95亿元，同比+7.8%；归母23.71亿元，同比+15.9%。液态奶收入338.7亿元，同比+5.2%，增速由负转正。东吴上调26-28年归母净利预测至49/56/62亿元。</p>
+    </div>
+  </div>
+  <div class="section-block">
+    <div class="opinion-tag">观点</div>
+    <div class="section-block-text">
+      <p>白酒"深度出清"不等于"全面看空"，批价修复+五粮液业绩超预期显示高端酒需求韧性仍在，结构性机会优先看高端和次高端龙头。</p>
+      <p>七部门文件对免税、城市商业综合体构成直接利好，但政策落地节奏仍需跟踪，短期情绪催化>实质业绩增厚。</p>
+    </div>
+  </div>
+  <div class="highlight-box">
+    <strong>核心洞察：</strong>白酒中报最差时刻或已过，批价修复是重要先行指标；七部门文件为Q4消费板块提供政策期权价值。
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">▌ 分行业</div>
+
+  <div class="section-block">
+    <div class="section-name">食饮</div>
+    <div class="fact-tag">事实</div>
+    <div class="section-block-text">
+      <p>白酒：21家酒企H1营收1980.34亿-6.64%，归母736.33亿-8.13%。五粮液H1收入284.17亿+20.87%、归母87.53亿+89.3%，增速领跑高端。茅台批价1870元（周+10），普五790元（周+10）。</p>
+      <p>调味品：海天26Q2营收71.17亿+2.93%、归母17.46亿+2.17%；天味+19.76%。</p>
+      <p>乳制品：蒙牛H1营收447.95亿+7.8%、归母23.71亿+15.9%，液奶338.7亿+5.2%转正。</p>
+    </div>
+    <div class="opinion-tag">观点</div>
+    <div class="section-block-text">
+      <p>华龙证券维持"筑底蓄势"判断，结构性机会优先看高端白酒和复合调味品。下半年基数效应收窄，需求复苏取决于商务活动恢复。</p>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="section-name">港股新消费</div>
+    <div class="fact-tag">事实</div>
+    <div class="section-block-text">
+      <p>名创优品：CICC下调26/27年经调整净利25%/20%至23/28亿，目标价25.80港元。管理层下修全年收入指引至高双位数→中双位数。海外（尤其北美）降速是主因。</p>
+      <p>美团：中金认为到店酒旅OPM阶段性恢复，外卖UE转正。目标价125港元。</p>
+    </div>
+    <div class="opinion-tag">观点</div>
+    <div class="section-block-text">
+      <p>名创海外降速短期承压，但国内稳健，估值已反映悲观预期。美团外卖UE转正是经营拐点，但需警惕抖音本地生活长期威胁。</p>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="section-name">农业养殖</div>
+    <div class="fact-tag">事实</div>
+    <div class="section-block-text">
+      <p>生猪均价10.61元/公斤（周-4.3%），旺季不旺。能繁母猪累计去化6.5%。国泰海通推荐牧原、立华、温氏、天康。华安维持年内去化10%判断。</p>
+    </div>
+    <div class="opinion-tag">观点</div>
+    <div class="section-block-text">
+      <p>产能去化加速但猪价低迷，反映需求疲软。当前估值处历史低位，左侧布局需忍受继续亏损，拐点时间不确定。</p>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">▌ 券商信号</div>
+
+  <div class="signal-card">
+    <div class="signal-tag tag-bullish">看多</div>
+    <div class="signal-content">
+      <strong>华龙证券</strong> · 白酒"筑底蓄势"，结构性机会优先看高端。推荐茅台、今世缘、迎驾贡酒、珍酒李渡、山西汾酒、古井贡酒。
+      <div class="signal-source">2026-08-31 · 推荐</div>
+    </div>
+    <div class="signal-grade grade-b">B</div>
+  </div>
+
+  <div class="signal-card">
+    <div class="signal-tag tag-bullish">看多</div>
+    <div class="signal-content">
+      <strong>东吴证券</strong> · 蒙牛H1业绩超预期，液奶增速转正确认原奶周期拐点。上调26-28年归母净利至49/56/62亿元。
+      <div class="signal-source">2026-08-31 · 买入</div>
+    </div>
+    <div class="signal-grade grade-b">B</div>
+  </div>
+
+  <div class="signal-card">
+    <div class="signal-tag tag-bearish">看空</div>
+    <div class="signal-content">
+      <strong>中金公司</strong> · 名创优品海外降速，下调26/27年经调整净利预测25%/20%。目标价25.80港元。
+      <div class="signal-source">2026-08-31 · 中性</div>
+    </div>
+    <div class="signal-grade grade-b">B</div>
+  </div>
+
+  <div class="signal-card">
+    <div class="signal-tag tag-bullish">看多</div>
+    <div class="signal-content">
+      <strong>中金公司</strong> · 美团到店酒旅OPM阶段性恢复，外卖UE转正。目标价125港元。
+      <div class="signal-source">2026-08-31 · 跑赢行业</div>
+    </div>
+    <div class="signal-grade grade-b">B</div>
+  </div>
+
+  <div class="signal-card">
+    <div class="signal-tag tag-bullish">看多</div>
+    <div class="signal-content">
+      <strong>国泰海通</strong> · 生猪产能去化加速，推荐牧原股份、立华股份、温氏股份、天康生物。
+      <div class="signal-source">2026-08-31 · 增持</div>
+    </div>
+    <div class="signal-grade grade-b">B</div>
+  </div>
+
+  <div class="signal-card">
+    <div class="signal-tag tag-neutral">中性</div>
+    <div class="signal-content">
+      <strong>国泰海通</strong> · 新消费步入低基数期，茶饮或迎来修复，推荐古茗。
+      <div class="signal-source">2026-08-31 · 增持</div>
+    </div>
+    <div class="signal-grade grade-c">C</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">▌ 关键价格</div>
+  <table class="price-table">
+    <tr>
+      <th>标的</th>
+      <th>价格</th>
+      <th>日涨跌</th>
+      <th>周涨跌</th>
+    </tr>
+    <tr>
+      <td>贵州茅台</td>
+      <td>1425.00元</td>
+      <td class="price-up">+0.35%</td>
+      <td class="price-up">+2.10%</td>
+    </tr>
+    <tr>
+      <td>五粮液</td>
+      <td>138.20元</td>
+      <td class="price-up">+1.25%</td>
+      <td class="price-up">+4.80%</td>
+    </tr>
+    <tr>
+      <td>山西汾酒</td>
+      <td>185.50元</td>
+      <td class="price-up">+0.80%</td>
+      <td class="price-up">+3.20%</td>
+    </tr>
+    <tr>
+      <td>蒙牛乳业</td>
+      <td>15.82港元</td>
+      <td class="price-up">+2.10%</td>
+      <td class="price-up">+5.40%</td>
+    </tr>
+    <tr>
+      <td>名创优品</td>
+      <td>28.50港元</td>
+      <td class="price-down">-3.20%</td>
+      <td class="price-down">-8.10%</td>
+    </tr>
+    <tr>
+      <td>美团</td>
+      <td>95.60港元</td>
+      <td class="price-up">+1.80%</td>
+      <td class="price-up">+3.50%</td>
+    </tr>
+    <tr>
+      <td>牧原股份</td>
+      <td>38.20元</td>
+      <td class="price-up">+0.50%</td>
+      <td class="price-down">-1.80%</td>
+    </tr>
+    <tr>
+      <td>全指消费</td>
+      <td>11850点</td>
+      <td class="price-up">+0.45%</td>
+      <td class="price-up">+1.20%</td>
+    </tr>
+    <tr>
+      <td>港股通消费</td>
+      <td>4850点</td>
+      <td class="price-up">+0.90%</td>
+      <td class="price-up">+2.10%</td>
+    </tr>
+    <tr>
+      <td>飞天茅台批价</td>
+      <td>1870元/瓶</td>
+      <td>—</td>
+      <td class="price-up">+10元</td>
+    </tr>
+    <tr>
+      <td>生猪均价</td>
+      <td>10.61元/公斤</td>
+      <td>—</td>
+      <td class="price-down">-4.3%</td>
+    </tr>
+  </table>
+</div>
+
+<div class="footer">
+  <div>消费PM每日简报 · 由 Codex 自动生成</div>
+  <div style="margin-top:4px;">数据截至 2026-09-01 08:30 · 投资观点仅供参考</div>
+  <div class="mcp-status">
+    <div class="mcp-pill ok">iFind</div>
+    <div class="mcp-pill ok">Wind</div>
+    <div class="mcp-pill ok">Comein</div>
+    <div class="mcp-pill ok">Info-Bridge</div>
+    <div class="mcp-pill fail">AceCamp</div>
+    <div class="mcp-pill fail">ThirdBridge</div>
+  </div>
+</div>
+
+</body>
+</html>

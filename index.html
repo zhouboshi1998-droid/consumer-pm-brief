@@ -1,395 +1,44 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>消费PM每日简报 · 8月22日</title>
-    <style>
-        :root {
-            --primary: #007AFF;
-            --bg: #F5F7FA;
-            --card: rgba(255, 255, 255, 0.82);
-            --text: #1D1D1F;
-            --text-secondary: #6E6E73;
-            --border: rgba(0, 0, 0, 0.06);
-            --red: #FF3B30;
-            --green: #34C759;
-            --amber: #FF9500;
-            --shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-            background: linear-gradient(180deg, #F5F7FA 0%, #EEF1F5 100%);
-            color: var(--text);
-            line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
-            padding: 24px;
-        }
-        .container { max-width: 720px; margin: 0 auto; }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-bottom: 20px;
-            padding-bottom: 16px;
-            border-bottom: 0.5px solid var(--border);
-        }
-        .title { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
-        .date { font-size: 15px; color: var(--text-secondary); font-weight: 500; }
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 12px;
-            border-radius: 100px;
-            font-size: 12px;
-            font-weight: 600;
-            background: rgba(0, 122, 255, 0.12);
-            color: #0051D5;
-            margin-bottom: 16px;
-        }
-        .badge::before {
-            content: "";
-            width: 6px; height: 6px;
-            border-radius: 50%;
-            background: var(--primary);
-        }
-        .card {
-            background: var(--card);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: 20px;
-            padding: 20px;
-            margin-bottom: 16px;
-            box-shadow: var(--shadow);
-            border: 0.5px solid var(--border);
-        }
-        .card h2 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 14px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .card h2::before {
-            content: "";
-            width: 4px; height: 18px;
-            border-radius: 2px;
-            background: var(--primary);
-        }
-        .theme-text { font-size: 15px; color: var(--text); line-height: 1.7; }
-        .section { margin-bottom: 16px; }
-        .section h3 {
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
-            padding-bottom: 6px;
-            border-bottom: 0.5px solid var(--border);
-        }
-        .section p {
-            font-size: 14px;
-            color: var(--text);
-            line-height: 1.65;
-            margin-bottom: 8px;
-        }
-        .tag {
-            display: inline-block;
-            padding: 2px 8px;
-            border-radius: 6px;
-            font-size: 11px;
-            font-weight: 600;
-            margin-right: 6px;
-        }
-        .tag-bull { background: rgba(52, 199, 89, 0.12); color: #248A3D; }
-        .tag-bear { background: rgba(255, 59, 48, 0.12); color: #C41C14; }
-        .tag-neutral { background: rgba(142, 142, 147, 0.12); color: #636366; }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 13px;
-        }
-        th {
-            text-align: left;
-            padding: 10px 8px;
-            font-weight: 600;
-            color: var(--text-secondary);
-            border-bottom: 0.5px solid var(--border);
-        }
-        td {
-            padding: 10px 8px;
-            border-bottom: 0.5px solid var(--border);
-            vertical-align: top;
-        }
-        tr:last-child td { border-bottom: none; }
-        .price-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 12px;
-        }
-        .price-item {
-            background: rgba(255, 255, 255, 0.6);
-            border-radius: 14px;
-            padding: 14px;
-            border: 0.5px solid var(--border);
-        }
-        .price-item .name { font-size: 12px; color: var(--text-secondary); margin-bottom: 4px; }
-        .price-item .value { font-size: 18px; font-weight: 700; }
-        .price-item .change { font-size: 12px; font-weight: 600; margin-top: 2px; }
-        .up { color: #C41C14; }
-        .down { color: #248A3D; }
-        .insight-box {
-            background: rgba(255, 149, 0, 0.08);
-            border: 0.5px solid rgba(255, 149, 0, 0.2);
-            border-radius: 16px;
-            padding: 16px;
-            margin-bottom: 16px;
-            font-size: 14px;
-            color: #8A5A00;
-            line-height: 1.6;
-        }
-        .footer {
-            text-align: center;
-            font-size: 12px;
-            color: var(--text-secondary);
-            margin-top: 24px;
-            padding-top: 16px;
-            border-top: 0.5px solid var(--border);
-        }
-        .source-list {
-            font-size: 12px;
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-        .source-status {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 8px;
-            font-size: 12px;
-            margin-bottom: 12px;
-        }
-        .source-status span {
-            padding: 6px 10px;
-            border-radius: 8px;
-            background: rgba(0,0,0,0.03);
-        }
-        .source-ok { color: #248A3D; }
-        .source-fail { color: #C41C14; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="refresh" content="0; url=20260901_消费早报.html">
+<title>消费PM每日简报</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    background: #F5F7FA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #1D1D1F;
+  }
+  .redirect-box {
+    text-align: center;
+    padding: 40px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    backdrop-filter: blur(20px);
+  }
+  h1 { font-size: 24px; margin-bottom: 12px; }
+  p { color: #86868B; font-size: 14px; }
+  a { color: #007AFF; text-decoration: none; font-weight: 600; }
+</style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div>
-                <div class="title">消费PM每日简报</div>
-                <div class="date">8月22日（周六）</div>
-            </div>
-        </header>
-
-        <div class="badge">数据源部分恢复</div>
-
-        <div class="card">
-            <h2>今日主题</h2>
-            <p class="theme-text">A股8/21缩量普涨但消费逆势跑输：上证+0.04%、沪深300+0.57%、创业板+1.43%，两市成交约1.88万亿缩量约2000亿；茅台-1.45%、五粮液-1.25%、海天-1.96%、永辉-2.85%。港股反弹但新消费承压，恒指+1.21%、恒生科技+1.40%，泡泡玛特-3.06%、阿里-2.54%、美团-0.99%。中报季结构性信号密集：泡泡玛特海外拐点确认、永辉扭亏、白酒分化、纺服制造订单回暖。</p>
-        </div>
-
-        <div class="card">
-            <h2>分行业</h2>
-            <div class="section">
-                <h3>食饮</h3>
-                <p><span class="tag tag-neutral">观察</span>珍酒李渡1H26收入25.5亿+2%、经调整利润6.3亿+2%，次高端收入+39%占比升至53.7%，实际业绩超预期。</p>
-                <p><span class="tag tag-bull">多</span>金徽酒1H26收入18.2亿+3.2%，加回一次性补缴税款7500万后净利润同比+38%，经营质量超预期。</p>
-                <p><span class="tag tag-bear">空</span>盐津铺子Q2利润同比+0.01%，华润啤酒H1白酒收入-27%/EBITDA率腰斩至14.7%，大众品仍承压。</p>
-            </div>
-            <div class="section">
-                <h3>港股新消费 / 互联网</h3>
-                <p><span class="tag tag-bear">空</span>泡泡玛特1H26营收171.7亿+23.8%，经调整净利51.6亿+9.5%，但海外-11.1%、净利率-3.9pct；JPM下调至减持。</p>
-                <p><span class="tag tag-neutral">观察</span>星星人收入+581%跃升第二大IP，公司启动20-50亿回购；H2基数抬升与海外修复是核心变量。</p>
-                <p><span class="tag tag-neutral">观察</span>阿里FY27Q1大体符合预期，AI capex加大/云增速提升/传统电商稳健，短期自由现金流承压。</p>
-            </div>
-            <div class="section">
-                <h3>零售</h3>
-                <p><span class="tag tag-bull">多</span>永辉超市1H26营收237.9亿-20.6%，归母净利2.53亿扭亏，调改门店模型持续验证。</p>
-                <p><span class="tag tag-neutral">观察</span>商务部发布县域消费政策指引，深度下沉低线市场的价值型零售标的受益。</p>
-            </div>
-            <div class="section">
-                <h3>纺服 / 轻工</h3>
-                <p><span class="tag tag-bull">多</span>罗莱生活1H26营收23.0亿+5.5%，归母净利2.49亿+34.4%，利润端改善显著。</p>
-                <p><span class="tag tag-bull">多</span>Info-Bridge提示纺服制造订单拐点，华利集团、九兴控股、伟星股份、李宁受关注。</p>
-            </div>
-            <div class="section">
-                <h3>家电</h3>
-                <p><span class="tag tag-bear">空</span>美的集团-1.26%、海尔智家-0.19%，铜价/塑料成本压力仍是H2核心跟踪变量。</p>
-            </div>
-            <div class="section">
-                <h3>农业</h3>
-                <p><span class="tag tag-neutral">观察</span>牧原股份-1.88%，生猪价格反弹持续性需观察出栏节奏与二次育肥情绪。</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2>券商信号</h2>
-            <table>
-                <tr>
-                    <th>来源</th>
-                    <th>方向</th>
-                    <th>标的/主题</th>
-                    <th>核心观点</th>
-                </tr>
-                <tr>
-                    <td>JPM摩根大通</td>
-                    <td><span class="tag tag-bear">减持</span></td>
-                    <td>泡泡玛特</td>
-                    <td>2026年下半年形势严峻</td>
-                </tr>
-                <tr>
-                    <td>中金公司</td>
-                    <td><span class="tag tag-bear">下调</span></td>
-                    <td>泡泡玛特</td>
-                    <td>经营仍处调整期，目标价下调8%至200港元</td>
-                </tr>
-                <tr>
-                    <td>华泰消费</td>
-                    <td><span class="tag tag-bull">买入</span></td>
-                    <td>泡泡玛特</td>
-                    <td>海外下行压力明显，目标价185港元，维持买入</td>
-                </tr>
-                <tr>
-                    <td>高盛中国</td>
-                    <td><span class="tag tag-neutral">观望</span></td>
-                    <td>泡泡玛特</td>
-                    <td>上半年业绩不及预期，销售端压力加大</td>
-                </tr>
-                <tr>
-                    <td>浦银消费</td>
-                    <td><span class="tag tag-neutral">观望</span></td>
-                    <td>华润啤酒</td>
-                    <td>喜力/老雪/红爵高增，但白酒业务拖累利润率</td>
-                </tr>
-                <tr>
-                    <td>中信建投食饮</td>
-                    <td><span class="tag tag-bull">多</span></td>
-                    <td>乳业深加工</td>
-                    <td>奶酪/稀奶油/黄油国产替代与B端扩容</td>
-                </tr>
-                <tr>
-                    <td>申万宏源</td>
-                    <td><span class="tag tag-bull">多</span></td>
-                    <td>百隆东方</td>
-                    <td>受益于棉价上行周期</td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="card">
-            <h2>关键价格</h2>
-            <div class="price-grid">
-                <div class="price-item">
-                    <div class="name">上证指数</div>
-                    <div class="value">3905.20</div>
-                    <div class="change up">+0.04%</div>
-                </div>
-                <div class="price-item">
-                    <div class="name">深证成指</div>
-                    <div class="value">14094.17</div>
-                    <div class="change up">+0.87%</div>
-                </div>
-                <div class="price-item">
-                    <div class="name">创业板指</div>
-                    <div class="value">3545.58</div>
-                    <div class="change up">+1.43%</div>
-                </div>
-                <div class="price-item">
-                    <div class="name">沪深300</div>
-                    <div class="value">4618.90</div>
-                    <div class="change up">+0.57%</div>
-                </div>
-                <div class="price-item">
-                    <div class="name">恒生指数</div>
-                    <div class="value">26009.46</div>
-                    <div class="change up">+1.21%</div>
-                </div>
-                <div class="price-item">
-                    <div class="name">恒生科技</div>
-                    <div class="value">4766.16</div>
-                    <div class="change up">+1.40%</div>
-                </div>
-                <div class="price-item">
-                    <div class="name">两市成交额</div>
-                    <div class="value">约1.88万亿</div>
-                    <div class="change down">缩量约2000亿</div>
-                </div>
-                <div class="price-item">
-                    <div class="name">金龙指数</div>
-                    <div class="value">—</div>
-                    <div class="change up">+0.4%</div>
-                </div>
-                <div class="price-item">
-                    <div class="name">贵州茅台</div>
-                    <div class="value">1272.83</div>
-                    <div class="change down">-1.45%</div>
-                </div>
-                <div class="price-item">
-                    <div class="name">五粮液</div>
-                    <div class="value">71.19</div>
-                    <div class="change down">-1.25%</div>
-                </div>
-                <div class="price-item">
-                    <div class="name">海天味业</div>
-                    <div class="value">35.05</div>
-                    <div class="change down">-1.96%</div>
-                </div>
-                <div class="price-item">
-                    <div class="name">永辉超市</div>
-                    <div class="value">3.07</div>
-                    <div class="change down">-2.85%</div>
-                </div>
-                <div class="price-item">
-                    <div class="name">泡泡玛特</div>
-                    <div class="value">149.00港元</div>
-                    <div class="change down">-3.06%</div>
-                </div>
-                <div class="price-item">
-                    <div class="name">阿里巴巴-W</div>
-                    <div class="value">123.00港元</div>
-                    <div class="change down">-2.54%</div>
-                </div>
-                <div class="price-item">
-                    <div class="name">美团-W</div>
-                    <div class="value">85.00港元</div>
-                    <div class="change down">-0.99%</div>
-                </div>
-                <div class="price-item">
-                    <div class="name">蒙牛乳业</div>
-                    <div class="value">18.82港元</div>
-                    <div class="change up">+2.01%</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2>数据来源</h2>
-            <div class="source-status">
-                <span class="source-ok">Wind: 可用</span>
-                <span class="source-ok">iFind: 可用</span>
-                <span class="source-ok">Comein: 可用</span>
-                <span class="source-ok">Info-Bridge: 可用</span>
-                <span class="source-ok">WebSearch: 可用</span>
-                <span class="source-fail">AceCamp: 不可用</span>
-                <span class="source-fail">ThirdBridge: 不可用</span>
-            </div>
-            <div class="source-list">
-                <p>行情数据经Wind独立获取并与WebSearch交叉验证；券商观点与行业动态来自Comein searchDomesticReports/searchAnalystComments、Info-Bridge market_digest大消费简报。AceCamp与ThirdBridge未接入，专家纪要维度偏薄。</p>
-            </div>
-        </div>
-
-        <div class="footer">
-            消费PM每日简报 · 2026-08-22 · 六源部分恢复产出
-        </div>
-    </div>
+  <div class="redirect-box">
+    <h1>消费PM每日简报</h1>
+    <p>正在跳转至 2026年9月1日 最新简报...</p>
+    <p>如果没有自动跳转，请 <a href="20260901_消费早报.html">点击这里</a></p>
+    <p style="margin-top:20px; font-size:12px;">
+      <a href="20260901_消费早报_精简版.txt">精简版.txt</a> ·
+      <a href="20260901_消费早报.md">详细版.md</a> ·
+      <a href="deploy/version.json">版本信息</a>
+    </p>
+  </div>
 </body>
 </html>

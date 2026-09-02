@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>消费PM每日简报 · 9月2日</title>
+<style>
+  :root {
+    --primary: #007AFF;
+    --bg: #F5F7FA;
+    --card: rgba(255,255,255,0.82);
+    --text: #1D1D1F;
+    --text-secondary: #86868B;
+    --border: rgba(0,0,0,0.06);
+    --red: #FF3B30;
+    --green: #34C759;
+    --amber: #FF9500;
+    --radius: 20px;
+    --shadow: 0 8px 32px rgba(0,0,0,0.08);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 24px 16px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+  }
+  .header .date {
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, var(--primary), #5856D6);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 16px rgba(0,122,255,0.3);
+  }
+  .badge::before { content: "⚡"; }
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .kpi {
+    background: var(--card);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 12px;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .kpi-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary);
+  }
+  .kpi-value.up { color: var(--red); }
+  .kpi-value.down { color: var(--green); }
+  .kpi-label {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+  }
+  .section {
+    background: var(--card);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow);
+  }
+  .section h2 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section h2::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 18px;
+    background: var(--primary);
+    border-radius: 2px;
+  }
+  .theme-item {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .theme-item:last-child { border-bottom: none; }
+  .theme-num {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 22px;
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+  .theme-head {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: flex-start;
+  }
+  .theme-body {
+    font-size: 13px;
+    color: var(--text-secondary);
+    padding-left: 30px;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 100px;
+    font-weight: 600;
+    margin-left: 6px;
+  }
+  .tag.fact { background: #E8F4FD; color: #007AFF; }
+  .tag.view { background: #FFF4E5; color: #FF9500; }
+  .tag.grade-b { background: #F0F0F0; color: #666; }
+  .industry-block { margin-bottom: 16px; }
+  .industry-block h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 8px;
+  }
+  .industry-block p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+  }
+  .signal-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+  }
+  .signal-row:last-child { border-bottom: none; }
+  .signal-meta {
+    color: var(--text-secondary);
+    font-size: 12px;
+  }
+  .price-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    background: rgba(0,0,0,0.03);
+    border-radius: 12px;
+    font-size: 13px;
+  }
+  .price-name { font-weight: 600; }
+  .price-value { font-weight: 700; }
+  .price-change { font-size: 11px; margin-left: 6px; }
+  .up { color: var(--red); }
+  .down { color: var(--green); }
+  .footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: 24px;
+    padding-bottom: 24px;
+  }
+  .source-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .source-chip {
+    text-align: center;
+    padding: 8px;
+    background: rgba(0,0,0,0.03);
+    border-radius: 12px;
+    font-size: 12px;
+  }
+  .source-chip .name { font-weight: 600; font-size: 13px; }
+  .source-chip .status { color: var(--green); font-size: 11px; }
+  .source-chip .status.warn { color: var(--amber); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>消费PM每日简报</h1>
+  <div class="date">2026年9月2日（周三）· 数据截至 08:30</div>
+</div>
+
+<div style="text-align:center;">
+  <div class="badge">3条核心主题 · 6只重点标的</div>
+</div>
+
+<div class="kpi-grid">
+  <div class="kpi">
+    <div class="kpi-value down">-0.16%</div>
+    <div class="kpi-label">沪指涨跌</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-value up">+1.15%</div>
+    <div class="kpi-label">食品饮料指数</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-value">2.03万亿</div>
+    <div class="kpi-label">A股成交额</div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>今日主题</h2>
+  <div class="theme-item">
+    <div class="theme-head"><span class="theme-num">1</span>大消费逆势领涨<span class="tag fact">事实</span><span class="tag grade-b">B级</span></div>
+    <div class="theme-body">9/1沪指-0.16%、成交缩至2.03万亿，但食品饮料指数+1.15%，山西汾酒+3.35%、泸州老窖+2.18%，七部门促消费政策首个交易日获资金明确响应。</div>
+  </div>
+  <div class="theme-item">
+    <div class="theme-head"><span class="theme-num">2</span>全球债券抛售压制风险偏好<span class="tag fact">事实</span><span class="tag grade-b">B级</span></div>
+    <div class="theme-body">美债收益率飙升引发全球权益波动，A股缩量震荡。但南向资金连续5日净买入港股消费，长线资金配置意愿未减。</div>
+  </div>
+  <div class="theme-item">
+    <div class="theme-head"><span class="theme-num">3</span>现货黄金急跌约2%<span class="tag fact">事实</span><span class="tag grade-b">B级</span></div>
+    <div class="theme-body">黄金珠宝短期承压，周大福-1.47%。需跟踪金价回调是否激发婚庆刚需释放。</div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>分行业速览</h2>
+  <div class="industry-block">
+    <h3>食饮</h3>
+    <p>白酒逆势上涨，批价维持1680-1730元。山西汾酒+3.35%、泸州老窖+2.18%、五粮液+0.79%、茅台+0.35%。东方证券指出Q2食品饮料超配比例降至-1.2%，为2003年以来历史最低，筹码出清较充分。</p>
+  </div>
+  <div class="industry-block">
+    <h3>零售/珠宝</h3>
+    <p>金价急跌压制短期情绪，周大福-1.47%。部分观点认为金价回调或激发刚需，但需验证终端动销。</p>
+  </div>
+  <div class="industry-block">
+    <h3>港股新消费</h3>
+    <p>美团-2.85%随恒指调整，名创优品美股ADR反弹+2.80%。南向资金连续净买入显示长线资金对港股消费信心仍在。</p>
+  </div>
+  <div class="industry-block">
+    <h3>家电/汽车/农业</h3>
+    <p>无重大边际变化，维持前期判断。</p>
+  </div>
+</div>
+
+<div class="section">
+  <h2>券商信号</h2>
+  <div class="signal-row">
+    <div>
+      <div style="font-weight:600;">天风证券 · 买入</div>
+      <div class="signal-meta">食品饮料消费属性重塑，政策催化下估值修复可期</div>
+    </div>
+    <span class="tag grade-b">B级</span>
+  </div>
+  <div class="signal-row">
+    <div>
+      <div style="font-weight:600;">东方证券 · 推荐</div>
+      <div class="signal-meta">Q2超配比例降至-1.2%，为2003年以来历史最低</div>
+    </div>
+    <span class="tag grade-b">B级</span>
+  </div>
+  <div class="signal-row">
+    <div>
+      <div style="font-weight:600;">浙商证券 · 推荐</div>
+      <div class="signal-meta">白酒中秋备货启动，批价企稳为旺季最大观察变量</div>
+    </div>
+    <span class="tag grade-b">B级</span>
+  </div>
+</div>
+
+<div class="section">
+  <h2>关键价格</h2>
+  <div class="price-grid">
+    <div class="price-item">
+      <span class="price-name">贵州茅台</span>
+      <span><span class="price-value">1299.56</span><span class="price-change up">+0.35%</span></span>
+    </div>
+    <div class="price-item">
+      <span class="price-name">五粮液</span>
+      <span><span class="price-value">71.83</span><span class="price-change up">+0.79%</span></span>
+    </div>
+    <div class="price-item">
+      <span class="price-name">山西汾酒</span>
+      <span><span class="price-value">120.67</span><span class="price-change up">+3.35%</span></span>
+    </div>
+    <div class="price-item">
+      <span class="price-name">泸州老窖</span>
+      <span><span class="price-value">78.68</span><span class="price-change up">+2.18%</span></span>
+    </div>
+    <div class="price-item">
+      <span class="price-name">海天味业</span>
+      <span><span class="price-value">34.00</span><span class="price-change up">+1.10%</span></span>
+    </div>
+    <div class="price-item">
+      <span class="price-name">牧原股份</span>
+      <span><span class="price-value">42.40</span><span class="price-change up">+0.21%</span></span>
+    </div>
+    <div class="price-item">
+      <span class="price-name">蒙牛乳业</span>
+      <span><span class="price-value">18.01</span><span class="price-change down">-0.50%</span></span>
+    </div>
+    <div class="price-item">
+      <span class="price-name">美团-W</span>
+      <span><span class="price-value">76.65</span><span class="price-change down">-2.85%</span></span>
+    </div>
+    <div class="price-item">
+      <span class="price-name">周大福</span>
+      <span><span class="price-value">12.77</span><span class="price-change down">-1.47%</span></span>
+    </div>
+    <div class="price-item">
+      <span class="price-name">名创优品</span>
+      <span><span class="price-value">18.60</span><span class="price-change">持平</span></span>
+    </div>
+  </div>
+  <div style="margin-top:14px; padding-top:14px; border-top:1px solid var(--border); font-size:13px; color:var(--text-secondary);">
+    <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+      <span>飞天茅台批价</span><span style="font-weight:600;">1680-1730元/瓶（企稳）</span>
+    </div>
+    <div style="display:flex; justify-content:space-between;">
+      <span>现货黄金</span><span style="font-weight:600;">约4400美元/盎司 <span class="down">-2.0%</span></span>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>六源矩阵状态</h2>
+  <div class="source-grid">
+    <div class="source-chip"><div class="name">iFind</div><div class="status">可用</div></div>
+    <div class="source-chip"><div class="name">Wind</div><div class="status">可用</div></div>
+    <div class="source-chip"><div class="name">Comein</div><div class="status">可用</div></div>
+    <div class="source-chip"><div class="name">Info-Bridge</div><div class="status">可用</div></div>
+    <div class="source-chip"><div class="name">AceCamp</div><div class="status warn">未调用</div></div>
+    <div class="source-chip"><div class="name">ThirdBridge</div><div class="status warn">未调用</div></div>
+  </div>
+  <p style="font-size:12px; color:var(--text-secondary); margin-top:12px;">AceCamp/ThirdBridge 本轮未调用（非交易日无新增纪要），不影响核心覆盖。</p>
+</div>
+
+<div class="footer">
+  本简报由 Codex 自动生成 · 数据截至 2026-09-02 08:30<br>
+  关键数字已标注 A/B/C 来源等级 · 投资观点仅供参考，不构成投资建议
+</div>
+
+</body>
+</html>

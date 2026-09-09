@@ -1,11 +1,11 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-09-02T08:30:00+08:00",
-  "latest_brief": "20260902_消费早报",
+  "last_updated": "2026-09-09T08:45:00+08:00",
+  "latest_brief": "20260909_消费早报",
   "files": {
-    "txt": "20260902_消费早报_精简版.txt",
-    "md": "20260902_消费早报.md",
-    "html": "20260902_消费早报.html"
+    "txt": "20260909_消费早报_精简版.txt",
+    "md": "20260909_消费早报.md",
+    "html": "20260909_消费早报.html"
   },
   "deploy": {
     "github_pages": "https://zhouboshi1998-droid.github.io/consumer-pm-brief/",
@@ -14,9 +14,9 @@
   "mcp_status": {
     "iFind": "available",
     "Wind": "available",
-    "Comein": "available",
+    "Comein": "unavailable (WebSearch fallback for sell-side)",
     "Info-Bridge": "available",
-    "AceCamp": "unavailable",
-    "ThirdBridge": "unavailable"
+    "AceCamp": "unavailable (API 401)",
+    "ThirdBridge": "unavailable (no Sep archives)"
   }
 }

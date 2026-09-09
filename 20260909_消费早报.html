@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>消费PM每日简报 · 9月9日</title>
+<style>
+  :root {
+    --primary: #007AFF;
+    --bg: #F5F7FA;
+    --card: rgba(255,255,255,0.82);
+    --text: #1D1D1F;
+    --text-secondary: #86868B;
+    --border: rgba(0,0,0,0.06);
+    --red: #FF3B30;
+    --green: #34C759;
+    --amber: #FF9500;
+    --radius: 20px;
+    --shadow: 0 8px 32px rgba(0,0,0,0.08);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'JetBrains Mono', 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 24px 16px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .header { text-align: center; margin-bottom: 24px; }
+  .header h1 { font-size: 24px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 4px; }
+  .header .date { font-size: 14px; color: var(--text-secondary); }
+  .badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: linear-gradient(135deg, var(--primary), #5856D6);
+    color: white; padding: 8px 16px; border-radius: 100px;
+    font-size: 13px; font-weight: 600; margin-bottom: 20px;
+    box-shadow: 0 4px 16px rgba(0,122,255,0.3);
+  }
+  .badge::before { content: "⚡"; }
+  .mcp-row { display: flex; justify-content: center; gap: 6px; flex-wrap: wrap; margin-bottom: 20px; }
+  .mcp-tag { font-size: 11px; padding: 3px 10px; border-radius: 100px; font-weight: 600; }
+  .mcp-tag.ok { background: #E8F8EE; color: #248A3D; }
+  .mcp-tag.no { background: #FDECEC; color: #C0392B; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+  .kpi {
+    background: var(--card); backdrop-filter: blur(20px);
+    border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 16px 12px; text-align: center; box-shadow: var(--shadow);
+  }
+  .kpi-value { font-size: 22px; font-weight: 700; color: var(--primary); }
+  .kpi-value.up { color: var(--red); }
+  .kpi-value.down { color: var(--green); }
+  .kpi-label { font-size: 11px; color: var(--text-secondary); margin-top: 4px; }
+  .section {
+    background: var(--card); backdrop-filter: blur(20px);
+    border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 20px; margin-bottom: 16px; box-shadow: var(--shadow);
+  }
+  .section h2 {
+    font-size: 17px; font-weight: 700; margin-bottom: 12px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section h2::before {
+    content: ""; display: inline-block; width: 4px; height: 18px;
+    background: var(--primary); border-radius: 2px;
+  }
+  .theme-item { padding: 12px 0; border-bottom: 1px solid var(--border); }
+  .theme-item:last-child { border-bottom: none; }
+  .theme-num {
+    display: inline-block; width: 22px; height: 22px;
+    background: var(--primary); color: white; border-radius: 50%;
+    font-size: 12px; font-weight: 700; text-align: center;
+    line-height: 22px; margin-right: 8px; flex-shrink: 0;
+  }
+  .theme-head { font-weight: 600; font-size: 14px; margin-bottom: 6px; display: flex; align-items: flex-start; }
+  .theme-body { font-size: 13px; color: var(--text-secondary); padding-left: 30px; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 100px; font-weight: 600; margin-left: 6px; }
+  .tag.fact { background: #E8F4FD; color: #007AFF; }
+  .tag.view { background: #FFF4E5; color: #FF9500; }
+  .tag.rumor { background: #F0F0F0; color: #86868B; }
+  .industry-block { margin-bottom: 14px; }
+  .industry-block:last-child { margin-bottom: 0; }
+  .industry-block h3 { font-size: 14px; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+  .industry-block p { font-size: 13px; color: var(--text-secondary); }
+  .signal-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 13px;
+  }
+  .signal-row:last-child { border-bottom: none; }
+  .signal-meta { color: var(--text-secondary); font-size: 12px; text-align: right; flex-shrink: 0; margin-left: 12px; }
+  .signal-badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 6px; margin-right: 8px; }
+  .sb-down { background: #E8F8EE; color: #248A3D; }
+  .sb-up { background: #FDECEC; color: #C0392B; }
+  .sb-new { background: #E8F4FD; color: #007AFF; }
+  .sb-turn { background: #FFF4E5; color: #FF9500; }
+  .price-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .price-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 12px; background: rgba(0,0,0,0.03); border-radius: 12px; font-size: 13px;
+  }
+  .price-name { font-weight: 600; }
+  .price-value { font-weight: 700; }
+  .price-change { font-size: 11px; margin-left: 6px; }
+  .up { color: var(--red); }
+  .down { color: var(--green); }
+  .footer { text-align: center; font-size: 12px; color: var(--text-secondary); margin-top: 24px; line-height: 1.8; }
+  .footer a { color: var(--primary); text-decoration: none; }
+  @media (max-width: 600px) {
+    .kpi-grid { grid-template-columns: 1fr 1fr; }
+    .price-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>消费PM每日简报</h1>
+  <div class="date">2026年9月9日 · 周三 · 早报（盘前）</div>
+</div>
+<div style="text-align:center"><span class="badge">AI 研究助手草稿 · 待签字</span></div>
+
+<div class="mcp-row">
+  <span class="mcp-tag ok">iFind ✅</span>
+  <span class="mcp-tag ok">Info-Bridge ✅</span>
+  <span class="mcp-tag ok">Wind ✅</span>
+  <span class="mcp-tag no">Comein ❌→WebSearch</span>
+  <span class="mcp-tag no">AceCamp ❌</span>
+  <span class="mcp-tag no">ThirdBridge ❌</span>
+</div>
+
+<div class="kpi-grid">
+  <div class="kpi">
+    <div class="kpi-value">1730元</div>
+    <div class="kpi-label">飞天原箱批价 · 周+25元</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-value up">+0.20%</div>
+    <div class="kpi-label">上证指数 3940.55（9/8）</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-value down">-1.06%</div>
+    <div class="kpi-label">现货金 4357.62美元</div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>▌今日主题</h2>
+  <div class="theme-item">
+    <div class="theme-head"><span class="theme-num">1</span>摩根大通齐降白酒评级</div>
+    <div class="theme-body">茅台增持→中性（TP 1930→1420元）、五粮液→减持（74元）、老窖→中性（105元）；申万宏源同日确认千元价格带底部，中外分歧加大。<span class="tag fact">事实</span></div>
+  </div>
+  <div class="theme-item">
+    <div class="theme-head"><span class="theme-num">2</span>飞天批价上行 vs 动销平淡</div>
+    <div class="theme-body">原箱1730元（周+25元）、1935再涨、五粮液停货挺价至780-800元；财通渠道会提示真实动销未启动，预判中秋前批价回落。<span class="tag fact">事实</span></div>
+  </div>
+  <div class="theme-item">
+    <div class="theme-head"><span class="theme-num">3</span>伊利回购10-20亿元注销</div>
+    <div class="theme-body">占股本0.40-0.80%；山西证券首次覆盖买入-A（26E归母105亿），减值出清获双重确认。<span class="tag fact">事实</span></div>
+  </div>
+  <div class="theme-item">
+    <div class="theme-head"><span class="theme-num">4</span>生猪去化加速</div>
+    <div class="theme-body">8月能繁环比-2.9%，牧原均价10.30元/公斤（同比-23.8%）；中金转多看27年中枢13元/公斤。<span class="tag fact">事实</span></div>
+  </div>
+  <div class="theme-item">
+    <div class="theme-head"><span class="theme-num">5</span>蜜雪降级、茶饮分化</div>
+    <div class="theme-body">蜜雪H1营收+2.3%、单店-17%，遭外资降至持有（211.5港元）；古茗7-8月同店转正。<span class="tag fact">事实</span></div>
+  </div>
+  <div class="theme-item">
+    <div class="theme-head"><span class="theme-num">6</span>黄金消费结构裂变</div>
+    <div class="theme-body">金饰上半年消费量-33.9%、金条+28.4%；老铺黄金H1营收+60.3%、净利+88.2%，Q3以来企稳。<span class="tag fact">事实</span></div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>▌分行业</h2>
+  <div class="industry-block"><h3>【白酒】</h3><p>中秋备货启动，批价上行vs动销平淡，业内预判结构性分化而非普涨。</p></div>
+  <div class="industry-block"><h3>【食品饮料】</h3><p>伊利回购注销；8月伊利/蒙牛出货负增长，东鹏/农夫双位数增（渠道库存35天+）。</p></div>
+  <div class="industry-block"><h3>【零食量贩】</h3><p>鸣鸣很忙"缺斤少两"致歉+十倍赔付；8月鸣鸣/万辰各净开店1400+家环比加速；盐津铺子周涨5.99%。</p></div>
+  <div class="industry-block"><h3>【茶饮出行】</h3><p>外卖补贴8月几乎归零利好头部；锦江/首旅/海底捞周二市值新低（极端情绪信号）。</p></div>
+  <div class="industry-block"><h3>【黄金珠宝】</h3><p>周大福8月内地同店降高个位数，门店收缩至2.5万家、弱店出清。</p></div>
+  <div class="industry-block"><h3>【生猪】</h3><p>温氏8月毛猪价同比-21.9%；卖方集体转多27年反转。</p></div>
+  <div class="industry-block"><h3>【泛消费】</h3><p>比亚迪海外月销17万+辆、JPM首选；空调10月排产转正+0.7%现拐点信号。</p></div>
+</div>
+
+<div class="section">
+  <h2>▌券商信号</h2>
+  <div class="signal-row"><span><span class="signal-badge sb-down">下调</span>摩根大通：茅台→中性1420元、五粮液→减持、老窖→中性</span><span class="signal-meta">9/8</span></div>
+  <div class="signal-row"><span><span class="signal-badge sb-down">下调</span>外资行：蜜雪集团降至持有211.5港元</span><span class="signal-meta">9/8</span></div>
+  <div class="signal-row"><span><span class="signal-badge sb-new">首覆</span>山西证券：伊利买入-A，26E归母105亿</span><span class="signal-meta">9/2</span></div>
+  <div class="signal-row"><span><span class="signal-badge sb-turn">转多</span>中金：生猪27年反转；申万宏源：白酒底部验证</span><span class="signal-meta">9/5-9/6</span></div>
+  <div class="signal-row"><span><span class="signal-badge sb-new">预测</span>花旗下调泡泡玛特/名创盈利预测维持买入</span><span class="signal-meta">9月上旬</span></div>
+  <div class="signal-row"><span><span class="signal-badge sb-turn">拐点</span>中信建投：空调10月排产转正+0.7%</span><span class="signal-meta">9月上旬</span></div>
+</div>
+
+<div class="section">
+  <h2>▌关键价格（9/8收盘 · 涨红跌绿）</h2>
+  <div class="price-grid">
+    <div class="price-item"><span class="price-name">飞天原箱批价</span><span><span class="price-value">1730元</span><span class="price-change up">周+25元</span></span></div>
+    <div class="price-item"><span class="price-name">贵州茅台</span><span><span class="price-value">1309.30</span><span class="price-change down">日-0.51%</span></span></div>
+    <div class="price-item"><span class="price-name">五粮液</span><span><span class="price-value">71.65</span><span class="price-change up">日+0.27%</span></span></div>
+    <div class="price-item"><span class="price-name">盐津铺子</span><span><span class="price-value">47.10</span><span class="price-change up">周+5.99%</span></span></div>
+    <div class="price-item"><span class="price-name">老铺黄金(HK)</span><span><span class="price-value">393.6</span><span class="price-change up">周+2.02%</span></span></div>
+    <div class="price-item"><span class="price-name">现货金</span><span><span class="price-value">4357.62$</span><span class="price-change down">日-1.06%</span></span></div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>▌市场段子（未验证）</h2>
+  <div class="industry-block"><p><span class="tag rumor">L2</span> 国窖费用反补、打款价降至840-850元抢回款，高度回款仅50-60%——报表下滑但真实动销好于表观的预期差。</p></div>
+  <div class="industry-block"><p><span class="tag rumor">L2</span> 量贩零食8月净开店环比加速（鸣鸣/万辰各1400+家）；盐津流通Q3调整结束、Q4转正。</p></div>
+  <div class="industry-block"><p><span class="tag rumor">L2</span> 锦江/首旅/海底捞周二创市值新低——极端情绪信号（反读参考）。</p></div>
+</div>
+
+<div class="footer">
+  数据来源：iFind · Info-Bridge · Wind · WebSearch（Comein/AceCamp 不可用，卖方信号走 WebSearch 兜底）<br>
+  <a href="20260909_消费早报_精简版.txt">精简版.txt</a> · <a href="20260909_消费早报.md">详细版.md</a> · <a href="deploy/version.json">版本信息</a><br>
+  草稿待签字 · 手动发送 · 不构成投资建议 · Generated 2026-09-09 08:45
+</div>
+
+</body>
+</html>

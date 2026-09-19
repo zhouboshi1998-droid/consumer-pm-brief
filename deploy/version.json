@@ -1,11 +1,11 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-09-18T09:05:00+08:00",
-  "latest_brief": "20260918_消费早报",
+  "last_updated": "2026-09-19T12:40:00+08:00",
+  "latest_brief": "20260919_消费早报",
   "files": {
-    "txt": "20260918_消费早报_精简版.txt",
-    "md": "20260918_消费早报.md",
-    "html": "20260918_消费早报.html"
+    "txt": "20260919_消费早报_精简版.txt",
+    "md": "20260919_消费早报.md",
+    "html": "20260919_消费早报.html"
   },
   "deploy": {
     "github_pages": "https://zhouboshi1998-droid.github.io/consumer-pm-brief/",
@@ -13,11 +13,11 @@
   },
   "mcp_status": {
     "Comein": "available",
-    "iFind": "available",
-    "Info-Bridge": "available",
+    "iFind": "available (notice API returned empty for 9/17-19 window, news cross-coverage used)",
+    "Info-Bridge": "unavailable (MCP not visible this run)",
     "Wind": "available",
     "AceCamp": "unavailable (API 401 - credentials expired)",
-    "ThirdBridge": "degraded (local archive 09/15-09/16 only)",
+    "ThirdBridge": "degraded (TB login expired, day 3, zero output)",
     "WebSearch": "available (fallback for sell-side signals + price verification)"
   }
 }

@@ -114,6 +114,12 @@
   .table td { padding: 8px 0; border-bottom: 0.5px solid var(--border); }
   .table tr:last-child td { border-bottom: none; }
   .table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .calib-item { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+  .calib-item:last-child { border-bottom: none; }
+  .calib-key { flex-shrink: 0; font-weight: 700; font-size: 11px; padding: 2px 8px; border-radius: 6px; height: fit-content; margin-top: 2px; }
+  .ck-1 { background: #E8F8EE; color: #248A3D; }
+  .ck-2 { background: #FFF4E5; color: #B26A00; }
+  .ck-3 { background: #E8F4FD; color: #007AFF; }
   .warn-box {
     background: #FFF9EC; border: 1px solid #FFE9BF; border-radius: 12px;
     padding: 12px 14px; font-size: 12.5px; color: #8A6A1F; line-height: 1.65;
@@ -130,28 +136,28 @@
 
 <div class="header">
   <h1>消费PM每日简报</h1>
-  <div class="date">2026年9月19日 · 周六 · 早报（覆盖 9/18 交易日 + 周末增量）</div>
+  <div class="date">2026年9月19日 · 周六 · 早报（覆盖周五交易日+隔夜外盘）</div>
 </div>
 <div style="text-align:center"><span class="badge">AI 研究助手草稿 · 待签字</span></div>
 
 <div class="mcp-row">
   <span class="mcp-tag ok">Comein ✅</span>
-  <span class="mcp-tag ok">iFind ✅ 公告口空缺</span>
+  <span class="mcp-tag ok">iFind ✅</span>
+  <span class="mcp-tag ok">Info-Bridge ✅</span>
   <span class="mcp-tag ok">Wind ✅</span>
-  <span class="mcp-tag ok">WebSearch ✅ 兜底</span>
-  <span class="mcp-tag no">Info-Bridge ❌ 不可见</span>
+  <span class="mcp-tag warn">ThirdBridge ⚠ 本地档</span>
+  <span class="mcp-tag warn">WebSearch ⚠ 故障</span>
   <span class="mcp-tag no">AceCamp ❌ 401</span>
-  <span class="mcp-tag warn">ThirdBridge ⚠ 登录失效D3</span>
 </div>
 
 <div class="kpi-grid">
   <div class="kpi">
-    <div class="kpi-value">1730元</div>
-    <div class="kpi-label">飞天散瓶批价 · 持平企稳</div>
+    <div class="kpi-value down">1740元</div>
+    <div class="kpi-label">飞天原箱批价 · 日-5 · 较年初+13%</div>
   </div>
   <div class="kpi">
     <div class="kpi-value up">4377$</div>
-    <div class="kpi-label">伦敦金 · 日+0.85% 高位未创新高</div>
+    <div class="kpi-label">现货黄金 · 加息后不降反升</div>
   </div>
   <div class="kpi">
     <div class="kpi-value up">+5.51%</div>
@@ -162,96 +168,108 @@
 <div class="section">
   <h2>▌今日主题</h2>
   <div class="theme-item">
-    <div class="theme-head"><span class="theme-num">1</span>白酒批价企稳回升，备货"供给克制"</div>
-    <div class="theme-body">飞天散瓶 1725-1750 元（中金调研约 1750）、原箱 1740-1745 元；五粮液较低点回升超 50 元，茅台自营零售价年内第六次调价至 1766 元。中秋礼盒普遍缺席、酒企不压货，双节动销成色是下周核心验证。<span class="tag fact">事实</span></div>
+    <div class="theme-head"><span class="theme-num">1</span>白酒中秋回款分层落定</div>
+    <div class="theme-body">茅台回款 85%（去年 80%）、库存降至 2 周；五粮液 70%；国窖仅 50%、9 月底加费追赶。美银调研：河南白酒市场从 800 亿缩至 450 亿（-40%+），300-500 元商务带最弱，茅五两端与百元以下坚挺。<span class="tag fact">事实</span></div>
   </div>
   <div class="theme-item">
-    <div class="theme-head"><span class="theme-num">2</span>港股新消费重估：小摩下调泡泡玛特</div>
-    <div class="theme-body">泡泡玛特 OW→Neutral、目标价 350→165 港元；名创优品目标价 26→16 港元。港股通消费指数 PE 13.4 倍处 10 年最低分位——评级下修与估值低分位并存，预期出清进行时。<span class="tag fact">事实</span></div>
+    <div class="theme-head"><span class="theme-num">2</span>飞天批价微落 + 老窖盈利下修落地</div>
+    <div class="theme-body">原箱 1740 元（日-5）、散瓶 1730 持平，较年初 +13%；渠道盯"节前守 1700 即价格底验证"。国信 9/15 下修泸州老窖 26 年收入/净利 -30%/-38%，国窖打款价 910→840 元转顺价、批价 830 元。<span class="tag fact">事实</span></div>
   </div>
   <div class="theme-item">
-    <div class="theme-head"><span class="theme-num">3</span>国信大幅下修泸州老窖盈利预测</div>
-    <div class="theme-body">2026 收入/净利 -30%/-38%；国窖打款价 910→840 元转顺价、渠道库存约 7 个月。头部酒企中首个明确量化下修，渠道模式切换是核心变量。<span class="tag view">观点</span></div>
+    <div class="theme-head"><span class="theme-num">3</span>乳业 TP 密集调整，反转进入兑现期</div>
+    <div class="theme-body">华泰上调现代牧业 TP 2.62 港元（26E 净利 +47%）、优然 9.36 港元；下调伊利 26E EPS 20%（减值+补税）维持买入。9 月前两周散奶 3.63 元/kg 加速上行，8 月合同奶价 3.06 元/kg 同比转正。<span class="tag view">观点</span></div>
   </div>
   <div class="theme-item">
-    <div class="theme-head"><span class="theme-num">4</span>金价高位运行，黄金珠宝链分化</div>
-    <div class="theme-body">伦敦金收 4377 美元（日+0.85%、周+0.68%），历史高位区未创新高；沪金 941.8 元/克。老铺黄金 9/17 -3.04% 后 9/18 反弹 +5.51% 报 383 港元；小摩维持增持（目标 891 港元）、Q2 放缓定性周期性。<span class="tag fact">事实</span></div>
+    <div class="theme-head"><span class="theme-num">4</span>黄金珠宝：个股 α 与行业 β 背离加深</div>
+    <div class="theme-body">老铺黄金 9/18 +5.51% 报 383 港元；花旗调研 46% 存量客户提价后仍购买、TP 507 港元。但 8 月金银珠宝社零 -17.5% 降幅扩大，东方证券提示下半年板块缺整体性机会。<span class="tag view">观点</span></div>
   </div>
   <div class="theme-item">
-    <div class="theme-head"><span class="theme-num">5</span>8月社零偏弱，双节出行链有支撑</div>
-    <div class="theme-body">8 月社零 +0.4%（前值+0.6%），除汽车外 +2.5%；汽车类 -18.5% 主要拖累、通讯器材 +27.3%。三部门印发文旅专项指导意见，假期机票预订同比 +12%，西南西北游人次涨幅超 180%。<span class="tag fact">事实</span></div>
+    <div class="theme-head"><span class="theme-num">5</span>美联储加息但金价反升</div>
+    <div class="theme-body">隔夜加息 25bp 至 3.75-4.00%（12:0、年内或再加息），现货金 9/19 凌晨 4377-4380 美元处历史高位；金龙指数 +0.76%、阿里美股 +4.3%；周五上证 3912（+0.94%）放量上涨。<span class="tag fact">事实</span></div>
   </div>
   <div class="theme-item">
-    <div class="theme-head"><span class="theme-num">6</span>个体异动与奶价反转确认</div>
-    <div class="theme-body">安井食品 9/18 放量 +6.78%（换手4.51%、量比2.65，原因待查）；瑞幸美股 +4.04%（待查）。原奶 8 月合同价 3.06 元/kg 同比转正，1-7 月乳制品产量 +6%，奶价底部确立。<span class="tag fact">事实</span></div>
+    <div class="theme-head"><span class="theme-num">6</span>安井异动 + 社零弱总量</div>
+    <div class="theme-body">安井食品周五放量 +6.78%（量比 2.65，申万归因海外拓展加速）；8 月社零 +0.4% 连续回落，除汽车外 +2.5%，汽车类 -18.5% 拖累最大。<span class="tag fact">事实</span></div>
   </div>
 </div>
 
 <div class="section">
   <h2>▌分行业</h2>
-  <div class="industry-block"><h3>【白酒】</h3><p>批价企稳 + 备货谨慎，飞天 1700 元上方有强支撑；古井礼盒降档、次高端承压，板块 9/18 -0.23%。</p></div>
-  <div class="industry-block"><h3>【食品】</h3><p>东鹏 26H1 净利 +20.7%、茶饮 +209%；千禾承诺分红率 ≥90%；海天 Q2 稳健、天味 +19.8%。</p></div>
-  <div class="industry-block"><h3>【黄金珠宝】</h3><p>8 月金银珠宝社零单月降幅扩大（高金价压制量）vs 老铺黄金 9/18 反弹，量价背离延续。</p></div>
-  <div class="industry-block"><h3>【农业】</h3><p>猪价 10.74 元/kg 节前僵持（同比 -16.9%）；8 月能繁环比 -2.94% 创去化以来最大单月降幅，自繁自养头均亏 174 元。</p></div>
-  <div class="industry-block"><h3>【汽车/家电】</h3><p>8 月 23 家车企销量 +4.85%、新能源渗透率 66.3%；家电以旧换新累计 6327 万台，内销单月同比转正。</p></div>
-  <div class="industry-block"><h3>【港股新消费】</h3><p>泡泡玛特/名创遭小摩下调；蜜雪出海门店超 4000 家行业第一但股价仍破发后修复中。</p></div>
+  <div class="industry-block"><h3>【白酒】</h3><p>Q2 营收 -17.3% 继续出清，开源定调 H2 前低后高；中秋礼盒集体退潮，茅台 1935 动销爆发。</p></div>
+  <div class="industry-block"><h3>【乳制品】</h3><p>8 月合同奶价 3.06 元/kg 同比转正，存栏同比 -80 万头；专家预计 27-28 年回升至 4.0-4.5 元。</p></div>
+  <div class="industry-block"><h3>【调味品/食品】</h3><p>海天 Q2 收入 +2.9% 连续 7 季稳健；千禾净利 +313%、承诺分红率 ≥90%；速冻龙头十一后二轮提价 2-4%。</p></div>
+  <div class="industry-block"><h3>【黄金珠宝】</h3><p>中小品牌出清加速（萃华退市）；央行月购金 91 吨构成结构性支撑。</p></div>
+  <div class="industry-block"><h3>【农业】</h3><p>生猪 10.74 元/kg 磨底、猪粮比 4.51 逼近预警；能繁去化加速，反转叙事指向 27 年。</p></div>
+  <div class="industry-block"><h3>【零售社服】</h3><p>国办促进房车消费、国常会部署体育赛事供给；文旅"十五五"锚定 2030 年出游 83 亿人次。</p></div>
+  <div class="industry-block"><h3>【家电/汽车/轻工】</h3><p>格力欧洲部分市场销量 +92%；广汽停牌筹划收购一汽合资公司股权；恒丰纸业 Q2 净利 +96.7%（HNB 卡位）。</p></div>
 </div>
 
 <div class="section">
   <h2>▌券商信号</h2>
-  <div class="signal-row"><span><span class="signal-badge sb-down">下调</span>小摩：泡泡玛特降至中性，目标价 350→165 港元</span><span class="signal-meta">9/18</span></div>
-  <div class="signal-row"><span><span class="signal-badge sb-down">下调</span>小摩：名创优品目标价 26→16 港元</span><span class="signal-meta">9/18</span></div>
-  <div class="signal-row"><span><span class="signal-badge sb-down">下修</span>国信：泸州老窖 2026 收入/净利 -30%/-38%，渠道转顺价</span><span class="signal-meta">9/15</span></div>
-  <div class="signal-row"><span><span class="signal-badge sb-up">维持+量化</span>小摩：老铺黄金增持、目标 891 港元，Q3/Q4 盈利 8/12 亿</span><span class="signal-meta">9/16</span></div>
-  <div class="signal-row"><span><span class="signal-badge sb-turn">底部共识</span>开源：白酒控货出清、下半年前低后高；奶价底部确立</span><span class="signal-meta">9/17</span></div>
-  <div class="signal-row"><span><span class="signal-badge sb-turn">观点强化</span>国信：肉奶周期共振反转，能繁去化加速</span><span class="signal-meta">9/16</span></div>
+  <div class="signal-row"><span><span class="signal-badge sb-up">TP上调</span>华泰：现代牧业 2.00→2.62 港元、优然 8.86→9.36 港元</span><span class="signal-meta">9/17</span></div>
+  <div class="signal-row"><span><span class="signal-badge sb-down">盈利下修</span>国信：泸州老窖 26 年收入/净利 -30%/-38%</span><span class="signal-meta">9/15</span></div>
+  <div class="signal-row"><span><span class="signal-badge sb-down">盈利下调</span>华泰：伊利 26E EPS -20%（维持买入）；光大：匠心家居下调</span><span class="signal-meta">9/17</span></div>
+  <div class="signal-row"><span><span class="signal-badge sb-new">首次覆盖</span>中银：莲花控股增持；国盛：中粮糖业买入</span><span class="signal-meta">9/16-18</span></div>
+  <div class="signal-row"><span><span class="signal-badge sb-turn">观点转谨慎</span>东方证券：黄金珠宝出清慢于预期、下半年缺整体机会</span><span class="signal-meta">9/17</span></div>
+  <div class="signal-row"><span><span class="signal-badge sb-turn">首推调整</span>国信 9 月白酒策略首推茅台（27 年 PE 18-19x）</span><span class="signal-meta">9/15</span></div>
 </div>
 
 <div class="section">
-  <h2>▌关键价格（9/18 · 涨红跌绿）</h2>
+  <h2>▌关键价格（9/18-19 · 涨红跌绿）</h2>
   <div class="price-grid">
-    <div class="price-item"><span class="price-name">飞天散瓶批价</span><span><span class="price-value">1725-30元</span><span class="price-change">日持平</span></span></div>
-    <div class="price-item"><span class="price-name">飞天原箱批价</span><span><span class="price-value">1740-45元</span><span class="price-change down">日-5元</span></span></div>
-    <div class="price-item"><span class="price-name">伦敦金现货</span><span><span class="price-value">4377$</span><span class="price-change up">日+0.85% / 周+0.68%</span></span></div>
-    <div class="price-item"><span class="price-name">生猪（外三元）</span><span><span class="price-value">10.74元/kg</span><span class="price-change">日持平</span></span></div>
-    <div class="price-item"><span class="price-name">贵州茅台</span><span><span class="price-value">1257.12元</span><span class="price-change down">日-0.78% / 周-1.41%</span></span></div>
-    <div class="price-item"><span class="price-name">老铺黄金(HK)</span><span><span class="price-value">383.00港元</span><span class="price-change up">日+5.51% / 周+3.63%</span></span></div>
-    <div class="price-item"><span class="price-name">安井食品</span><span><span class="price-value">79.48元</span><span class="price-change up">日+6.78% / 周+6.33%</span></span></div>
-    <div class="price-item"><span class="price-name">泡泡玛特(HK)</span><span><span class="price-value">155.10港元</span><span class="price-change up">日+1.24% / 周+1.37%</span></span></div>
+    <div class="price-item"><span class="price-name">飞天原箱批价</span><span><span class="price-value">1740元</span><span class="price-change down">日-5</span></span></div>
+    <div class="price-item"><span class="price-name">飞天散瓶批价</span><span><span class="price-value">1730元</span><span class="price-change">持平</span></span></div>
+    <div class="price-item"><span class="price-name">八代普五批价</span><span><span class="price-value">770-790元</span><span class="price-change">持平</span></span></div>
+    <div class="price-item"><span class="price-name">国窖1573批价</span><span><span class="price-value">830元</span><span class="price-change">持平</span></span></div>
+    <div class="price-item"><span class="price-name">现货黄金</span><span><span class="price-value">4377$</span><span class="price-change up">日+0.9%</span></span></div>
+    <div class="price-item"><span class="price-name">生猪（外三元）</span><span><span class="price-value">10.74元/kg</span><span class="price-change down">周-3%</span></span></div>
+    <div class="price-item"><span class="price-name">原奶（合同）</span><span><span class="price-value">3.06元/kg</span><span class="price-change up">同比转正</span></span></div>
+    <div class="price-item"><span class="price-name">USD/CNY 中间价</span><span><span class="price-value">6.7521</span><span class="price-change up">调升59bp</span></span></div>
   </div>
 </div>
 
 <div class="section">
-  <h2>▌消费标的速览（9/18收盘 · Comein/Wind）</h2>
+  <h2>▌行情速览（9/18收盘 · Comein）</h2>
   <table class="table">
     <thead><tr><th>标的</th><th class="num">日%</th><th class="num">周%</th></tr></thead>
     <tbody>
-      <tr><td>安井食品</td><td class="num" style="color:#FF3B30">+6.78</td><td class="num" style="color:#FF3B30">+6.33</td></tr>
-      <tr><td>老铺黄金(HK)</td><td class="num" style="color:#FF3B30">+5.51</td><td class="num" style="color:#FF3B30">+3.63</td></tr>
-      <tr><td>瑞幸咖啡(US)</td><td class="num" style="color:#FF3B30">+4.04</td><td class="num" style="color:#FF3B30">+1.04</td></tr>
-      <tr><td>古井贡酒</td><td class="num" style="color:#FF3B30">+1.38</td><td class="num" style="color:#FF3B30">+1.80</td></tr>
-      <tr><td>五粮液</td><td class="num" style="color:#FF3B30">+1.26</td><td class="num" style="color:#FF3B30">+0.36</td></tr>
-      <tr><td>中国中免</td><td class="num" style="color:#FF3B30">+1.66</td><td class="num" style="color:#FF3B30">+0.64</td></tr>
-      <tr><td>泡泡玛特(HK)</td><td class="num" style="color:#FF3B30">+1.24</td><td class="num" style="color:#FF3B30">+1.37</td></tr>
-      <tr><td>蜜雪集团(HK)</td><td class="num" style="color:#FF3B30">+1.94</td><td class="num" style="color:#34C759">-0.56</td></tr>
+      <tr><td>上证指数</td><td class="num" style="color:#FF3B30">+0.94</td><td class="num">—</td></tr>
       <tr><td>贵州茅台</td><td class="num" style="color:#34C759">-0.78</td><td class="num" style="color:#34C759">-1.41</td></tr>
+      <tr><td>五粮液</td><td class="num" style="color:#FF3B30">+1.26</td><td class="num" style="color:#FF3B30">+0.36</td></tr>
+      <tr><td>安井食品</td><td class="num" style="color:#FF3B30">+6.78</td><td class="num" style="color:#FF3B30">+6.33</td></tr>
+      <tr><td>中国中免</td><td class="num" style="color:#FF3B30">+1.66</td><td class="num" style="color:#FF3B30">+0.64</td></tr>
+      <tr><td>老铺黄金(HK)</td><td class="num" style="color:#FF3B30">+5.51</td><td class="num" style="color:#FF3B30">+3.63</td></tr>
+      <tr><td>蜜雪集团(HK)</td><td class="num" style="color:#FF3B30">+1.94</td><td class="num" style="color:#34C759">-0.56</td></tr>
+      <tr><td>泡泡玛特(HK)</td><td class="num" style="color:#FF3B30">+1.24</td><td class="num" style="color:#FF3B30">+1.37</td></tr>
       <tr><td>蒙牛乳业(HK)</td><td class="num" style="color:#34C759">-1.77</td><td class="num" style="color:#34C759">-3.21</td></tr>
-      <tr><td>美团-W(HK)</td><td class="num" style="color:#FF3B30">+0.41</td><td class="num" style="color:#34C759">-2.53</td></tr>
-      <tr><td>百胜中国(US)</td><td class="num" style="color:#34C759">-0.56</td><td class="num" style="color:#34C759">-2.84</td></tr>
+      <tr><td>古茗(HK)</td><td class="num" style="color:#FF3B30">+0.55</td><td class="num" style="color:#34C759">-4.37</td></tr>
     </tbody>
   </table>
 </div>
 
 <div class="section">
-  <h2>▌数据源状态与纪要降级说明</h2>
-  <div class="warn-box">
-    ① Info-Bridge MCP 今日不可见，市场段子区降级至本地微信段子日报（C级·未验证）：珀莱雅参股毕生之研、山东白酒渠道交流流传、HNB/冰雪主题。② AceCamp API 401 凭证失效，本期无专家纪要新增，未编造内容。③ ThirdBridge TB 登录失效第 3 日零产出，且 DeepSeek 402 欠费——两链路需运维处理。④ iFind 公告接口 9/17-19 窗口空结果，公司动态以新闻交叉覆盖，建议核对巨潮。
-  </div>
+  <h2>▌专家纪要速览（本地存档 · C级）</h2>
+  <div class="calib-item"><span class="calib-key ck-2">白酒专家</span><span>9/16（ThirdBridge）：旺季预计持平或小个位数下滑；专家口径飞天批价 1790-1800（与市场 1740 有出入）、库存 10-15 天；非标动销 -72%、普五 +30%+。</span></div>
+  <div class="calib-item"><span class="calib-key ck-1">原奶供需</span><span>专家纪要 9/17（Info-Bridge）：存栏 570 万头同比 -80 万头，奶价预计 27-28 年回升至 4.0-4.5 元/kg。</span></div>
+  <div class="calib-item"><span class="calib-key ck-2">量贩零食</span><span>专家纪要 9/17：Q3 同店 -5%~-10%（门店自我加密分流）；硬折扣渗透率仅 8%、未来三年 CAGR 约 23%。</span></div>
+  <div class="calib-item"><span class="calib-key ck-3">家居/医美</span><span>欧派经销商 9/10（TB·C级）：Q2 下滑扩大至 20-30%、获客成本升至 2000+ 元；医美机构：行业盈利未改善。</span></div>
+</div>
+
+<div class="section">
+  <h2>▌判断校准（三点）</h2>
+  <div class="calib-item"><span class="calib-key ck-1">有信心</span><span>原奶反转方向——奶价同比转正 + 存栏去化是硬数据，牧业 TP 上调是兑现信号。推翻条件：奶价环比连续两月回落。</span></div>
+  <div class="calib-item"><span class="calib-key ck-2">有分歧</span><span>白酒价格底——市场口径 1740 vs 专家口径 1790-1800 有 50 元量级出入；节前批价守 1700 与否是验证点。</span></div>
+  <div class="calib-item"><span class="calib-key ck-3">待讨论</span><span>黄金珠宝背离——花旗调研"需求无弹性" vs 社零 -17.5% 与东方证券谨慎，个股 α 能否持续跑赢行业 β。</span></div>
+</div>
+
+<div class="section">
+  <div class="warn-box">⚠️ 数据源状态：Comein / iFind / Info-Bridge / Wind 正常；<b>AceCamp API 401 凭证失效</b>；ThirdBridge 本地档仅 9/16 有消费条目；WebSearch 本轮故障，价格校实改用 Comein 快照 + 多源交叉。批价存在专家口径（1790-1800）与市场口径（1740）分歧，本报告取市场口径。小摩下调泡泡玛特传闻未核实，未作事实引用。</div>
 </div>
 
 <div class="footer">
-  数据来源：Comein、iFind、Wind、WebSearch（Info-Bridge、AceCamp 不可用已显式降级）<br>
-  <a href="https://zhouboshi1998-droid.github.io/consumer-pm-brief/">GitHub Pages</a> · 草稿待签字，手动发送 · 不代下评级/仓位/时点决策
+  <p>消费PM每日简报 · 2026-09-19 早报 · AI 草稿待签字</p>
+  <p>数据来源：Comein、iFind、Info-Bridge、Wind（AceCamp 401 不可用）</p>
+  <p><a href="https://zhouboshi1998-droid.github.io/consumer-pm-brief/">GitHub Pages</a> · 覆盖窗口：9/18 交易日 → 9/19 晨</p>
 </div>
 
 </body>

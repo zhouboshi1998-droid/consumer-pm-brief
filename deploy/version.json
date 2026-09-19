@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-09-19T12:40:00+08:00",
+  "last_updated": "2026-09-19T13:05:00+08:00",
   "latest_brief": "20260919_消费早报",
   "files": {
     "txt": "20260919_消费早报_精简版.txt",
@@ -12,12 +12,12 @@
     "cloudstudio": "https://cloudstudio.net/p/consumer-pm-brief"
   },
   "mcp_status": {
-    "Comein": "available",
-    "iFind": "available (notice API returned empty for 9/17-19 window, news cross-coverage used)",
-    "Info-Bridge": "unavailable (MCP not visible this run)",
+    "Comein": "available (11子板块研报+行情快照+价格核验)",
+    "iFind": "available (新闻/公告，公告窗口索引有限)",
+    "Info-Bridge": "available (20260918消费简报+rag+热词)",
     "Wind": "available",
     "AceCamp": "unavailable (API 401 - credentials expired)",
-    "ThirdBridge": "degraded (TB login expired, day 3, zero output)",
-    "WebSearch": "available (fallback for sell-side signals + price verification)"
+    "ThirdBridge": "degraded (本地档仅9/16有消费条目)",
+    "WebSearch": "unavailable this run (fetch failed)，价格校实改用Comein快照+多源交叉"
   }
 }

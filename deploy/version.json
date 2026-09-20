@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-09-19T13:05:00+08:00",
-  "latest_brief": "20260919_消费早报",
+  "last_updated": "2026-09-20T08:55:00+08:00",
+  "latest_brief": "20260920_消费早报",
   "files": {
-    "txt": "20260919_消费早报_精简版.txt",
-    "md": "20260919_消费早报.md",
-    "html": "20260919_消费早报.html"
+    "txt": "20260920_消费早报_精简版.txt",
+    "md": "20260920_消费早报.md",
+    "html": "20260920_消费早报.html"
   },
   "deploy": {
     "github_pages": "https://zhouboshi1998-droid.github.io/consumer-pm-brief/",
     "cloudstudio": "https://cloudstudio.net/p/consumer-pm-brief"
   },
   "mcp_status": {
-    "Comein": "available (11子板块研报+行情快照+价格核验)",
-    "iFind": "available (新闻/公告，公告窗口索引有限)",
-    "Info-Bridge": "available (20260918消费简报+rag+热词)",
-    "Wind": "available",
+    "Comein": "available (研报/点评/行情快照)",
+    "iFind": "available (新闻/热点；公告接口周末窗口空)",
+    "Info-Bridge": "available (OTA立案/关税/量贩/乳业条目)",
+    "Wind": "available (备用未动用)",
+    "WebSearch": "available (批价/金价/美股校实)",
     "AceCamp": "unavailable (API 401 - credentials expired)",
-    "ThirdBridge": "degraded (本地档仅9/16有消费条目)",
-    "WebSearch": "unavailable this run (fetch failed)，价格校实改用Comein快照+多源交叉"
+    "ThirdBridge": "unavailable (本地档9/16后无消费新增)"
   }
 }

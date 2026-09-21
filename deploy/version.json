@@ -1,23 +1,23 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-09-20T08:55:00+08:00",
-  "latest_brief": "20260920_消费早报",
+  "last_updated": "2026-09-21T08:55:00+08:00",
+  "latest_brief": "20260921_消费早报",
   "files": {
-    "txt": "20260920_消费早报_精简版.txt",
-    "md": "20260920_消费早报.md",
-    "html": "20260920_消费早报.html"
+    "txt": "20260921_消费早报_精简版.txt",
+    "md": "20260921_消费早报.md",
+    "html": "20260921_消费早报.html"
   },
   "deploy": {
     "github_pages": "https://zhouboshi1998-droid.github.io/consumer-pm-brief/",
     "cloudstudio": "https://cloudstudio.net/p/consumer-pm-brief"
   },
   "mcp_status": {
-    "Comein": "available (研报/点评/行情快照)",
-    "iFind": "available (新闻/热点；公告接口周末窗口空)",
-    "Info-Bridge": "available (OTA立案/关税/量贩/乳业条目)",
-    "Wind": "available (备用未动用)",
-    "WebSearch": "available (批价/金价/美股校实)",
+    "Comein": "unavailable (本会话MCP未接入)",
+    "iFind": "unavailable (本会话MCP未接入)",
+    "Info-Bridge": "unavailable (MCP未接入；本地讯息之桥日报9/21档可用)",
+    "Wind": "unavailable (本会话MCP未接入)",
+    "WebSearch": "available (卖方信号/价格/行情校实兜底)",
     "AceCamp": "unavailable (API 401 - credentials expired)",
-    "ThirdBridge": "unavailable (本地档9/16后无消费新增)"
+    "ThirdBridge": "unavailable (本地档9/19-21无消费增量)"
   }
 }
